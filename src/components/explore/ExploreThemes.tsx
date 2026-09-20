@@ -44,7 +44,7 @@ export default function ExploreThemes() {
   const [search, setSearch] = createSignal("");
 
   const REMOTE_THEMES_URL =
-    "https://raw.githubusercontent.com/nexcord-app/themes/master/themes.json";
+    "https://raw.githubusercontent.com/nexcord-app/themes/main/themes.json";
 
   onMount(() => {
     header.updateHeader({
