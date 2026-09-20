@@ -1,0 +1,2 @@
+import n from"./openscad-COetekFt.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/openscad" instead of "highlight.js/lib/languages/openscad.js"'))}e();export{n as default};
+//# sourceMappingURL=openscad.js-CzysO0c1.js.map

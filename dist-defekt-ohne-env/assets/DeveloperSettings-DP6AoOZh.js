@@ -1,0 +1,7 @@
+import{e as l,D as m,H as t,c as e,I as r}from"./ModerationService-7nF9_67y.js";import{s as p}from"./Flexbox-DahX4I5v.js";import{b as u}from"./useStore-C1x_XtZn.js";import{B as d,a as o}from"./Breadcrumb-xfmK78bh.js";import{S as n}from"./SettingsBlock-CMShPInh.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./Text-xQnkEBKO.js";import"./useResizeObserver-DLOEUKTg.js";const g=p("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+`;function C(){const{header:a}=u(),s=()=>{const i=document.cookie.split("; ").find(c=>c.startsWith("useLatestURL="));return i?i.split("=")[1]==="true":!1},[h,f]=l(s());return m(()=>{a.updateHeader({title:t("3i16p4")+" - "+t("AResiX"),iconName:"settings"})}),e(g,{get children(){return[e(d,{get children(){return[e(o,{href:"/app",icon:"home",get title(){return t("t5AkH8")}}),e(o,{get title(){return t("AResiX")}})]}}),e(n,{href:"./applications",icon:"extension",get label(){return t("tqCAim")},get description(){return t("MMd/Sl")},get children(){return e(r,{name:"keyboard_arrow_right"})}}),e(n,{href:"https://docs.nexcord.de",hrefBlank:!0,icon:"menu_book",get label(){return t("nXXDek")},get children(){return e(r,{name:"open_in_new",style:{"margin-right":"6px"}})}}),e(n,{href:"https://github.com/Nerimity/nerimity.js",hrefBlank:!0,icon:"code_blocks",label:"nexcord.js",get children(){return e(r,{name:"open_in_new",style:{"margin-right":"6px"}})}})]}})}export{C as default};
+//# sourceMappingURL=DeveloperSettings-DP6AoOZh.js.map

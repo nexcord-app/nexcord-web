@@ -1,0 +1,36 @@
+import { Compartment, StateEffect } from '@codemirror/state';
+import { createEffect, on } from 'solid-js';
+/**
+ * Creates a compartment extension for the given CodeMirror EditorView.
+ *
+ * Extension compartments can be used to make a configuration dynamic.
+ * By wrapping part of your configuration in a compartment, you can later replace that part through a transaction.
+ *
+ * See {@link https://codemirror.net/examples/reconfigure/} for use cases and examples of `Compartments`.
+ * Check out {@link https://codemirror.net/docs/ref/#state.Compartment} for more details about Compartment API.
+ *
+ * @param extension The extension to wrap in a compartment.
+ * @param view The CodeMirror EditorView
+ */
+export function createCompartmentExtension(extension, view) {
+    const compartment = new Compartment();
+    const reconfigure = (extension) => {
+        view()?.dispatch({
+            effects: compartment.reconfigure(extension),
+        });
+    };
+    const $extension = typeof extension === 'function' ? extension : () => extension;
+    createEffect(on([view, $extension], ([view, extension]) => {
+        if (view && extension) {
+            if (compartment.get(view.state)) {
+                reconfigure(extension);
+            }
+            else {
+                view.dispatch({
+                    effects: StateEffect.appendConfig.of(compartment.of(extension)),
+                });
+            }
+        }
+    }, { defer: true }));
+    return reconfigure;
+}

@@ -1,0 +1,2 @@
+import n from"./mizar-BdYrIkPP.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/mizar" instead of "highlight.js/lib/languages/mizar.js"'))}i();export{n as default};
+//# sourceMappingURL=mizar.js-CPAPjEC8.js.map

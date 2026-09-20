@@ -1,0 +1,2 @@
+const o=[{name:"Offline",id:"offline",color:"var(--status-offline)"},{name:"Online",id:"online",color:"var(--status-online)"},{name:"Looking To Play",id:"ltp",color:"var(--status-looking-to-play)"},{name:"Away From Keyboard",id:"afk",color:"var(--status-away-from-keyboard)"},{name:"Do Not Disturb",id:"dnd",color:"var(--status-do-not-disturb)"}];function t(a){return o[a]||o[0]}export{o as U,t as u};
+//# sourceMappingURL=userStatus-Cd3lZMeP.js.map

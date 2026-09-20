@@ -1,0 +1,30 @@
+import { Accessor } from 'solid-js';
+import { EditorView, ViewUpdate } from '@codemirror/view';
+import { Extension, Transaction } from '@codemirror/state';
+export interface CreateCodeMirrorProps {
+    /**
+     * The initial value of the editor
+     */
+    value?: string;
+    /**
+     * Fired whenever the editor code value changes.
+     */
+    onValueChange?: (value: string) => void;
+    /**
+     * Fired whenever a change occurs to the document, every time the view updates.
+     */
+    onModelViewUpdate?: (vu: ViewUpdate) => void;
+    /**
+     * Fired whenever a transaction has been dispatched to the view.
+     * Used to add external behavior to the transaction [dispatch function](https://codemirror.net/6/docs/ref/#view.EditorView.dispatch) for this editor view, which is the way updates get routed to the view
+     */
+    onTransactionDispatched?: (tr: Transaction, view: EditorView) => void;
+}
+/**
+ * Creates a CodeMirror editor instance.
+ */
+export declare function createCodeMirror(props?: CreateCodeMirrorProps): {
+    readonly editorView: Accessor<EditorView>;
+    readonly ref: import("solid-js").Setter<HTMLElement>;
+    readonly createExtension: (extension: Extension | Accessor<Extension | undefined>) => import("./createCompartmentExtension").CompartmentReconfigurationCallback;
+};

@@ -1,0 +1,254 @@
+import { For, Show, createEffect, createSignal, onMount } from "solid-js";
+import { styled } from "solid-styled-components";
+
+import useStore from "@/chat-api/store/useStore";
+import Breadcrumb, { BreadcrumbItem } from "../ui/Breadcrumb";
+import { t } from "@nerimity/i18lite";
+import SettingsBlock, {
+  SettingsGroup
+} from "../ui/settings-block/SettingsBlock";
+import Button from "../ui/Button";
+import {
+  createGoogleAccountLink,
+  createGoogleDriveAccountLink,
+  unlinkAccountWithGoogle,
+  unlinkAccountWithGoogleDrive
+} from "@/chat-api/services/UserService";
+import {
+  OAuth2AuthorizedApplication,
+  OAuth2AuthorizedApplications,
+  OAuth2Unauthorize
+} from "@/chat-api/services/OAuthService";
+import Avatar from "../ui/Avatar";
+import Text from "../ui/Text";
+import { toast } from "../ui/custom-portal/CustomPortal";
+import { Notice } from "../ui/Notice/Notice";
+
+const Container = styled("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  white-space: pre-line;
+`;
+
+export default function ConnectionsSettings() {
+  const { header } = useStore();
+
+  createEffect(() => {
+    header.updateHeader({
+      title:
+        t("settings.drawer.title") + " - " + t("settings.drawer.connections"),
+      iconName: "settings"
+    });
+  });
+
+  return (
+    <Container>
+      <Breadcrumb>
+        <BreadcrumbItem href="/app" icon="home" title={t("dashboard.title")} />
+        <BreadcrumbItem title={t("settings.drawer.connections")} />
+      </Breadcrumb>
+      <Connections />
+      <ThirdPartyConnections />
+    </Container>
+  );
+}
+
+function Connections() {
+  return (
+    <>
+      <GoogleDriveLink />
+      <GoogleLink />
+    </>
+  );
+}
+
+function ThirdPartyConnections() {
+  const [connections, setConnections] = createSignal<
+    OAuth2AuthorizedApplication[]
+  >([]);
+
+  onMount(() => {
+    OAuth2AuthorizedApplications().then(setConnections);
+  });
+
+  return (
+    <SettingsGroup>
+      <SettingsBlock
+        icon="info"
+        label={t("settings.connections.thirdParty.title")}
+      >
+        <Text opacity={0.6} size={12}>
+          {t("settings.connections.thirdParty.connectionCount", {
+            count: connections().length
+          })}
+        </Text>
+      </SettingsBlock>
+      <For each={connections()}>
+        {(connection) => (
+          <ThirdPartyConnectionItem
+            onUnauthorize={() => {
+              setConnections(
+                connections().filter((c) => c.id !== connection.id)
+              );
+            }}
+            connection={connection}
+          />
+        )}
+      </For>
+    </SettingsGroup>
+  );
+}
+
+const ThirdPartyConnectionItem = (props: {
+  connection: OAuth2AuthorizedApplication;
+  onUnauthorize: () => void;
+}) => {
+  const application = () => props.connection.application;
+
+  const [requestSent, setRequestSent] = createSignal(false);
+
+  const unauthorizeClick = () => {
+    if (requestSent()) return;
+    setRequestSent(true);
+    OAuth2Unauthorize(application().id)
+      .then(() => {
+        props.onUnauthorize();
+      })
+      .catch((err) => {
+        toast(err.message);
+      })
+      .finally(() => setRequestSent(false));
+  };
+
+  return (
+    <SettingsBlock
+      label={application().name}
+      icon={
+        <Avatar
+          size={36}
+          user={{
+            username: application().name,
+            hexColor: application().botUser?.hexColor || "white",
+            avatar: application().botUser?.avatar
+          }}
+        />
+      }
+    >
+      <Button
+        label={
+          requestSent()
+            ? t("settings.connections.thirdParty.unauthorizing")
+            : t("settings.connections.thirdParty.unauthorizeButton")
+        }
+        alert
+        iconName="link_off"
+        iconSize={16}
+        onClick={unauthorizeClick}
+      />
+    </SettingsBlock>
+  );
+};
+
+function GoogleDriveLink() {
+  const { account } = useStore();
+  const isGoogleDriveConnected = () =>
+    account.user()?.connections?.find((c) => c.provider === "GOOGLE_DRIVE");
+
+  const linkGoogle = () => {
+    createGoogleDriveAccountLink()
+      .then((url) => {
+        window.open(url, "_blank");
+      })
+      .catch((err) => {
+        toast(err.message);
+      });
+  };
+  const unlinkGoogle = async () => {
+    await unlinkAccountWithGoogleDrive().catch((err) => {
+      toast(err.message);
+    });
+  };
+
+  return (
+    <>
+      <Notice type="caution">
+        <div>
+          <b>
+            {t("settings.connections.driveWarning.title")}
+          </b>
+          <br />
+          <br />
+          {t("settings.connections.driveWarning.message")}
+        </div>
+      </Notice>
+      <SettingsBlock
+        iconSrc="/assets/Drive.svg"
+        label="Google Drive"
+        description={t("settings.connections.googleDriveDescription")}
+      >
+        <Show when={!isGoogleDriveConnected()}>
+          <Button
+            label={t("settings.connections.linkButton")}
+            iconName="link"
+            onClick={linkGoogle}
+          />
+        </Show>
+        <Show when={isGoogleDriveConnected()}>
+          <Button
+            label={t("settings.connections.unlinkButton")}
+            color="var(--alert-color)"
+            iconName="link_off"
+            onClick={unlinkGoogle}
+          />
+        </Show>
+      </SettingsBlock>
+    </>
+  );
+}
+
+function GoogleLink() {
+  const { account } = useStore();
+  const isGoogleConnected = () =>
+    account.user()?.connections?.find((c) => c.provider === "GOOGLE");
+
+  const linkGoogle = () => {
+    createGoogleAccountLink()
+      .then((url) => {
+        window.open(url, "_blank");
+      })
+      .catch((err) => {
+        toast(err.message);
+      });
+  };
+  const unlinkGoogle = async () => {
+    await unlinkAccountWithGoogle().catch((err) => {
+      toast(err.message);
+    });
+  };
+
+  return (
+    <SettingsBlock
+      iconSrc="/assets/Google.svg"
+      label="Google"
+      description={t("settings.connections.googleDescription")}
+    >
+      <Show when={!isGoogleConnected()}>
+        <Button
+          label={t("settings.connections.linkButton")}
+          iconName="link"
+          onClick={linkGoogle}
+        />
+      </Show>
+      <Show when={isGoogleConnected()}>
+        <Button
+          label={t("settings.connections.unlinkButton")}
+          color="var(--alert-color)"
+          iconName="link_off"
+          onClick={unlinkGoogle}
+        />
+      </Show>
+    </SettingsBlock>
+  );
+}

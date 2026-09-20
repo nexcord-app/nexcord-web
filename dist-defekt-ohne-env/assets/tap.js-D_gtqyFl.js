@@ -1,0 +1,2 @@
+import n from"./tap-Dw0nFAIu.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/tap" instead of "highlight.js/lib/languages/tap.js"'))}e();export{n as default};
+//# sourceMappingURL=tap.js-D_gtqyFl.js.map

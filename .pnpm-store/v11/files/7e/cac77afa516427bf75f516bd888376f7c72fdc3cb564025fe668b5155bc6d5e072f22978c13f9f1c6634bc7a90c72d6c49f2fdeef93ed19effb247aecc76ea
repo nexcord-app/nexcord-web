@@ -1,0 +1,3 @@
+import type { InitOptions } from '@nerimity/i18lite';
+import type { IDom } from 'html-parse-string';
+export declare const replaceElements: (ast: IDom, { interpolation }: InitOptions) => (child: Node, index: number) => string | Node;

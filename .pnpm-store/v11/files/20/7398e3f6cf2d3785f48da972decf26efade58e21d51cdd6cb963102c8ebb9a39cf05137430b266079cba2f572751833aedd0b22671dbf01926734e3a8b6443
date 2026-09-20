@@ -1,0 +1,61 @@
+export type $Dictionary<T = unknown> = {
+    [key: string]: T;
+};
+export type ResourceKey = string | {
+    [key: string]: any;
+};
+export interface ResourceLanguage {
+    [namespace: string]: ResourceKey;
+}
+export interface Resource {
+    [language: string]: ResourceLanguage;
+}
+export interface InterpolationOptions {
+    prefix?: string;
+    suffix?: string;
+}
+export interface InitOptions {
+    resources: Resource;
+    lng?: string;
+    fallbackLng?: string;
+    interpolation?: InterpolationOptions;
+    keySeparator?: false | string;
+    nsSeparator?: false | string;
+    defaultNS?: string;
+    ignoreJSONStructure?: boolean;
+}
+export interface TOptionsBase {
+    lng?: string;
+}
+export type TOptions<TInterpolationMap extends object = $Dictionary> = TOptionsBase & TInterpolationMap;
+export type TFunction = {
+    (key: string, options?: {}): string;
+    (key: string, defaultValue: string, options?: {}): string;
+    (key: string, arg2?: string | {}, arg3?: {}): string;
+};
+export interface i18n {
+    language: string;
+    getResource: (lng: string, ns: string, key: string, options?: any) => any;
+    createInstance: () => i18n;
+    t: TFunction;
+    on: (...args: any[]) => void;
+    init: (options?: InitOptions, callback?: (error: any, t: TFunction) => void) => void;
+    changeLanguage: (lng: string) => Promise<TFunction>;
+    addResourceBundle(lng: string, ns: string, resources: any, deep?: boolean, overwrite?: boolean): i18n;
+    store?: {
+        data: Resource;
+    };
+    options?: InitOptions;
+}
+export declare let language: string;
+export declare let fallbackLng: string;
+export declare let options: InitOptions;
+export declare const t: TFunction;
+export declare const on: (event: string, callback: (...args: any[]) => void) => void;
+export declare const init: i18n['init'];
+export declare const changeLanguage: (lang: string) => Promise<TFunction>;
+export declare const addResourceBundle: i18n['addResourceBundle'];
+export declare const getResource: (lng: string, nsName: string, key: string, opts?: Pick<InitOptions, "keySeparator" | "ignoreJSONStructure">) => any;
+export declare const createInstance: () => i18n;
+declare const instance: i18n;
+export default instance;

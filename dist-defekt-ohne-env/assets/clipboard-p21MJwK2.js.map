@@ -1,0 +1,1 @@
+{"version":3,"file":"clipboard-p21MJwK2.js","sources":["../../src/common/clipboard.ts"],"sourcesContent":["export const copyToClipboard = (text: string) => {\n  return navigator.clipboard.writeText(text);\n};\n"],"names":["copyToClipboard","text"],"mappings":"AAAO,MAAMA,EAAmBC,GACvB,UAAU,UAAU,UAAUA,CAAI"}

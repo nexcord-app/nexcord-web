@@ -1,0 +1,7 @@
+import{W as g,X as m,M as h,aO as f,o as A,c as e,U as n,E as v,G as s,ac as b,C as x,I as y,w as B,s as S,aQ as w}from"./useStore-C81yKXnX.js";import{B as C,a as i}from"./Breadcrumb-B2nrXbr4.js";import{S as o}from"./SettingsBlock-zYSlJJFm.js";import{f as k,h as N}from"./ApplicationService-BDcrUZt3.js";import"./_commonjsHelpers-CE1G-McA.js";var _=v("<div>");const $=S("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+`;function M(){const{header:c}=g(),l=m();h(()=>{c.updateHeader({title:"Settings - Developer Applications",iconName:"settings"})});const[a,p]=f([]);A(async()=>{const t=await N();p(w(t))});const d=async()=>{const t=await k().catch(r=>{B(r.message)});t&&l("/app/settings/developer/applications/"+t.id)};return e($,{get children(){return[e(C,{get children(){return[e(i,{href:"/app",icon:"home",get title(){return n("t5AkH8")}}),e(i,{href:"/app/settings/developer",get title(){return n("AResiX")}}),e(i,{get title(){return n("tqCAim")}})]}}),(()=>{var t=_();return s(t,e(o,{icon:"extension",label:"Applications",get header(){return a.length!==0},get description(){return`${a.length}/10`},get children(){return e(b,{iconName:"add",label:"Add",onClick:d})}}),null),s(t,e(x,{each:a,children:(r,u)=>e(o,{icon:"extension",get href(){return`./${r.id}`},borderTopRadius:!1,get borderBottomRadius(){return u()===a.length-1},get children(){return e(y,{name:"keyboard_arrow_right"})},get label(){return r.name}})}),null),t})()]}})}export{M as default};
+//# sourceMappingURL=DeveloperApplicationsSettings-B5x7d1R5.js.map

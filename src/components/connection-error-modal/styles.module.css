@@ -1,0 +1,28 @@
+.connectionErrorContainer {
+  max-width: 450px;
+  margin: 6px;
+  margin-top: 0;
+  word-break: break-word;
+}
+
+.message {
+  font-size: 16px;
+}
+
+.messageDim {
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+.suspendContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notice {
+  max-width: 240px;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}

@@ -1,0 +1,113 @@
+import env from "@/common/env";
+import { request, xhrRequest } from "./Request";
+import { StorageKeys, useLocalStorage } from "@/common/localStorage";
+import ServiceEndpoints from "./ServiceEndpoints";
+
+const [tokens, setTokens] = useLocalStorage<
+  {
+    token: string;
+    channelId?: string;
+    createdAt: number;
+  }[]
+>(StorageKeys.CDN_TOKEN, []);
+
+const generateToken = async (channelId?: string, userToken?: string | null) => {
+  if (!Array.isArray(tokens())) {
+    setTokens([]);
+  }
+  const existingToken = tokens().find((t) => t.channelId === channelId);
+
+  if (existingToken) {
+    const expired = Date.now() - existingToken.createdAt > 2 * 60 * 1000;
+    if (!expired) {
+      return existingToken.token;
+    }
+  }
+
+  const res = await request<{ token: string }>({
+    method: "POST",
+    url:
+      env.SERVER_URL +
+      "/api" +
+      (channelId ? ServiceEndpoints.channel(channelId) : "") +
+      "/cdn/token",
+    useToken: true,
+    token: userToken
+  });
+
+  const newToken = {
+    token: res.token,
+    channelId,
+    createdAt: Date.now()
+  };
+
+  setTokens([
+    newToken,
+    ...tokens()
+      .filter((t) => Date.now() - t.createdAt <= 2 * 60 * 1000)
+      .slice(0, 9)
+  ]);
+
+  return res.token;
+};
+interface NexcordCDNRequestOpts {
+  file: File;
+  onUploadProgress?: (progress: number) => void;
+  channelId?: string;
+  userToken?: string | null;
+}
+
+export async function uploadBanner(
+  groupId: string,
+  opts: NexcordCDNRequestOpts & { points?: number[] }
+) {
+  return nexcordCDNUploadRequest({
+    ...opts,
+    type: "profile_banners",
+    groupId
+  });
+}
+
+export async function uploadAvatar(
+  groupId: string,
+  opts: NexcordCDNRequestOpts & { points?: number[] }
+) {
+  return nexcordCDNUploadRequest({ ...opts, type: "avatars", groupId });
+}
+
+export async function uploadEmoji(opts: NexcordCDNRequestOpts) {
+  return nexcordCDNUploadRequest({ ...opts, type: "emojis" });
+}
+
+export async function uploadAttachment(
+  groupId: string,
+  opts: NexcordCDNRequestOpts
+) {
+  return nexcordCDNUploadRequest({ ...opts, type: "attachments", groupId });
+}
+
+async function nexcordCDNUploadRequest(opts: {
+  type: "avatars" | "profile_banners" | "emojis" | "attachments";
+  channelId?: string;
+  points?: number[];
+  file: File;
+  groupId?: string;
+  userToken?: string | null;
+  onUploadProgress?: (percent: number, speed?: string) => void;
+}) {
+  const url = new URL(`${env.NERIMITY_CDN}${opts.type}/${opts.groupId || ""}`);
+
+  const formData = new FormData();
+  formData.append("f", opts.file);
+
+  return xhrRequest<{ fileId: string }>(
+    {
+      method: "POST",
+      url: url.href,
+      body: formData,
+      params: opts.points ? { points: JSON.stringify(opts.points) } : undefined,
+      useToken: await generateToken(opts.channelId, opts.userToken)
+    },
+    opts.onUploadProgress
+  );
+}

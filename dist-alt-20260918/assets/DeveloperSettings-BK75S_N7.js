@@ -1,0 +1,7 @@
+import{e as l,D as m,H as t,c as e,I as r}from"./ModerationService-DpHh3JQr.js";import{s as p}from"./Flexbox-Cufh4wPc.js";import{b as u}from"./useStore-DEZEOTom.js";import{B as d,a as o}from"./Breadcrumb-DaqW7yf5.js";import{S as n}from"./SettingsBlock-DKlh9Lz3.js";import"./_commonjsHelpers-CE1G-McA.js";import"./Text-CN5caMAL.js";import"./useResizeObserver-Dz383fBa.js";const g=p("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+`;function C(){const{header:a}=u(),s=()=>{const i=document.cookie.split("; ").find(c=>c.startsWith("useLatestURL="));return i?i.split("=")[1]==="true":!1},[h,f]=l(s());return m(()=>{a.updateHeader({title:t("3i16p4")+" - "+t("AResiX"),iconName:"settings"})}),e(g,{get children(){return[e(d,{get children(){return[e(o,{href:"/app",icon:"home",get title(){return t("t5AkH8")}}),e(o,{get title(){return t("AResiX")}})]}}),e(n,{href:"./applications",icon:"extension",get label(){return t("tqCAim")},get description(){return t("MMd/Sl")},get children(){return e(r,{name:"keyboard_arrow_right"})}}),e(n,{href:"https://docs.nerimity.com",hrefBlank:!0,icon:"menu_book",get label(){return t("nXXDek")},get children(){return e(r,{name:"open_in_new",style:{"margin-right":"6px"}})}}),e(n,{href:"https://github.com/nerimity/nerimity.js",hrefBlank:!0,icon:"code_blocks",label:"nerimity.js",get children(){return e(r,{name:"open_in_new",style:{"margin-right":"6px"}})}})]}})}export{C as default};
+//# sourceMappingURL=DeveloperSettings-BK75S_N7.js.map

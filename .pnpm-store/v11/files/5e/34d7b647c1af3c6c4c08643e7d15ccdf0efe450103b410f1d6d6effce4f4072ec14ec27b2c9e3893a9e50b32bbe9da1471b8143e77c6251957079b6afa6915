@@ -1,0 +1,51 @@
+{
+  "author": "SupertigerDev",
+  "description": "i18next lite",
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "i18n",
+    "i18next",
+    "internationalization",
+    "intl",
+    "language",
+    "localization",
+    "translate",
+    "translations"
+  ],
+  "license": "MIT",
+  "name": "@nerimity/i18lite",
+  "peerDependencies": {
+    "html-parse-string": "<=1.x",
+    "solid-js": ">=1.8.x"
+  },
+  "peerDependenciesMeta": {
+    "html-parse-string": {
+      "optional": true
+    }
+  },
+  "repository": "github:nerimity/i18lite",
+  "scripts": {
+    "build": "vite build --config vite.config.js",
+    "build:types": "tsc --project tsconfig.types.json"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "version": "1.1.2"
+}

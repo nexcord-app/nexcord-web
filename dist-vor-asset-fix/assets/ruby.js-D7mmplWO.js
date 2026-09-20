@@ -1,0 +1,2 @@
+import n from"./ruby-7T4ktxyv.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/ruby" instead of "highlight.js/lib/languages/ruby.js"'))}e();export{n as default};
+//# sourceMappingURL=ruby.js-D7mmplWO.js.map

@@ -1,0 +1,62 @@
+{
+  "version": "1.1.0",
+  "name": "@nerimity/solid-turnstile",
+  "description": "SolidJS library for Cloudflare Turnstile",
+  "license": "MIT",
+  "author": "Supertigerr",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Supertigerr/solid-turnstile.git"
+  },
+  "homepage": "https://github.com/Supertigerr/solid-turnstile#readme",
+  "bugs": {
+    "url": "https://github.com/Supertigerr/solid-turnstile/issues"
+  },
+  "private": false,
+  "sideEffects": false,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/source/index.jsx",
+      "import": "./dist/esm/index.js",
+      "browser": {
+        "import": "./dist/esm/index.js",
+        "require": "./dist/cjs/index.js"
+      },
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js"
+    }
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.0.0"
+  },
+  "devDependencies": {
+    "prettier": "2.7.1",
+    "rollup": "^2.79.1",
+    "rollup-preset-solid": "^1.4.0",
+    "solid-js": "^1.6.7",
+    "taze": "^0.7.6",
+    "typescript": "^4.9.4",
+    "vite": "^3.2.5",
+    "vite-plugin-solid": "^2.5.0"
+  },
+  "keywords": [
+    "solid"
+  ],
+  "packageManager": "pnpm@7.5.0",
+  "scripts": {
+    "dev": "vite serve dev",
+    "test": "echo \"test not setup\"",
+    "build": "rollup -c",
+    "format": "prettier -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "update-deps": "taze -w && pnpm i",
+    "typecheck": "tsc --noEmit"
+  }
+}

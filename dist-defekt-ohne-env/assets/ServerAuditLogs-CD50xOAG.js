@@ -1,0 +1,6 @@
+import{z as m,D as u,H as t,c as e,B as c,S as g}from"./ModerationService-7nF9_67y.js";import{b as p}from"./useStore-C1x_XtZn.js";import{s as l}from"./Flexbox-DahX4I5v.js";import{B as f,a}from"./Breadcrumb-xfmK78bh.js";import{b as h}from"./UsersAuditLogsPane-DiHOVd3o.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./Text-xQnkEBKO.js";import"./useResizeObserver-DLOEUKTg.js";import"./date-QVcUUowu.js";import"./languages-CyEDRxRF.js";import"./Input-ojZsAQjm.js";const v=l("div")`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+`;function A(){const r=m(),{header:o,servers:i,channels:d}=p(),s=()=>i.get(r.serverId),n=()=>d.get(r.channelId);return u(()=>{o.updateHeader({title:t("3i16p4")+" - "+t("gg7o5L"),serverId:r.serverId,iconName:"settings"})}),e(v,{get children(){return[e(f,{get children(){return[e(a,{get href(){return c.SERVER_MESSAGES(r.serverId,s()?.defaultChannelId)},icon:"home",get title(){return s()?.name}}),e(a,{get href(){return n()?.serverId?"../":void 0},get title(){return t("gg7o5L")}}),e(g,{get when(){return n()?.serverId},get children(){return e(a,{get title(){return n()?.name}})}})]}}),e(h,{alwaysExpanded:!0,get serverId(){return r.serverId},hideSearchBar:!0,noMargin:!0,get title(){return t("gg7o5L")}})]}})}export{A as default};
+//# sourceMappingURL=ServerAuditLogs-CD50xOAG.js.map

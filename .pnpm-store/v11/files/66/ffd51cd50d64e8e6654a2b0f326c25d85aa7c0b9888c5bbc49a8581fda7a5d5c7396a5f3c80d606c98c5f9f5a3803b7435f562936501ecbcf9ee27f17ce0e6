@@ -1,0 +1,82 @@
+import { createComponent as f, memo as d } from "solid-js/web";
+import { useContext as m, createContext as y, createSignal as x, children as C } from "solid-js";
+import T from "@nerimity/i18lite";
+const g = y();
+function w(t, r) {
+  const [n, e] = x(r.resources ? t.t : () => null);
+  t.on("loaded", () => e(() => t.t)), t.init(r, (a, i) => e(() => i));
+  async function c(a) {
+    const i = await t.changeLanguage(a);
+    e(() => i);
+  }
+  function o(a, i, h, u = {}) {
+    return t.addResourceBundle(a, i, h, u.deep, u.overwrite);
+  }
+  return [((...a) => n().apply(null, a)), {
+    addResources: o,
+    getI18next: () => t,
+    changeLanguage: c
+  }];
+}
+const I = () => m(g), N = (t) => f(g.Provider, {
+  get value() {
+    return w(t.instance || T, {
+      lng: t.lng,
+      ...t.options
+    });
+  },
+  get children() {
+    return t.children;
+  }
+}), l = (t, { prefix: r, suffix: n }) => t.includes(r) && t.includes(n), S = (t, { interpolation: r }) => (n, e) => typeof n == "string" ? l(n, r) ? t.children[e].children?.[0].content : t.children[e].content : (n.textContent = t.children[e].children?.[0].content, n), k = !globalThis.window, v = (t, r, n) => (e) => {
+  const c = typeof e;
+  if (c === "string" && l(e, r.interpolation)) return t(e, n.options);
+  if (c === "object") {
+    const o = e.textContent ?? e.t;
+    o && l(o, r.interpolation) && (e[k ? "t" : "textContent"] = t(o, n.options));
+  }
+  return e;
+};
+let s;
+(async () => {
+  try {
+    s = (await import("html-parse-string")).parse;
+  } catch {
+  }
+})();
+const L = () => {
+  console.error(
+    "In order to use JSX nesting, install %chtml-parse-string",
+    "font-weight: 700",
+    "https://github.com/ryansolid/html-parse-string."
+  );
+}, P = ({ i18n: { options: t }, t: r, props: n }, e) => {
+  const c = r(n.key, n.options);
+  if (!n.children) return c;
+  if (c === n.key) return e.map(v(r, t, n));
+  if (!s) {
+    L();
+    return;
+  }
+  try {
+    const [o] = s(`<0>${c}</0>`);
+    return e.map(S(o, t));
+  } catch (o) {
+    console.error(o);
+  }
+}, R = (t) => {
+  const [r, {
+    getI18next: n
+  }] = I();
+  return d(() => d(() => typeof t.children == "string")() ? r(t.key, t.children, t.options) : P({
+    i18n: n(),
+    t: r,
+    props: t
+  }, C(() => t.children)()));
+};
+export {
+  R as Trans,
+  N as TransProvider,
+  I as useTransContext
+};
+//# sourceMappingURL=browser.mjs.map

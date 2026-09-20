@@ -1,0 +1,2 @@
+import{b as r,X as v,W as S,M as f,K as g,bI as I,w as i,bJ as j}from"./useStore-B0mu5xqR.js";const E=()=>{const[c,o]=r(null),[e,t]=r(!1),u=v(),l=S(),s=()=>l.servers.get(c());return f(()=>{e()&&s()&&u(g.SERVER_MESSAGES(s().id,s()._count?.welcomeQuestions?"welcome":s().defaultChannelId))}),{joining:e,joinPublicById:async n=>{e()||(o(n),t(!0),await j(n).catch(a=>{i(a.message),t(!1)}))},joinByInviteCode:async(n,a)=>{e()||(o(a),t(!0),await I(n).catch(d=>{i(d.message),t(!1)}))}}};export{E as u};
+//# sourceMappingURL=useJoinServer-Dg6-EmYl.js.map

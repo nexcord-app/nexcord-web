@@ -1,0 +1,58 @@
+import { createEffect, createSignal, on, onCleanup, onMount, } from 'solid-js';
+import { EditorView } from '@codemirror/view';
+import { EditorState } from '@codemirror/state';
+import { createCompartmentExtension as coreCreateCompartmentExtension } from './createCompartmentExtension';
+/**
+ * Creates a CodeMirror editor instance.
+ */
+export function createCodeMirror(props) {
+    const [ref, setRef] = createSignal();
+    const [editorView, setEditorView] = createSignal();
+    function localCreateCompartmentExtension(extension) {
+        return coreCreateCompartmentExtension(extension, editorView);
+    }
+    const updateListener = EditorView.updateListener.of((vu) => props?.onModelViewUpdate?.(vu));
+    // eslint-disable-next-line solid/reactivity
+    localCreateCompartmentExtension(updateListener);
+    createEffect(on(ref, (ref) => {
+        const state = EditorState.create({ doc: props?.value ?? '' });
+        const currentView = new EditorView({
+            state,
+            parent: ref,
+            // Replace the old `updateListenerExtension`
+            dispatch: (transaction, editorView) => {
+                if (props?.onTransactionDispatched) {
+                    props.onTransactionDispatched(transaction, editorView);
+                }
+                currentView.update([transaction]);
+                if (transaction.docChanged) {
+                    const document = transaction.state.doc;
+                    const value = document.toString();
+                    props?.onValueChange?.(value);
+                }
+            },
+        });
+        onMount(() => setEditorView(currentView));
+        onCleanup(() => {
+            editorView()?.destroy();
+            setEditorView(undefined);
+        });
+    }));
+    createEffect(on(editorView, (editorView) => {
+        const localValue = editorView?.state.doc.toString();
+        if (localValue !== props?.value && !!editorView) {
+            editorView.dispatch({
+                changes: {
+                    from: 0,
+                    to: localValue?.length,
+                    insert: props?.value ?? '',
+                },
+            });
+        }
+    }, { defer: true }));
+    return {
+        editorView,
+        ref: setRef,
+        createExtension: localCreateCompartmentExtension,
+    };
+}

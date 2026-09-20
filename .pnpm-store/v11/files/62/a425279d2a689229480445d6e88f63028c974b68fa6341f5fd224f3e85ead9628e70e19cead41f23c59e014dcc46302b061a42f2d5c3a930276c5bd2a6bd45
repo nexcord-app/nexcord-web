@@ -1,0 +1,56 @@
+import { use, effect, className, style, template } from 'solid-js/web';
+import { onMount } from 'solid-js';
+
+const _tmpl$ = /*#__PURE__*/template(`<div></div>`, 2);
+function Turnstile(props) {
+  const turnstile = () => window.turnstile;
+  let element;
+  onMount(() => {
+    if (document.getElementById("turnstileScript")) return ready();
+    const scriptEl = document.createElement("script");
+    scriptEl.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback";
+    scriptEl.id = "turnstileScript";
+    document.body.appendChild(scriptEl);
+    window.onloadTurnstileCallback = ready;
+  });
+  const ready = () => {
+    const id = turnstile().render(element, {
+      sitekey: props.sitekey,
+      theme: props.theme,
+      size: props.size,
+      callback(token) {
+        props.onVerify(token);
+      },
+      "error-callback": () => props.onError?.(),
+      "expired-callback": () => {
+        props.onExpire?.();
+        if (props.autoResetOnExpire) turnstile().reset(id);
+      },
+      "timeout-callback": () => props.onTimeout?.(),
+      retry: props.retry
+    });
+    props.onLoad?.(id);
+    props?.ref?.({
+      reset: () => turnstile().reset(id)
+    });
+  };
+  return (() => {
+    const _el$ = _tmpl$.cloneNode(true);
+    const _ref$ = element;
+    typeof _ref$ === "function" ? use(_ref$, _el$) : element = _el$;
+    effect(_p$ => {
+      const _v$ = props.class,
+        _v$2 = props.style;
+      _v$ !== _p$._v$ && className(_el$, _p$._v$ = _v$);
+      _p$._v$2 = style(_el$, _v$2, _p$._v$2);
+      return _p$;
+    }, {
+      _v$: undefined,
+      _v$2: undefined
+    });
+    return _el$;
+  })();
+}
+
+export { Turnstile };
+//# sourceMappingURL=index.js.map

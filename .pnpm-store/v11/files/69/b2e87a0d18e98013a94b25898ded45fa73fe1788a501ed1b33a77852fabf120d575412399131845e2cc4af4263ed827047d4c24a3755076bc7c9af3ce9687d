@@ -1,0 +1,76 @@
+{
+  "author": "SupertigerDev",
+  "description": "i18next for SolidJS",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
+    "@solidjs/testing-library": "^0.8.10",
+    "@types/jest": "^30.0.0",
+    "babel-preset-solid": "^1.9.9",
+    "html-parse-string": "^0.0.9",
+    "@nerimity/i18lite": "^1.0.9",
+    "i18next-http-backend": "^3.0.2",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "solid-jest": "^0.2.0",
+    "solid-js": "^1.9.9",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vite-plugin-solid": "^2.11.9"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "browser": {
+        "default": "./dist/browser.mjs"
+      },
+      "import": "./dist/ssr.mjs",
+      "require": "./dist/ssr.js"
+    }
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "i18n",
+    "i18next",
+    "internationalization",
+    "intl",
+    "language",
+    "localization",
+    "solid",
+    "solid-js",
+    "solidjs",
+    "translate",
+    "translations"
+  ],
+  "license": "MIT",
+  "main": "./dist/ssr.js",
+  "module": "./dist/ssr.mjs",
+  "name": "@nerimity/solid-i18lite",
+  "peerDependencies": {
+    "html-parse-string": "<=1.x",
+    "@nerimity/i18lite": "<=1.x",
+    "solid-js": ">=1.8.x"
+  },
+  "peerDependenciesMeta": {
+    "html-parse-string": {
+      "optional": true
+    }
+  },
+  "repository": "github:nerimity/solid-i18lite",
+  "scripts": {
+    "build:browser": "vite build --config vite.browser.config.js",
+    "build:docs": "vite build --config vite.docs.config.js",
+    "build:ssr": "vite build --config vite.ssr.config.js",
+    "build:types": "tsc --project tsconfig.types.json",
+    "docs": "vite --config vite.docs.config.js",
+    "test": "jest --coverage",
+    "test:dev": "jest"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/types/index.d.ts",
+  "version": "1.6.1"
+}

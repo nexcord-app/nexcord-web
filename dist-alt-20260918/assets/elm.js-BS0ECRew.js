@@ -1,0 +1,2 @@
+import n from"./elm-3GArE9D5.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/elm" instead of "highlight.js/lib/languages/elm.js"'))}e();export{n as default};
+//# sourceMappingURL=elm.js-BS0ECRew.js.map

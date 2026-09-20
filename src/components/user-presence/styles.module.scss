@@ -1,0 +1,90 @@
+.userPresence {
+  display: flex;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.full .lastOnline {
+  overflow: initial;
+  text-overflow: initial;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.lastOnline {
+  overflow: hidden;
+  opacity: 0.6;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .full .value > span,
+.full span,
+.full .activity {
+  overflow: initial;
+  text-overflow: initial;
+  word-break: break-word;
+  white-space: pre-line;
+}
+
+.value > span {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.activity {
+  display: flex;
+
+  overflow: hidden;
+  align-items: center;
+
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  gap: 4px;
+}
+.activityAction {
+  color: white;
+}
+.activityCount {
+  margin-right: 2px;
+  margin-left: -1px;
+  opacity: 0.6;
+}
+.activityName {
+}
+
+.value {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  line-height: 1;
+  color: var(--content-color);
+  font-size: 12px;
+}
+
+.dot {
+  align-self: center;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+  border-radius: 50%;
+
+  &.offline {
+    background-color: var(--status-offline, #adadad);
+  }
+  &.online {
+    background-color: var(--status-online, #78e380);
+  }
+  &.ltp {
+    background-color: var(--status-looking-to-play, #78a5e3);
+  }
+  &.afk {
+    background-color: var(--status-away-from-keyboard, #e3a878);
+  }
+  &.dnd {
+    background-color: var(--status-do-not-disturb, #e37878);
+  }
+}

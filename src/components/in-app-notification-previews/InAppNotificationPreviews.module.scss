@@ -1,0 +1,123 @@
+.backgroundContainer {
+  position: absolute;
+  z-index: 1111;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.container {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 8px;
+  padding-bottom: 2px;
+  margin: 4px;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background-color: var(--pane-color);
+
+  user-select: none;
+  transition: 0.2s;
+  pointer-events: all;
+  app-region: no-drag;
+
+  .innerContainer {
+    display: flex;
+    overflow: hidden;
+    flex: 1;
+
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .actions {
+    overflow: hidden;
+    height: 0;
+    transition: 0.2s;
+  }
+}
+.expanded {
+  .container {
+    height: auto;
+    .markup {
+      display: block;
+      overflow: initial;
+      flex: 1;
+      text-overflow: initial;
+      white-space: pre-line;
+      line-break: anywhere;
+    }
+  }
+
+  .actions {
+    height: 30px;
+  }
+}
+
+.actionsContainer {
+  display: flex;
+  margin-top: 3px;
+  gap: 4px;
+}
+.infoContainer {
+  display: flex;
+  flex: 1;
+}
+.progressBar {
+  flex-shrink: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  .progress {
+    width: 100%;
+    height: 80%;
+    border-radius: 9999px;
+  }
+}
+
+.title {
+  display: inline-block;
+  overflow: hidden;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: bold;
+}
+.info {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  gap: 2px;
+}
+.body {
+  display: flex;
+  overflow: hidden;
+  opacity: 0.8;
+  font-size: 12px;
+
+  .markup {
+    display: inline-block;
+    overflow: hidden;
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  gap: 4px;
+}
+
+.avatar {
+  align-self: flex-start;
+  margin-right: 4px;
+  margin-left: 4px;
+}

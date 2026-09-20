@@ -1,0 +1,632 @@
+{
+    "general": {
+        "searchPlaceholder": "Sök",
+        "cancelButton": "Avbryt",
+        "closeButton": "Stäng",
+        "editButton": "Redigera",
+        "undoButton": "Ångra",
+        "deleteButton": "Radera",
+        "cannotBeUndone": "Detta kan ej ångras!",
+        "confirmButton": "Bekräfta",
+        "doneButton": "Klar",
+        "backButton": "Tillbaka",
+        "saveButton": "Spara",
+        "saveChangesButton": "Spara ändringar",
+        "saving": "Sparar…",
+        "copyLink": "Kopiera länk",
+        "copyID": "Kopiera ID",
+        "accountData": {
+            "email": "E-post",
+            "username": "Användarnamn",
+            "password": "Lösenord"
+        },
+        "avatarAndBanner": {
+            "avatar": "Profilbild",
+            "banner": "Bakgrundsbild",
+            "browse": "Bläddra",
+            "supportedFileTypes": "Stödjer: {{extensions}}, Max {{size}}",
+            "remove": "Ta bort",
+            "revert": "Återgå"
+        }
+    },
+    "header": {
+        "logoutButton": "Logga ut",
+        "openAppButton": "Öppna app",
+        "loginButton": "Logga in",
+        "joinNowButton": "Gå med nu"
+    },
+    "systemMessages": {
+        "joinServer": {
+            "bot": "<User/><2> har lagts till i servern.</2>",
+            "user": "<User/><2> har gått med i servern.</2>"
+        },
+        "leaveServer": "<User/><2> har lämnat servern.</2>",
+        "kickUser": "<User/><2> har blivit utsparkad.</2>",
+        "banUser": "<User/><2> har blivit bannad.</2>",
+        "callStarted": "<User/><2> startade ett samtal.</2>",
+        "bumpServer": "<User/><2> bumpade servern.</2>",
+        "pinnedMessage": "<User/><2> fäste ett meddelande.</2>",
+        "unsupported": "<User/><2> Meddelandet stöds ej.</2>"
+    },
+    "statusHeader": {
+        "authenticationError": "Autentiseringsfel",
+        "connecting": "Ansluter…",
+        "reconnecting": "Återansluter…",
+        "inQueue": "I kön: {{count}} användare före dig",
+        "authenticating": "Autentiserar…",
+        "connected": "Ansluten!",
+        "statusPage": "Statussida"
+    },
+    "dangerousLinkModal": {
+        "title": "Anpassad länk",
+        "message": "Den här länken tar dig till",
+        "cancelButton": "Besök inte",
+        "visitButton": "Besök"
+    },
+    "connectionErrorModal": {
+        "noToken": "Ingen token försedd.",
+        "suspended": "Du är avstängd.",
+        "reason": "Anledning",
+        "defaultReason": "Bryter mot Användarvillkoren",
+        "until": "Tills",
+        "never": "aldrig",
+        "by": "Av",
+        "deletionNotice": "Ditt konto och dina uppgifter kommer att raderas om 15 dagar",
+        "ipBanned": "Din IP-adress är bannad.",
+        "ipBanNotice": "Någon med samma IP-address har stängts av från Nexcord. Ditt konto påverkas inte.",
+        "title": "Anslutningsfel",
+        "ok": "OK"
+    },
+    "homePage": {
+        "slogan": "En modern och elegant chattapp.",
+        "subslogan": "Nexcord erbjuder en elegant och funktionsrik upplevelse som skiljer sig från mängden.",
+        "viewGitHubButton": "Visa på GitHub",
+        "getStarted": "Kom igång",
+        "availableOn": "Tillgänglig på",
+        "browser": "Webbläsare",
+        "featureList": {
+            "feature1": "Gratis animerade profilbilder & emojis",
+            "feature2": "Elegant design",
+            "feature3": "Ändra din tagg gratis",
+            "feature4": "Skapa inlägg på din profil",
+            "feature5": "Skapa ditt egna community",
+            "feature6": "Hitta nya gemenskaper",
+            "feature7": "Hålls uppe via donationer",
+            "feature8": "Fullständig källkod på GitHub",
+            "feature9": "Uttryck dig själv med profilramar"
+        }
+    },
+    "loginPage": {
+        "title": "Logga in för att fortsätta",
+        "emailOrUsernameAndTag": "E-postadress / användarnamn:tagg",
+        "password": "Lösenord",
+        "login": "Logga in",
+        "createAccountInstead": "Skapa ett konto istället",
+        "loggingIn": "Loggar in…"
+    },
+    "registerPage": {
+        "header": "Registrera dig",
+        "notices": {
+            "title": "Notiser",
+            "toxic": "Var inte elak.",
+            "nsfw": "Inget NSFW-innehåll.",
+            "age": "Du måste vara 14 år eller äldre."
+        },
+        "title": "Välkommen till {{appName}}",
+        "email": "E-post",
+        "username": "Användarnamn",
+        "password": "Lösenord",
+        "confirmPassword": "Bekräfta lösenord",
+        "agreement": "Genom att skapa ett konto godkänner du Villkoren och Integritetspolicyn.",
+        "registerButton": "Registrera dig",
+        "registering": "Registrerar…",
+        "loginInstead": "Logga in istället"
+    },
+    "resetPassword": {
+        "title": "Återställ lösenord",
+        "resetSuccessful": "Återställning av lösenord lyckades.",
+        "passwordsDoNotMatch": "Bekräfta att lösenordet inte matchar.",
+        "passwordTooLong": "Lösenordet måste vara kortare än 72 tecken.",
+        "resetPasswordButton": "Återställ lösenord",
+        "resetting": "Återställer…",
+        "email": "E-post",
+        "sendEmailButton": "Skicka e-post",
+        "sending": "Skickar e-post…"
+    },
+    "dashboard": {
+        "title": "Aktivitetsflöde",
+        "activeUsers": "Aktiva användare",
+        "noActiveUsers": "Inga aktiva användare",
+        "servers": "Servrar",
+        "posts": "Inlägg",
+        "feed": "Flöde",
+        "discover": "Upptäck",
+        "notifications": "Aviseringar"
+    },
+    "status": {
+        "online": "Online",
+        "ltp": "Vill spela",
+        "afk": "Borta från tangentbordet",
+        "dnd": "Stör ej",
+        "offline": "Offline",
+        "appearAsOffline": "Visas som offline"
+    },
+    "sidePane": {
+        "home": "Hem",
+        "homeShort": "Hem",
+        "moderation": "Moderationsruta",
+        "moderationShort": "Mod",
+        "addServer": "Lägg till server"
+    },
+    "updateModal": {
+        "title": "Uppdatering tillgänglig",
+        "updateButton": "Uppdatera nu",
+        "laterButton": "Senare",
+        "releasedAt": "Släpptes vid"
+    },
+    "messageArea": {
+        "messageBoxPlaceholder": "Skriv till {{username}}",
+        "messageBoxChannelPlaceholder": "Skriv i {{channelName}}",
+        "replying": "Svarar på {{count}} meddelanden)",
+        "mention": "Nämn",
+        "dropFile": "Dra in fil",
+        "uploadTo": "Ladda upp till",
+        "channelNotice": {
+            "title": "Innan du skriver…",
+            "understoodButton": "Förstått"
+        },
+        "specialMentions": {
+            "everyone": "Nämner alla",
+            "someone": "Nämner en slumpmässig användare",
+            "silent": "Tyst meddelande"
+        },
+        "linkToGoogleDrive": {
+            "body": "Du måste länka ditt Google Drive konto för att ladda upp stora bilder, videor eller filer",
+            "linkButton": "Länka nu",
+            "cancelButton": "Länka inte"
+        },
+        "emailNotice": "Bekräfta din e-postadress för att skicka meddelanden.",
+        "gifPicker": {
+            "noResults": "Ingen GIFs hittad",
+            "search": "Sök {{platform}}",
+            "favorites": {
+                "title": "Favoriter",
+                "search": "Sök Favoriter",
+                "noFavorites": "Inga favoriter ännu"
+            }
+        }
+    },
+    "inputFieldActions": {
+        "copy": "Kopiera",
+        "cut": "Klipp ut",
+        "paste": "Klistra"
+    },
+    "markup": {
+        "bold": "Fetstil",
+        "italic": "Kursivstil",
+        "strikethrough": "Genomstruken",
+        "header": "Rubrik",
+        "namedLink": "Namngiven länk",
+        "spoiler": "Spoiler",
+        "timestamp": "Tidsstämpel",
+        "color": "Färg",
+        "html": "HTML-läge",
+        "emojiPicker": "Emoji-väljare",
+        "timestampModal": {
+            "title": "Tids-markup",
+            "relative": "Relativ",
+            "offset": "Offset"
+        },
+        "checkbox": "Kryssruta"
+    },
+    "inbox": {
+        "blockedUsersModal": {
+            "title": "Blockerade användare"
+        },
+        "drawer": {
+            "searchBarPlaceholder": "Sök",
+            "friendRequests": "{{count}} Vänförfrågningar",
+            "onlineFriends": "{{count}} Online-vänner",
+            "offlineFriends": "{{count}} Offline-vänner",
+            "notes": "Anteckningar",
+            "addFriendButton": "Lägg till vän",
+            "blockedUsersButton": "Blockerad",
+            "inboxTitle": "Inkorg",
+            "friendsButton": "Vänner",
+            "viewAll": "Visa alla"
+        }
+    },
+    "explore": {
+        "drawer": {
+            "title": "Utforska",
+            "servers": "Servrar",
+            "bots": "Bottar",
+            "themes": "Teman"
+        },
+        "bots": {
+            "title": "Utforska - Bottar",
+            "noticeMessage": "En bot kan bli bumpad en gång var {{hours}} timme. Alla bumpar återställs var {{date}}.",
+            "moderationNotice": "Bottar modereras inte av Nexcord. Vänligen rapportera bottar som är elakartade eller bryter mot användarvillkoren.",
+            "inviteButton": "Bjud in",
+            "serverCount": "I {{count}} servrar"
+        },
+        "themes": {
+            "title": "Utforska - Teman",
+            "themesHeaderDescription": "Personalisera Nexcord med ett eget tema.",
+            "officialThemes": "Officiella Teman",
+            "communityThemes": "Community Teman",
+            "noCommunityThemes": "Inga community teman hittades.",
+            "fetchThemesError": "Misslyckades att hämta in teman. Försök igen senare.",
+            "unlockDescription": "Klicka för att utforska alla community teman"
+        },
+        "servers": {
+            "title": "Utforska - Servrar",
+            "noticeMessage": "En server kan bli bumpad en gång per {{hours}} timme. Alla bumpar nollställs var {{date}}.",
+            "moderationNotice": "Servrar modereras inte av Nexcord. Anmäl servrar som bryter mot Användarvillkoren, tack.",
+            "sortMostBumps": "Mest Bumpar",
+            "sortMostMembers": "Mest Medlemmar",
+            "sortRecentlyAdded": "Nyligen tillagda",
+            "sortRecentlyBumped": "Nyligen Bumpad",
+            "sortMostActive": "Mest Aktiv (Beta)",
+            "filterAll": "Alla",
+            "filterVerified": "Verifierad",
+            "pinnedServers": "Fästa Sevrar",
+            "recentlyBumped": "Nyligen Bumpade Servrar",
+            "memberCount": "{{count}} medlemmar",
+            "visitServerButton": "Besök",
+            "joinServerButton": "Gå med",
+            "bumpButton": "Bumpa ({{count}})",
+            "lifetimeBumpCount": "{{count}} totala bumpar"
+        },
+        "sort": "Sortera",
+        "filter": "Filtrera",
+        "by": "Av",
+        "bumped": "Bumpad"
+    },
+    "editFolderModal": {
+        "title": "Redigera mapp",
+        "placeholder": "Mappnamn",
+        "errors": {
+            "emptyName": "Ge mappen ett namn."
+        }
+    },
+    "servers": {
+        "settings": {
+            "drawer": {
+                "general": "Allmänt",
+                "audit-logs": "Audit Loggar",
+                "roles": "Roller",
+                "channels": "Kanaler",
+                "bans": "Bannade",
+                "invites": "Inbjudningar",
+                "publishServer": "Publicera server",
+                "verify": "Verifiera",
+                "role": "Roll",
+                "welcome-screen": "Välkomstskärm",
+                "channel": "Kanal",
+                "permissions": "Behörigheter",
+                "emoji": "Emoji",
+                "notifications": "Aviseringar",
+                "external-embed": "Extern Embed"
+            },
+            "bans": {
+                "sort": {
+                    "alphabetical": "Alfabetiskt",
+                    "unsorted": "Osorterad"
+                },
+                "noResults": "Inga resultat hittades.",
+                "reason": "Anledning",
+                "noReason": "Ingen anledning angiven",
+                "bannedAt": "Bannad vid",
+                "unknown": "Okänd",
+                "unban": "Ta bort ban",
+                "unbanning": "Tar bort ban…"
+            },
+            "webhook": {
+                "title": "Webhooks",
+                "name": "Webhook Namn",
+                "link": "Webhook URL",
+                "delete": "Ta bort Webhook",
+                "linkDescription": "Utför aktion genom denna länk",
+                "addButton": "Lägg till Webhook"
+            },
+            "general": {
+                "serverRenameNotice": "Du kommer att förlora alla förmåner som en verifierad server ger om du byter namn.",
+                "serverName": "Servernamn",
+                "defaultChannel": "Standardkanal",
+                "defaultChannelDescription": "Nya medlemmar kommer dirigeras till denna kanal.",
+                "systemMessages": "Systemmeddelanden",
+                "systemMessagesDescription": "Där systemmeddelanden ska visas.",
+                "deleteThisServer": "Radera servern",
+                "deleteServerButton": "Radera Servern",
+                "none": "Inga"
+            },
+            "roles": {
+                "addNewRole": "Lägg till ny roll",
+                "addRoleButton": "Lägg till roll"
+            },
+            "role": {
+                "clear": "Nollställ",
+                "roleIcon": "Ikon till roll",
+                "managedByBot": "Denna roll överses av {{botName}}. Du kan inte ta bort eller lägga till medlemmar till rollen. Sparka ut botten för att radera rollen.",
+                "hideRole": "Göm Rollen",
+                "hideRoleDescription": "Visa medlemmar med denna roll tillsammans med vanliga medlemmar",
+                "applyOnJoin": "Applicera när användare har gått med",
+                "applyOnJoinDescription": "Rollen appliceras när användaren går med i servern.",
+                "roleName": "Rollnamn",
+                "roleColor": "Rollfärg",
+                "permissionsDescription": "Hantera behörigheter för den här rollen.",
+                "deleteRoleTitle": "Radera {{roleName}}",
+                "deleteRoleButton": "Radera rollen"
+            },
+            "header": {
+                "editServer": "Redigera server",
+                "serverMemberCount": "{{count}} medlemmar"
+            },
+            "welcomeScreen": {
+                "title": "Frågor",
+                "description": "Anordna frågor. Låt användare tillsätta roller.",
+                "answers": {
+                    "editModal": {
+                        "selectRoles": "Välj roller",
+                        "title": "Redigera svar",
+                        "answer": "Svar",
+                        "placeholder": "Katter"
+                    },
+                    "title": "Svar",
+                    "addButton": "Lägg till svar"
+                },
+                "questions": {
+                    "addButton": "Lägg till fråga",
+                    "question": "Fråga",
+                    "questionPlaceholder": "Katt eller hund?",
+                    "multiselect": "Markera flera"
+                }
+            },
+            "channels": {
+                "createButton": "Skapa",
+                "createNewDescription": "Skapa en ny kanal eller kategori",
+                "textChannel": "Textkanal",
+                "category": "Kategori"
+            },
+            "channel": {
+                "channelName": "Kanalnamn",
+                "channelIcon": "Kanalikon",
+                "permissionsDescription": "Hantera behörigheter för kanalen.",
+                "slowModeDescription": "Specifiera hur länge en användare måste vänta innan de får skicka ett meddelande.",
+                "deleteThisChannel": "Radera kanalen",
+                "deleteChannelTitle": "Radera {{channelName}}",
+                "deleteChannelButton": "Radera kanal",
+                "removeNoticeButton": "Ta bort notis",
+                "slowMode": "Långsamt läge",
+                "channelNotice": "Kanalnotis",
+                "channelNoticeDescription": "Visas när användaren är på väg att chatta för första gången. Ändringarna tillämpas efter omladdning.",
+                "channelNoticeTooLong": "Kanalnotis får inte vara längre än 300 tecken."
+            },
+            "notifications": {
+                "notice": "Dessa inställningar ändras bara för dig.",
+                "ping": "Aviseringsping",
+                "pingDescription": "Visa en aviseringsindikator.",
+                "sound": "Aviseringsljud",
+                "soundDescription": "Gör ett ljud när du får en avisering.",
+                "channelsDescription": "Hantera aviseringar per kanal.",
+                "resetButton": "Återställ Överskridningar({{count}})"
+            },
+            "emoji": {
+                "title": "Egen Emoji",
+                "description": "Lägg till din egen emoji.",
+                "addButton": "Lägg till emoji"
+            },
+            "invites": {
+                "createInviteButton": "Skapa inbjudan",
+                "serverInvites": "Server Inbjudningar",
+                "serverInvitesDescription": "Bjud in dina vänner till servern.",
+                "customInviteVerifiedOnlyNotice": "Att skapa en egen inbjudningslänk är bara tillgängligt för verifierade servrar.",
+                "customLink": "Egen Länk",
+                "uses": "{{count}} användning(ar)"
+            },
+            "publishServer": {
+                "publishNotice": "När du gör din server offentlig kommer den synas på <1>explore</1> sidan.",
+                "public": "Offentlig",
+                "publicDescription": "Gör denna server offentlig.",
+                "bumpServer": "Bumpa servern",
+                "bumpServerDescription": "Bumpa servern till toppen.",
+                "bumpButton": "Bump ({{count}})",
+                "descriptionLabel": "Serverbeskrivning ({{current}}/{{max}})",
+                "publishServerButton": "Publicera",
+                "unpublishServerButton": "Avpublicera",
+                "bumpCooldown": "Du måste vänta {{hours}} timmar, {{minutes}} minuter, och {{seconds}} sekunder för att bumpa denna server."
+            },
+            "verify": {
+                "requirements": {
+                    "membersDescription": "Din server måste ha minst {{count}} mängd medlemmar.",
+                    "profanityFree": "Inga svordomar",
+                    "profanityFreeDescription": "Server namn, bild och bakgrundsbild får inte ha svordomar.",
+                    "avatarAndBanner": "Bild & Bakgrund",
+                    "avatarAndBannerDescription": "Servern måste ha en bild och bakgrund.",
+                    "rules": "Serverregler",
+                    "rulesDescription": "Servern måste ha en kanal med regler.",
+                    "title": "Krav",
+                    "englishOnly": "Endast engelska",
+                    "englishOnlyDescription": "Servrar som inte är på engelska är svårare att moderera.",
+                    "oneMonthOrSupporter": "Minst 1 månad ELLER supporter emblem",
+                    "oneMonthOrSupporterDescription": "Din server måste vara minst 1 månad gammal ELLER ska ägaren av servern ha \"supporter\" emblemen.",
+                    "members": "{{count}} eller mer medlemmar"
+                },
+                "perks": {
+                    "title": "Förmåner",
+                    "badge": "Verifierad emblem",
+                    "badgeDescription": "En emblem för att visa att din server är speciell.",
+                    "explore": "Markera i Utforska",
+                    "exploreDescription": "Din server kommer visas i en separat del på utforskasidan.",
+                    "customInvite": "Egen inbjudningslänk",
+                    "customInviteDescription": "Skapa din egna inbjudningslänk från Inbjudningar-sidan.",
+                    "emojiSlots": "Mer platser för emojis",
+                    "emojiSlotsDescription": "200st emojis till din server.",
+                    "hdScreenshare": "1080p@60fps skärmdelning",
+                    "hdScreenshareDescription": "Dela din skärm i 1080p 60fps."
+                },
+                "alreadyVerified": "Din server är redan verifierad!",
+                "insufficientMembers": "Du behöver {{count}} mer medlem/medlemmar för att ansöka om verifiering.",
+                "verifiable": "Redo för verifiering",
+                "verifiableDescription": "Du har nog med medlemmar för att verifiera din server!",
+                "verifyButton": "Verifiera"
+            },
+            "externalEmbed": {
+                "noInvites": {
+                    "title": "Inga Inbjudningar Skapade",
+                    "description": "Du måste skapa en inbjudan innan du kan skapa en extern inbäddningslänk.",
+                    "createButton": "Skapa inbjudan"
+                },
+                "title": "Skapa extern inbäddningslänk",
+                "description": "Skapa en extern IFrame-inbäddning för din webbplats.",
+                "dropdownPlaceholder": "Välj Inbjudan",
+                "options": {
+                    "hideHeader": "Dölj rubrik",
+                    "hideMembers": "Dölj medlemslista",
+                    "hideActivities": "Dölj aktivitetslista"
+                }
+            }
+        },
+        "rolePermissions": {
+            "manageChannelsDescription": "Behörigheter för att uppdatera eller radera kanaler.",
+            "kick": "Kicka",
+            "banDescription": "Behörigheten att kunna banna användare.",
+            "mentionEveryone": "Nämn Alla",
+            "mentionEveryoneDescription": "Aktivera nämningen @everyone. Admin till servern kan fortfarande nämna alla användare.",
+            "nicknameMember": "Ge smeknamn",
+            "nicknameMemberDescription": "Låt användare ändra sitt smeknamn i servern.",
+            "admin": "Admin",
+            "adminDescription": "Aktiverar alla behörigheter.",
+            "sendMessage": "Skicka meddelande"
+        },
+        "leaveModal": {
+            "title": "Lämna servern?",
+            "body": {
+                "part1": "Är du säker på att du vill lämna <1>{{serverName}}</1>?",
+                "part2": "Du kan gå med i servern igen när som!"
+            },
+            "cancelButton": "Lämna inte",
+            "confirmButton": "Lämna"
+        },
+        "channelPermissions": {
+            "hiddenChannel": "Gömd kanal",
+            "publicChannel": "Offentlig kanal",
+            "publicChannelDescription": "Aktivera tillträde till kanalen. Admin till servern har tillträde till alla kanaler.",
+            "sendMessage": "Skicka meddelanden",
+            "sendMessageDescription": "Aktivera att kunna skicka meddelanden i kanalen. Admin till servern kan fortfarande skicka meddelanden.",
+            "joinVoice": "Anslut till röstkanal"
+        }
+    },
+    "settings": {
+        "drawer": {
+            "privacy": "Sekretess",
+            "connections": "Anslutningar",
+            "profile": "Profil",
+            "title": "Inställningar",
+            "account": "Konto",
+            "interface": "Gränssnitt",
+            "language": "Språk",
+            "notifications": "Aviseringar",
+            "developer": "Utvecklare",
+            "applications": "Applikationer",
+            "experiments": "Experiment",
+            "badges": "Emblemer",
+            "viewSource": "Visa Källa",
+            "changelog": "Ändringslogg"
+        },
+        "language": {
+            "reloadNotice": "Starta om appen för att applicera översättningen helt.",
+            "reloadButton": "Ladda om",
+            "searchNotice": "Översättningar överses av Nexcords användare. Var snäll och rapportera felaktiga eller olämpliga översättningar till Nexcord.",
+            "contributors": "De som bidrar"
+        },
+        "header": {
+            "servers": "servrar",
+            "friends": "vänner",
+            "manageAccount": "Hantera Konto"
+        },
+        "account": {
+            "tag": "Tagg",
+            "botID": "Bot ID",
+            "profile": "Profil",
+            "profileDescription": "Redigera din beskrivning eller färger",
+            "palestineBorder": "Lägg till Palestina-ram till din profilbild.",
+            "bio": "Beskrivning",
+            "gradientColor1": "Gradientfärg 1",
+            "gradientColor2": "Gradientfärg 2",
+            "primaryColor": "Primärfärg",
+            "usernameFont": "Font till användarnamn",
+            "default": "Appstandard",
+            "preview": "Förhandsvisa",
+            "changePassword": "Byt lösenord",
+            "forgotPassword": "Glömt lösenordet",
+            "newPassword": "Nytt lösenord",
+            "newPasswordDescription": "Byter du lösenord så blir du utloggad på alla andra enheter.",
+            "confirmNewPassword": "Bekfräfta nytt lösenord",
+            "confirmNewPasswordDescription": "Bekräfta ditt nya lösenord",
+            "confirmCurrentPassword": "Bekräfta nuvarande lösenord",
+            "confirmEmail": "Bekräfta din E-post",
+            "enterCode": "Ange 5-siffriga koden som skickats till din E-post:",
+            "sendCodeButton": "Skicka kod",
+            "resendIn": "Skicka igen {{time}}",
+            "deleteAccount": "Radera mitt konto",
+            "deleteAccountDescription": "Detta kan ej ångras!",
+            "deleteAccountNotice": "Du måste lämna/radera alla dina servrar innan du kan radera ditt konto.",
+            "understoodButton": "Jag förstår",
+            "deletedInfo": {
+                "bio": "• Beskrivning",
+                "messages": "• Dina meddelanden"
+            },
+            "deleteCheckbox": "Radera mina inlägg och meddelanden"
+        },
+        "notifications": {
+            "message": "Meddelande",
+            "mention": "Nämn",
+            "mentionDescription": "Ljudet som spelas när du nämns.",
+            "sounds": "Ljud",
+            "soundsDescription": "Om aviseringsljuden är för irriterande så kan du stänga av de.",
+            "volume": "Volym",
+            "volumeDescription": "Ändra volym på aviseringsljuden.",
+            "changeSoundsDescription": "Ändra ljudet på dina aviseringar med dessa royalty-free ljuden.",
+            "messageDescription": "Ljudet när du får ett meddelande.",
+            "reminder": "Påminnelse",
+            "reminderDescription": "Aviseringar för påminnelser.",
+            "inAppPreview": "Förhandsvisning i appen"
+        },
+        "badges": {
+            "noticeTitle": "Donationer",
+            "notice": "Stötta detta projekt genom att skänka pengar.",
+            "palestineDescription": "Kan sättas på genom profilinställningar",
+            "price": "{{price}} Emblem"
+        },
+        "privacy": {
+            "friendRequest": {
+                "title": "Vänförfrågan"
+            }
+        }
+    },
+    "welcomePopup": {
+        "subtitle": "Tack för att du provar på Nexcord!",
+        "joinServer": "Gå med i den officiella Nexcord servern",
+        "editProfile": "Redigera min profil",
+        "support": "Stötta mig på {{platform}}",
+        "contribute": "Bidra till Nexcord på GitHub"
+    },
+    "dropDown": {
+        "selectItem": "Markera Objekt",
+        "selectItemMultiple": "Markera Objekt",
+        "itemsSelected": "{{count}} objekt markerade"
+    },
+    "remindersModal": {
+        "title": "Påminnelser",
+        "showAllButton": "Visa alla påminnelser",
+        "viewButton": "Visa",
+        "dismissing": "Avvisar…",
+        "deleting": "Raderar…",
+        "snoozeFor5Minutes": "Snooza i 5 minuter",
+        "snoozeFor1Day": "Snooza i 1 dag",
+        "deletedItem": "Raderat inlägg eller meddelande.",
+        "closeNotice": "Du måste avvisa alla aktiva påminnelser."
+    }
+}

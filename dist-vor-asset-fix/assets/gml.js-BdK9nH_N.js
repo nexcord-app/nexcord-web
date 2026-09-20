@@ -1,0 +1,2 @@
+import n from"./gml-D7jw2IbN.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/gml" instead of "highlight.js/lib/languages/gml.js"'))}e();export{n as default};
+//# sourceMappingURL=gml.js-BdK9nH_N.js.map

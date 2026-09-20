@@ -1,0 +1,88 @@
+let j = {}, b = "translation", v = "", d = "";
+const S = { resources: {}, interpolation: { prefix: "{{", suffix: "}}" } };
+let u = S;
+const h = (e) => e.replace(/[-|\\{}()[\]^$+*?.]/g, (t) => t === "-" ? "\\x2d" : `\\${t}`), $ = (e) => typeof e != "string" ? e : e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/\//g, "&#x2F;"), A = /* @__PURE__ */ new Map(), P = (e, t, o = !0) => {
+  if (!e) return "";
+  const s = u?.interpolation, n = s?.prefix ?? "{{", c = s?.suffix ?? "}}", r = n + "|" + c;
+  let l = A.get(r);
+  if (!l) {
+    const f = h(n), i = h(c);
+    l = new RegExp(`${f}\\s*(\\w+)\\s*${i}`, "g"), A.set(r, l);
+  }
+  return e.replace(l, (f, i) => {
+    if (Object.prototype.hasOwnProperty.call(t, i)) {
+      let g = t[i];
+      return o ? $(g) : g;
+    }
+    return f;
+  });
+}, y = (e, t, o) => {
+  let s = x(a.language, b, e) ?? // 1. Try current language + key
+  (d ? x(d, b, e) : void 0) ?? (typeof t == "string" ? t : e);
+  if (o || typeof t == "object" && t !== null) {
+    const n = o || t;
+    return P(s, n, n?.interpolation?.escapeValue ?? !0);
+  }
+  return s;
+}, V = (e, t) => {
+  j[e] = t;
+}, F = (e, t) => {
+  u = S, e && (u = { ...e, interpolation: e?.interpolation || {} }, u.interpolation.prefix = e.interpolation?.prefix || "{{", u.interpolation.suffix = e.interpolation?.suffix || "}}"), d = e?.fallbackLng || "", v = e?.lng || "", a.store = { data: u.resources || {} }, u.resources = {}, t?.(null, y);
+}, M = (e) => (v = e, Promise.resolve(y)), L = (e, t, o = !0) => {
+  const s = e;
+  for (const n in t) {
+    const c = s[n], r = t[n];
+    r && typeof r == "object" && !Array.isArray(r) ? ((typeof c != "object" || Array.isArray(c)) && (s[n] = {}), L(s[n], r, o)) : (o || c === void 0) && (s[n] = r);
+  }
+  return e;
+}, q = (e, t, o, s = !0, n = !0) => {
+  a.store = a.store || { data: {} }, a.store.data = a.store.data || {}, a.store.data[e] = a.store.data[e] || {}, a.store.data[e][t] = a.store.data[e][t] || {};
+  const c = a.store.data[e][t], r = o;
+  return s ? L(c, r, n) : a.store.data[e][t] = n ? r : { ...r, ...c }, (j.loaded || (() => {
+  }))(e, t), a;
+}, x = (e, t, o, s) => {
+  const n = a.store;
+  if (!n) return;
+  const c = n.data?.[e];
+  if (!c) return;
+  const r = c[t];
+  if (!r || typeof r == "string") return;
+  const l = s?.keySeparator ?? a.options?.keySeparator ?? ".";
+  if (l === !1) return r[o];
+  const f = String(l);
+  if (o.indexOf(f) === -1) return r[o];
+  let i = r, g = 0;
+  for (let p = 0; p <= o.length; p++)
+    if (p === o.length || o[p] === f) {
+      const R = o.slice(g, p);
+      if (i == null || !(R in i)) return;
+      i = i[R], g = p + 1;
+    }
+  return i;
+}, B = () => a, a = {
+  get language() {
+    return v;
+  },
+  createInstance: B,
+  t: y,
+  on: V,
+  init: F,
+  changeLanguage: M,
+  addResourceBundle: q,
+  options: u,
+  getResource: x
+};
+export {
+  q as addResourceBundle,
+  M as changeLanguage,
+  B as createInstance,
+  a as default,
+  d as fallbackLng,
+  x as getResource,
+  F as init,
+  v as language,
+  V as on,
+  u as options,
+  y as t
+};
+//# sourceMappingURL=index.mjs.map

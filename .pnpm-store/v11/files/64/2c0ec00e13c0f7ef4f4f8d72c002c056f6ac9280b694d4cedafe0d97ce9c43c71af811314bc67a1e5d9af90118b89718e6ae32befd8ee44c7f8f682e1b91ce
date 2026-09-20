@@ -1,0 +1,7 @@
+declare const emojis: {
+    emoji: string;
+    short_names: string[];
+    category: string;
+}[];
+
+export { emojis };

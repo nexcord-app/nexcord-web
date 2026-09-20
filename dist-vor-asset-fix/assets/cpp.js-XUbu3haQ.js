@@ -1,0 +1,2 @@
+import n from"./cpp-Bm3ii6kY.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/cpp" instead of "highlight.js/lib/languages/cpp.js"'))}e();export{n as default};
+//# sourceMappingURL=cpp.js-XUbu3haQ.js.map

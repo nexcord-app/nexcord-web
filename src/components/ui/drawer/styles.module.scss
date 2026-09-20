@@ -1,0 +1,99 @@
+.drawerLayout {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+}
+
+.opacityContent {
+  position: absolute;
+  inset: 0;
+  z-index: 1111111111;
+  background-color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+body .mobile {
+  .content {
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+.content {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  &.hasLeftDrawer {
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &.hasRightDrawer {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.sideBar {
+  padding-right: 4px;
+  &.hasLeftDrawer {
+    padding-right: 0;
+  }
+}
+.leftDrawer {
+  display: flex;
+  flex-direction: column;
+  background: var(--side-pane-color);
+  margin-right: 0;
+  margin-left: 0;
+  border-radius: 8px;
+
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.rightPane {
+  display: flex;
+  flex-direction: column;
+  background: var(--side-pane-color);
+  width: 100%;
+  margin-left: 0;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.mobile .leftDrawer {
+  border-radius: 8px;
+}
+.mobile .rightPane {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+// .mobile .leftDrawer {
+//   border-radius: 0;
+//   margin: 0;
+// }
+
+// .mobile .rightPane {
+//   margin: 0;
+//   border-radius: 0;
+// }

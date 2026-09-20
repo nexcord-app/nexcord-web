@@ -1,0 +1,586 @@
+{
+    "header": {
+        "logoutButton": "登出",
+        "openAppButton": "打开应用",
+        "loginButton": "登录",
+        "joinNowButton": "立即加入"
+    },
+    "homePage": {
+        "slogan": "一款现代、时尚的聊天应用。",
+        "subslogan": "Nexcord 提供了一种优雅且功能丰富的体验，使其与众不同。",
+        "viewGitHubButton": "在 GitHub 上查看源代码",
+        "getStarted": "入门",
+        "availableOn": "支持以下平台",
+        "browser": "浏览器",
+        "featureList": {
+            "feature1": "免费、自由的动画头像与表情",
+            "feature2": "时尚的设计",
+            "feature3": "可自由更改您的用户标识",
+            "feature4": "可在您的个人资料中发表帖子",
+            "feature5": "创建属于您自己的社区",
+            "feature6": "寻找新的社区",
+            "feature7": "依靠捐款运营",
+            "feature8": "在 GitHub 上有完整的开源源代码",
+            "feature9": "可拥有自己的头像框"
+        }
+    },
+    "loginPage": {
+        "title": "登录以继续",
+        "emailOrUsernameAndTag": "使用 <电子邮箱> 或 <用户名>:<用户标识>",
+        "password": "密码",
+        "login": "登录",
+        "createAccountInstead": "没有账号？创建一个",
+        "loggingIn": "正在登录…"
+    },
+    "registerPage": {
+        "header": "注册",
+        "notices": {
+            "title": "注意",
+            "toxic": "请不要发表令人不适的言论。",
+            "nsfw": "严禁发布 NSFW 内容。",
+            "age": "您必须年满 14 周岁。"
+        },
+        "title": "欢迎来到 {{appName}}",
+        "email": "电子邮箱",
+        "username": "用户名",
+        "password": "密码",
+        "confirmPassword": "确认密码",
+        "agreement": "只要您创建了账号，您就会被自动视为同意用户条款与隐私政策。",
+        "registerButton": "注册",
+        "registering": "正在注册…",
+        "loginInstead": "已有账号？登录"
+    },
+    "resetPassword": {
+        "title": "重置密码",
+        "resetSuccessful": "重置密码成功。",
+        "passwordsDoNotMatch": "密码确认不匹配。",
+        "resetPasswordButton": "重置密码",
+        "resetting": "正在重置密码…",
+        "email": "电子邮箱",
+        "sendEmailButton": "发送确认邮件",
+        "sending": "正在发送确认邮件…",
+        "passwordTooLong": "密码须短于72个字符。"
+    },
+    "dashboard": {
+        "title": "仪表板",
+        "activeUsers": "活跃用户",
+        "noActiveUsers": "暂无活跃用户",
+        "servers": "服务器",
+        "posts": "帖子",
+        "feed": "发布内容",
+        "discover": "发现",
+        "notifications": "通知"
+    },
+    "messageArea": {
+        "messageBoxPlaceholder": "向 {{username}} 发送消息...",
+        "messageBoxChannelPlaceholder": "在 {{channelName}} 发送消息...",
+        "gifPicker": {
+            "search": "搜索 {{platform}}",
+            "noResults": "未找到 GIF",
+            "favorites": {
+                "title": "收藏",
+                "search": "搜索收藏",
+                "noFavorites": "暂无收藏"
+            }
+        },
+        "replying": "正在回复 {{count}} 条消息",
+        "mention": "提及",
+        "dropFile": "拖放文件",
+        "uploadTo": "上传至",
+        "channelNotice": {
+            "title": "开聊之前…",
+            "understoodButton": "知道了"
+        },
+        "specialMentions": {
+            "everyone": "提及所有人",
+            "someone": "随机提及一位用户",
+            "silent": "免打扰消息"
+        },
+        "linkToGoogleDrive": {
+            "body": "需绑定 Google Drive 账号方可上传大文件、视频或图片。",
+            "linkButton": "立即绑定",
+            "cancelButton": "暂不绑定"
+        },
+        "emailNotice": "确认邮箱后即可发送消息。"
+    },
+    "inbox": {
+        "blockedUsersModal": {
+            "title": "已屏蔽用户"
+        },
+        "drawer": {
+            "searchBarPlaceholder": "搜索",
+            "friendRequests": "{{count}} 条好友请求",
+            "onlineFriends": "{{count}} 位在线好友",
+            "offlineFriends": "{{count}} 位离线好友",
+            "notes": "笔记",
+            "addFriendButton": "添加朋友",
+            "blockedUsersButton": "已屏蔽",
+            "inboxTitle": "消息列表",
+            "friendsButton": "好友",
+            "viewAll": "查看全部"
+        }
+    },
+    "explore": {
+        "drawer": {
+            "title": "发现",
+            "servers": "服务器",
+            "bots": "机器人",
+            "themes": "主题"
+        },
+        "servers": {
+            "title": "发现 - 服务器",
+            "noticeMessage": "一个服务器每 {{hours}} 小时可以被“顶”一次. 所有的“顶”将在 {{date}} 被重置。",
+            "sortMostBumps": "最多顶",
+            "sortMostMembers": "最多用户",
+            "sortRecentlyAdded": "最近添加",
+            "sortRecentlyBumped": "最近",
+            "filterAll": "全部",
+            "filterVerified": "已认证",
+            "memberCount": "{{count}} 位成员",
+            "lifetimeBumpCount": "{{count}} 个永久提升（顶）",
+            "visitServerButton": "查看服务器",
+            "joinServerButton": "加入服务器",
+            "bumpButton": "顶 ({{count}})"
+        },
+        "bots": {
+            "title": "探索 - 机器人"
+        }
+    },
+    "servers": {
+        "settings": {
+            "drawer": {
+                "general": "通用",
+                "audit-logs": "审核日志",
+                "roles": "角色",
+                "channels": "频道",
+                "bans": "封禁",
+                "invites": "邀请",
+                "publishServer": "发布服务器",
+                "verify": "认证",
+                "role": "角色",
+                "welcome-screen": "欢迎页面",
+                "channel": "频道",
+                "notifications": "通知",
+                "external-embed": "外嵌链接"
+            },
+            "general": {
+                "serverRenameNotice": "如果重命名服务器，您将失去验证服务器的所有特权。",
+                "serverName": "服务器名称",
+                "defaultChannel": "默认频道",
+                "defaultChannelDescription": "新用户将被直接引入该频道。",
+                "systemMessages": "系统通知",
+                "systemMessagesDescription": "系统通知出现的频道",
+                "deleteThisServer": "删除服务器",
+                "deleteServerButton": "删除服务器"
+            },
+            "roles": {
+                "addNewRole": "新建角色",
+                "addRoleButton": "新建角色"
+            },
+            "role": {
+                "roleName": "角色名称",
+                "roleColor": "角色颜色",
+                "hideRole": "隐藏角色",
+                "hideRoleDescription": "将拥有该角色的成员与所有默认成员一并展示",
+                "permissionsDescription": "为此角色分配权限。",
+                "deleteRoleButton": "删除角色"
+            },
+            "header": {
+                "editServer": "编辑服务器",
+                "serverMemberCount": "{{count}} 位成员"
+            },
+            "channels": {
+                "createButton": "新建",
+                "createNewDescription": "新建频道或分类"
+            },
+            "channel": {
+                "channelName": "频道名称",
+                "permissionsDescription": "为该频道设置权限。",
+                "deleteThisChannel": "删除该频道",
+                "deleteChannelButton": "删除频道",
+                "removeNoticeButton": "清除通知"
+            },
+            "invites": {
+                "createInviteButton": "创建邀请",
+                "serverInvites": "服务器邀请",
+                "serverInvitesDescription": "邀请您的朋友到服务器。",
+                "customInviteVerifiedOnlyNotice": "自定义邀请链接仅对已认证服务器可用。",
+                "customLink": "自定义链接"
+            },
+            "publishServer": {
+                "publishNotice": "发布服务器将会使您的服务器在 <1>发现页</1> 中可见。",
+                "public": "公开",
+                "publicDescription": "使该服务器公开。",
+                "bumpServer": "提升服务器",
+                "bumpServerDescription": "将你的服务器提升到顶部。",
+                "publishServerButton": "公开服务器",
+                "unpublishServerButton": "取消公开服务器"
+            }
+        },
+        "rolePermissions": {
+            "admin": "管理员",
+            "adminDescription": "启用所有权限。",
+            "sendMessage": "发送消息",
+            "sendMessageDescription": "允许成员在该服务器中发送消息。服务器管理员仍可以发送消息。",
+            "manageRoles": "管理角色",
+            "manageRolesDescription": "允许更改或删除角色。",
+            "manageChannels": "管理频道",
+            "manageChannelsDescription": "允许管理或删除频道。",
+            "kick": "踢出用户",
+            "kickDescription": "允许踢出用户。",
+            "ban": "封禁用户",
+            "banDescription": "允许封禁用户。",
+            "mentionEveryone": "提及（@）所有人",
+            "mentionEveryoneDescription": "允许提及所有人。服务器管理员仍可以提及所有人。",
+            "nicknameMember": "更改名字",
+            "nicknameMemberDescription": "允许成员在服务器中更改名字。"
+        },
+        "channelPermissions": {
+            "publicChannel": "公共频道",
+            "publicChannelDescription": "允许成员查看频道。服务器管理员可查看任意频道。",
+            "sendMessage": "发送消息",
+            "sendMessageDescription": "允许成员在频道中发送消息。服务器管理员仍可以发送消息。",
+            "joinVoice": "加入语音",
+            "joinVoiceDescription": "允许成员在频道中加入语音频道。服务器管理员仍可以加入语音频道。"
+        }
+    },
+    "settings": {
+        "drawer": {
+            "title": "设置",
+            "account": "账号",
+            "interface": "外观",
+            "language": "语言",
+            "notifications": "通知",
+            "developer": "开发者选项",
+            "applications": "应用程序",
+            "experiments": "实验性功能",
+            "badges": "徽章与头像框",
+            "viewSource": "查看源代码",
+            "changelog": "变更日志",
+            "window-settings": "窗口设置",
+            "call-settings": "语音设置",
+            "activity-status": "活动状态",
+            "tickets": "发送反馈",
+            "privacy": "隐私",
+            "connections": "连接",
+            "profile": "个人资料",
+            "source": "源代码"
+        },
+        "header": {
+            "servers": "个服务器",
+            "friends": "个好友",
+            "manageAccount": "管理账户"
+        },
+        "account": {
+            "tag": "用户标识",
+            "profile": "个人资料",
+            "profileDescription": "编辑您的个人资料与颜色",
+            "changePassword": "更改密码",
+            "forgotPassword": "忘记密码",
+            "newPassword": "新密码",
+            "newPasswordDescription": "更改密码将会使您在所有其他设备上登出。",
+            "confirmNewPassword": "确认密码",
+            "confirmNewPasswordDescription": "确认您的新密码",
+            "confirmCurrentPassword": "确认当前密码",
+            "deleteAccount": "删除我的账号",
+            "deleteAccountDescription": "该操作将不能被撤销！",
+            "deleteAccountNotice": "在您删除您的账号前，您必须要离开或删除所有服务器。",
+            "understoodButton": "确认",
+            "confirmEmail": "确认您的电子邮箱"
+        },
+        "privacy": {
+            "lastOnline": {
+                "title": "最后一次在线时间",
+                "description": "设置谁能看您的最后一次在线的时间。"
+            },
+            "directMessage": {
+                "title": "私信",
+                "description": "设置谁能向您发送私信。"
+            },
+            "friendRequest": {
+                "title": "好友请求",
+                "description": "设置谁能向您发送好友请求。"
+            },
+            "profileOptions": {
+                "title": "个人资料选项",
+                "hideFollowers": "隐藏关注者",
+                "hideFollowersDescription": "从您的个人资料中隐藏关注者。",
+                "hideFollowing": "隐藏关注的人",
+                "hideFollowingDescription": "从您的个人资料中隐藏您正在关注的用户。"
+            }
+        },
+        "notifications": {
+            "desktopNotifications": "桌面通知",
+            "desktopNotificationsDescription": "显示桌面通知（即使应用被最小化）",
+            "sounds": "声音",
+            "soundsDescription": "如果您觉得通知声音令人厌烦，您可以禁用它。",
+            "volume": "音量",
+            "volumeDescription": "更改通知声音的音量。",
+            "changeSoundsDescription": "用这些免费版权的音效改变通知的声音。",
+            "message": "消息",
+            "messageDescription": "当收到消息时播放音效。",
+            "mention": "提及",
+            "mentionDescription": "当被提及时播放音效。",
+            "inAppPreview": "应用内预览消息或通知",
+            "inAppPreviewDescription": "显示应用内消息气泡。",
+            "inAppPreviewModes": {
+                "off": "关闭",
+                "inheritFromPingSettings": "沿用提及（@）设置"
+            }
+        },
+        "call": {
+            "nextCallNotice": "从您下一次加入语音时，设置将被应用。",
+            "inputDevices": "输入设备",
+            "outputDevices": "输出设备",
+            "default": "默认",
+            "inputMode": "输入模式选择",
+            "openMic": "打开麦克风",
+            "voiceActivity": "语音激活",
+            "pushToTalk": "按键激活",
+            "bindButton": "绑定",
+            "stopButton": "停止",
+            "downloadAppNotice": "下载 Nexcord 桌面应用来使用此功能并忽视窗口标签激活状态。"
+        },
+        "interface": {
+            "blurEffect": "模糊效果",
+            "blurEffectDescription": "启用透明模糊效果。在移动设备上自动禁用。可能造成显示问题。",
+            "disableAdvancedMarkupBar": "禁用高级文字标记栏",
+            "disableAdvancedMarkupBarDescription": "在文字频道中禁用聊天框上的高级文字标记栏。",
+            "customizeColors": "自定义颜色",
+            "customizeColorsDescription": "自定义界面颜色。"
+        }
+    },
+    "supportBlock": {
+        "support": "支持我们",
+        "supportDescription": "向我们捐赠来获得头像框！"
+    },
+    "createServerModal": {
+        "title": "创建服务器",
+        "notice": "不允许 NSFW 内容。",
+        "serverName": "服务器名称",
+        "placeholder": "我的绝妙的服务器",
+        "creating": "正在创建...",
+        "createServerButton": "创建服务器"
+    },
+    "serverContextMenu": {
+        "markAsRead": "标记为已读",
+        "leave": "离开服务器",
+        "notificationOptions": {
+            "everything": "所有通知",
+            "mentionsOnly": "仅提及",
+            "mute": "静音"
+        }
+    },
+    "userContextMenu": {
+        "viewProfile": "查看个人资料",
+        "sendMessage": "发送消息",
+        "editRoles": "编辑用户角色",
+        "changeNickname": "更改名字",
+        "transferOwnership": "服务器拥有权限转移",
+        "callVolume": "语音音量"
+    },
+    "kickServerMemberModal": {
+        "title": "踢出 {{username}}",
+        "kickButton": "踢出用户",
+        "kicking": "正在踢出该用户...",
+        "message": "您确定要踢出 <1>{{username}}</1> 吗？"
+    },
+    "editServerRolesModal": {
+        "title": "编辑角色"
+    },
+    "banModal": {
+        "title": "封禁 {{username}}?",
+        "message": "您确定要封禁 <1>{{username}}</1> 吗？",
+        "deletePastMessagesCheckbox": "删除该用户在过去 7 小时内发送的消息。",
+        "banButton": "封禁用户",
+        "banning": "正在封禁用户..."
+    },
+    "messageContextMenu": {
+        "editMessage": "编辑消息",
+        "deleteMessage": "删除消息",
+        "copyMessage": "复制消息",
+        "viewReactions": "查看反应",
+        "quoteMessage": "引用消息",
+        "reportMessage": "举报消息",
+        "reply": "回复"
+    },
+    "profile": {
+        "followButton": "关注",
+        "unfollowButton": "取消关注",
+        "removeFriendButton": "删除好友",
+        "addFriendButton": "添加好友",
+        "pendingRequest": "已发送好友请求",
+        "acceptRequestButton": "接受请求",
+        "messageButton": "发送消息",
+        "mutualFriends": "{{count}} 个共同好友",
+        "mutualServers": "{{count}} 个共同服务器",
+        "postsTab": "帖子",
+        "followersTab": "关注者",
+        "followingTab": "关注的人",
+        "postsAndRepliesTab": "{{count}} 条帖子与回复",
+        "likedPostsTab": "{{count}} 条点赞的帖子"
+    },
+    "posts": {
+        "deletePostModal": {
+            "message": "你确定要删除这条帖子吗？"
+        },
+        "postWasDeleted": "该条帖子已删除！",
+        "someoneLikedYourPost": "<1>{{username}}</1> 为你的帖子点了赞！",
+        "someoneRepostedYourPost": "<1>{{username}}</1>  转发了你的帖子！",
+        "someoneFollowedYou": "<1>{{username}}</1> 关注了你！",
+        "someoneRepliedToPost": "<1>{{username}}</1> 回复了你的帖子！",
+        "createAPostInputPlaceholder": "创建新帖子...",
+        "replyInputPlaceholder": "回复...",
+        "replyButton": "回复",
+        "createButton": "创建",
+        "pollOptions": "投票选项",
+        "optionNumberPlaceholder": "选项 {{number}}"
+    },
+    "informationDrawer": {
+        "channelNotice": "频道通知",
+        "attachments": "附件",
+        "members": "成员"
+    },
+    "botInvite": {
+        "serverSelect": "请选择服务器！",
+        "creator": "创建者：",
+        "selectButton": "选择服务器",
+        "addButton": "添加机器人",
+        "permissions": "机器人权限"
+    },
+    "general": {
+        "backButton": "返回",
+        "cancelButton": "取消",
+        "deleteButton": "删除",
+        "confirmButton": "确定",
+        "accountData": {
+            "email": "邮箱",
+            "username": "用户名",
+            "password": "密码"
+        },
+        "searchPlaceholder": "搜索",
+        "closeButton": "关闭",
+        "editButton": "编辑",
+        "undoButton": "撤销",
+        "cannotBeUndone": "此操作无法撤销！",
+        "doneButton": "完成",
+        "saveButton": "保存",
+        "saveChangesButton": "保存更改",
+        "saving": "保存中…",
+        "copyLink": "复制链接",
+        "copyID": "复制ID",
+        "avatarAndBanner": {
+            "avatar": "头像",
+            "banner": "横幅",
+            "browse": "浏览",
+            "remove": "移除",
+            "supportedFileTypes": "支持的格式：{{extensions}}，文件大小不超过 {{size}}",
+            "revert": "还原"
+        }
+    },
+    "systemMessages": {
+        "joinServer": {
+            "bot": "<User/><2> 加入了服务器。</2>",
+            "user": "<User/><2> 已经加入了服务器。</2>"
+        },
+        "leaveServer": "<User/><2> 离开了服务器。</2>",
+        "kickUser": "<User/><2> 已被踢出。</2>",
+        "banUser": "<User/><2> 已被禁言。</2>",
+        "unsupported": "<User/><2> 不支持的消息。</2>",
+        "callStarted": "<2> 发起了通话。</2>",
+        "bumpServer": "<User/><2> 顶了一下服务器。</2>",
+        "pinnedMessage": "<User/><2> 置顶了一条消息。</2>"
+    },
+    "statusHeader": {
+        "authenticationError": "认证错误",
+        "connecting": "连接中…",
+        "authenticating": "正在认证...…",
+        "connected": "已连接！",
+        "inQueue": "排队中：{{count}}个用户在您前面",
+        "reconnecting": "正在重新连接…",
+        "statusPage": "服务状态"
+    },
+    "dangerousLinkModal": {
+        "message": "此链接将带您至",
+        "cancelButton": "不访问",
+        "visitButton": "访问",
+        "title": "自定义链接"
+    },
+    "connectionErrorModal": {
+        "ok": "确认",
+        "defaultReason": "违反服务条款",
+        "until": "直到",
+        "never": "从不",
+        "deletionNotice": "您的账号和数据将在15天内删除",
+        "ipBanned": "您的IP已被封禁。",
+        "reason": "理由",
+        "noToken": "未提供Token。",
+        "title": "连接出现错误",
+        "ipBanNotice": "同一 IP 下的其他用户已被 Nexcord 封禁。您的账号未受影响。",
+        "suspended": "您已被封禁。"
+    },
+    "welcomePopup": {
+        "subtitle": "感谢您试用Nexcord!",
+        "editProfile": "编辑个人信息",
+        "support": "在{{platform}}上支持我",
+        "joinServer": "加入 Nexcord 官方服务器",
+        "contribute": "在 GitHub 上为 Nexcord 做贡献"
+    },
+    "invite": {
+        "members": "用户"
+    },
+    "photoEditor": {
+        "brush": "笔刷",
+        "erase": "橡皮",
+        "title": "图片编辑器",
+        "desktopMove": "Space +拖拽以移动"
+    },
+    "badges": {
+        "founder": {
+            "name": "建立者"
+        }
+    },
+    "colorPickerModal": {
+        "title": "颜色选择器"
+    },
+    "status": {
+        "online": "在线",
+        "ltp": "寻找玩伴",
+        "afk": "离开",
+        "dnd": "请勿打扰",
+        "offline": "离线",
+        "appearAsOffline": "隐身",
+        "lastOnline": "上次在线 {{time}}"
+    },
+    "sidePane": {
+        "home": "首页",
+        "homeShort": "首页",
+        "moderation": "内容管理面板",
+        "moderationShort": "版主",
+        "addServer": "添加服务器"
+    },
+    "updateModal": {
+        "title": "发现新版本",
+        "updateButton": "立即更新",
+        "laterButton": "以后再说",
+        "releasedAt": "发布于"
+    },
+    "inputFieldActions": {
+        "copy": "复制",
+        "cut": "剪切",
+        "paste": "黏贴"
+    },
+    "dropDown": {
+        "selectItem": "单选",
+        "selectItemMultiple": "多选",
+        "itemsSelected": "已选择 {{count}} 个项"
+    },
+    "markup": {
+        "bold": "粗体",
+        "italic": "斜体",
+        "strikethrough": "删除线",
+        "header": "标题",
+        "namedLink": "自定义链接文字",
+        "spoiler": "剧透"
+    }
+}

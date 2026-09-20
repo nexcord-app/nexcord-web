@@ -1,0 +1,12 @@
+import{au as x,C as v,f as E,D as S,E as T,g as I,t as w,i as b,b as C,a3 as P,d as f,a8 as y,c as h,p as W,e as _,a2 as z,S as j,K as B}from"./ModerationService-JKa8HDPL.js";import{u as R,s as $}from"./Flexbox-CKnPoiWr.js";import{U as A}from"./useStore-1zAIwTgm.js";import{u as L}from"./useResizeObserver-5zHNQ4fP.js";const M="_tooltip_1rd72_1",N="_tooltipContent_1rd72_13",m={tooltip:M,tooltipContent:N};var U=w("<div>"),D=w("<div><div>");const k=t=>{const a=x(()=>t.tooltip),{isMobileAgent:l}=v(),{createPortal:d,closePortalById:o}=E(),e="tooltip"+W();S(T(()=>t.disable,()=>{t.disable&&i()}));const u=n=>{if(!a()||t.disable||l())return;const s=n.currentTarget.getBoundingClientRect();t.onBeforeShow&&!t.onBeforeShow(n.currentTarget)||d(()=>h(q,{rect:s,get children(){return a()},get anchor(){return t.anchor}}),e)},i=()=>{o(e)};return I(()=>{i()}),(()=>{var n=U();return n.addEventListener("mouseleave",i),n.addEventListener("mouseenter",u),b(n,()=>t.children),C(r=>{var s=P(m.container,t.class),g=t.style;return s!==r.e&&f(n,r.e=s),r.t=y(n,g,r.t),r},{e:void 0,t:void 0}),n})()},q=t=>{const[a,l]=_(),{height:d,width:o}=L(a),c=()=>{if(!o())return;let e=t.rect.left+(t.anchor==="left"?-o()-4:t.rect.width);return t.anchor==="right"&&o()+e+10>window.innerWidth&&(e=window.innerWidth-(o()+20)),t.anchor==="left"&&e<=0&&(e=0),{top:t.rect.top+t.rect.height/2-d()/2+"px",left:e+"px"}};return(()=>{var e=D(),u=e.firstChild;return z(l,e),b(u,()=>t.children),C(i=>{var n=m.tooltip,r=c(),s=m.tooltipContent;return n!==i.e&&f(e,i.e=n),i.t=y(e,r,i.t),s!==i.a&&f(u,i.a=s),i},{e:void 0,t:void 0,a:void 0}),e})()},F=$("img")`
+  border-radius: 4px;
+  height: 18px;
+  width: 18px;
+  flex-shrink: 0;
+  object-fit: scale-down;
+`,G=R`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`,J=t=>{const{hasFocus:a,shouldAnimate:l}=v(),d=()=>{if(t.icon.includes(".")){const o=()=>{const e=t.icon?.endsWith(".gif");return!t.icon?.endsWith(".webp#a")&&!e?!1:t.defaultPaused?!(t.hovered&&a()):!l(t.hovered)},c=new URL(`${B.NERIMITY_CDN}emojis/${t.icon}`);return t.resize&&c.searchParams.set("size",t.resize.toString()),o()&&c.searchParams.set("type","webp"),c.href}return A(t.icon)};return h(j,{get when(){return t.icon},get children(){return h(k,{get tooltip(){return t.title},anchor:"right",class:G,get children(){return h(F,{get src(){return d()},get style(){return{height:`${t.size}px`,width:`${t.size}px`}}})}})}})};export{J as E,k as T};
+//# sourceMappingURL=Emoji-CBS3HK9g.js.map

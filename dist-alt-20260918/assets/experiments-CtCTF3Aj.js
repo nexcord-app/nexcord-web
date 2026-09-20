@@ -1,0 +1,2 @@
+import{c as o,a2 as a,S as c,y as l}from"./useStore-B0mu5xqR.js";const E=[],[n,r]=a(l.ENABLED_EXPERIMENTS,[]),m=e=>()=>n().includes(e),x=e=>o(c,{get when(){return!e.id||n().includes(e.id)},get children(){return e.children}}),S=e=>({experiment:()=>{const t=E.find(i=>i.id===e());if(n().includes(e()))return t},toggleExperiment:()=>{const t=n().includes(e());r(t?n().filter(s=>s!==e()):[...n(),e()])}});export{E,x as S,m as i,S as u};
+//# sourceMappingURL=experiments-CtCTF3Aj.js.map

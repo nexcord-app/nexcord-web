@@ -1,0 +1,2 @@
+import{t as l,ac as c,i,b as n,a3 as v,d,a8 as m,Z as o}from"./ModerationService-DpHh3JQr.js";import{s as f}from"./SettingsBlock-DKlh9Lz3.js";var k=l("<div>");function E(t){return(()=>{var e=k();return c(e,"click",t.onClick,!0),i(e,()=>t.children),n(a=>{var s=v(f.block,t.class),r=t.style;return s!==a.e&&d(e,a.e=s),a.t=m(e,r,a.t),a},{e:void 0,t:void 0}),e})()}o(["click"]);export{E as B};
+//# sourceMappingURL=Block-CeMjFYlP.js.map

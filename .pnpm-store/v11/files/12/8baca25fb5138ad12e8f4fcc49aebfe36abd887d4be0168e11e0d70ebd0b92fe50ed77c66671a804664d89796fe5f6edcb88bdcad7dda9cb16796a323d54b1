@@ -1,0 +1,45 @@
+import { JSXElement, JSX, Component } from 'solid-js';
+
+interface Emoji {
+    emoji: string;
+    short_names: string[];
+    category: string;
+}
+type EmojiWithIndex = Emoji & {
+    index: number;
+};
+interface CustomEmoji {
+    id: string;
+    name: string;
+    url: string;
+    category: CustomEmojiCategory;
+}
+interface CustomEmojiCategory {
+    id: string;
+    name: string;
+    url?: string;
+    customElement?: (size: number) => JSXElement;
+    type?: 'category';
+}
+interface Category {
+    name: string;
+    index: number;
+    type?: 'category';
+}
+interface EmojiPickerProps {
+    primaryColor?: string;
+    emojis?: Emoji[];
+    customEmojis?: CustomEmoji[];
+    onEmojiClick?: (emoji: EmojiWithIndex | CustomEmoji) => void;
+    maxRow?: number;
+    maxRecent?: number;
+    spriteUrl: string;
+    class?: string;
+    style?: JSX.CSSProperties;
+    focusOnMount?: boolean;
+}
+declare const EmojiPicker: Component<EmojiPickerProps>;
+declare function addToHistory(name: string, maxRecent: number): void;
+declare function getHistory(): string[];
+
+export { Category, CustomEmoji, CustomEmojiCategory, Emoji, EmojiPicker, EmojiPickerProps, EmojiWithIndex, addToHistory, getHistory };

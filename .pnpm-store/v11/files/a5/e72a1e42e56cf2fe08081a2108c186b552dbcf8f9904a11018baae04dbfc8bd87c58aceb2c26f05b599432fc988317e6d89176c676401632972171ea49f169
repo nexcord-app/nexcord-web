@@ -1,0 +1,6 @@
+declare const useMicRecorder: () => {
+    record: () => Promise<Blob>;
+    stop: () => void;
+};
+
+export { useMicRecorder };

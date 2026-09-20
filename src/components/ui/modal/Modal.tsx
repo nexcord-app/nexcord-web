@@ -1,0 +1,207 @@
+import style from "./Modal.module.scss";
+import {
+  createContext,
+  JSXElement,
+  onCleanup,
+  onMount,
+  Show,
+  useContext
+} from "solid-js";
+import Button, { ButtonProps } from "../Button";
+import Icon from "../icon/Icon";
+import { cn } from "@/common/classNames";
+import { useWindowProperties } from "@/common/useWindowProperties";
+import { useCustomPortalItem } from "../custom-portal/CustomPortal";
+
+const ModalContext = createContext<{
+  close?: () => void;
+}>();
+
+interface RootProps {
+  children: JSXElement;
+  close?: () => void;
+  class?: string;
+  /**
+   @default true
+  */
+  closeOnEscape?: boolean;
+  doNotCloseOnBackgroundClick?: boolean;
+  desktopMaxWidth?: number;
+  desktopMinWidth?: number;
+  desktopClass?: string;
+}
+
+const BodyAnim: [Keyframe[], Keyframe[]] = [
+  [{ opacity: "0", transform: "translateY(80px)" }, { opacity: "1" }],
+  [{ opacity: "1" }, { opacity: "0", transform: "translateY(80px)" }]
+];
+
+const BgAnim: [Keyframe[], Keyframe[]] = [
+  [{ opacity: "0" }, { opacity: "1" }],
+  [{ opacity: "1" }, { opacity: "0" }]
+];
+
+const Root = (props: RootProps) => {
+  let rootEl: HTMLDivElement | undefined;
+  let bgEl: HTMLDivElement | undefined;
+  const { isMobileWidth } = useWindowProperties();
+
+  const portalItem = useCustomPortalItem();
+
+  portalItem?.setCustomCloseHandler(async () => {
+    bgEl?.animate(BgAnim[1], {
+      duration: 200,
+      fill: "forwards",
+      easing: "ease-in-out"
+    });
+    await rootEl?.animate(BodyAnim[1], {
+      duration: 200,
+      fill: "forwards",
+      easing: "ease-in-out"
+    }).finished;
+  });
+
+  let startClick = { x: 0, y: 0 };
+  let textSelected = false;
+
+  const onBackgroundClick = (event: MouseEvent) => {
+    if (props.doNotCloseOnBackgroundClick) return;
+    if (event.target !== event.currentTarget) return;
+    event.stopImmediatePropagation();
+
+    const xDistance = Math.abs(startClick.x - event.clientX);
+    const yDistance = Math.abs(startClick.y - event.clientY);
+
+    const clickedPos = xDistance > 3 || yDistance > 3;
+    if (clickedPos || textSelected) {
+      return;
+    }
+
+    props.close?.();
+  };
+
+  const onMouseDown = (event: MouseEvent) => {
+    startClick = {
+      x: event.clientX,
+      y: event.clientY
+    };
+    textSelected = !!window.getSelection()?.toString();
+  };
+
+  onMount(() => {
+    bgEl?.animate(BgAnim[0], {
+      duration: 200,
+      fill: "forwards",
+      easing: "ease-in-out"
+    });
+    rootEl?.animate(BodyAnim[0], {
+      duration: 200,
+      fill: "forwards",
+      easing: "ease-in-out"
+    });
+
+    const closeOnEscape = props.closeOnEscape ?? true;
+    if (!closeOnEscape) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") props.close?.();
+    };
+    document.addEventListener("keydown", onKeyDown);
+    onCleanup(() => document.removeEventListener("keydown", onKeyDown));
+  });
+
+  return (
+    <ModalContext.Provider value={{ close: () => props.close?.() }}>
+      <div
+        onMouseUp={onBackgroundClick}
+        onMouseDown={onMouseDown}
+        ref={bgEl}
+        class={cn(
+          style.modalBackground,
+          isMobileWidth() ? style.mobile : undefined
+        )}
+      >
+        <div
+          ref={rootEl}
+          class={cn(
+            style.modalRoot,
+            !isMobileWidth() && props.desktopClass,
+            props.class
+          )}
+          style={{
+            ...(!isMobileWidth() && props.desktopMaxWidth
+              ? { "max-width": props.desktopMaxWidth + "px" }
+              : {}),
+            ...(!isMobileWidth() && props.desktopMinWidth
+              ? { "min-width": props.desktopMinWidth + "px" }
+              : {})
+          }}
+        >
+          {props.children}
+        </div>
+      </div>
+    </ModalContext.Provider>
+  );
+};
+
+interface HeaderProps {
+  title: string;
+  icon?: string;
+  alert?: boolean;
+}
+const Header = (props: HeaderProps) => {
+  const modal = useContext(ModalContext);
+  return (
+    <div class={style.modalHeader}>
+      <div class={style.titleAndIcon}>
+        <Show when={props.icon}>
+          <Icon
+            name={props.icon}
+            color={props.alert ? "var(--alert-color)" : "var(--primary-color)"}
+            class={style.modalHeaderIcon}
+          />
+        </Show>
+        <span style={{ color: props.alert ? "var(--alert-color)" : undefined }}>
+          {props.title}
+        </span>
+      </div>
+      <Show when={modal?.close}>
+        <Button
+          iconName="close"
+          color="var(--alert-color)"
+          onClick={modal?.close}
+          padding={0}
+          margin={0}
+        />
+      </Show>
+    </div>
+  );
+};
+
+interface BodyProps {
+  children: JSXElement;
+  class?: string;
+}
+const Body = (props: BodyProps) => {
+  return <div class={cn(style.modalBody, props.class)}>{props.children}</div>;
+};
+
+interface FooterProps {
+  children: JSXElement;
+}
+
+const Footer = (props: FooterProps) => {
+  return <div class={style.modalFooter}>{props.children}</div>;
+};
+
+const ModalButton = (props: ButtonProps) => {
+  return <Button {...props} margin={0} />;
+};
+
+export const Modal = {
+  Root,
+  Header,
+  Body,
+  Footer,
+  Button: ModalButton
+};

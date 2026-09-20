@@ -1,0 +1,24 @@
+{
+  "name": "Nexcord",
+  "short_name": "Nexcord",
+  "theme_color": "#77a8f3",
+  "description": "A modern and sleek chat app.",
+  "id": "/app",
+  "start_url": "/app",
+  "background_color": "hsl(216deg 9% 8%)",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ]
+}

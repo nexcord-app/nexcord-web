@@ -1,0 +1,2 @@
+import t from"./http-B1m0cdo-.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/http" instead of "highlight.js/lib/languages/http.js"'))}e();export{t as default};
+//# sourceMappingURL=http.js-BHKL4w5F.js.map

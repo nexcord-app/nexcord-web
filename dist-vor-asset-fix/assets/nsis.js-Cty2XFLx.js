@@ -1,0 +1,2 @@
+import n from"./nsis-OgC8GHd4.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/nsis" instead of "highlight.js/lib/languages/nsis.js"'))}i();export{n as default};
+//# sourceMappingURL=nsis.js-Cty2XFLx.js.map

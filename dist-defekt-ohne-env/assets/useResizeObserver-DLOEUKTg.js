@@ -1,0 +1,2 @@
+import{ah as u,D as o,E as c,g as h}from"./ModerationService-7nF9_67y.js";function b(r){const[t,s]=u({width:0,height:0});return o(c(r,e=>{if(!e)return;const i=new ResizeObserver(n=>{s({width:n[0].contentRect.width,height:n[0].contentRect.height})});i.observe(e),h(()=>{i.disconnect()})})),{width:()=>t.width,height:()=>t.height}}function d(r,t){o(c(r,s=>{if(!s)return;const e=new MutationObserver(t);e.observe(s,{childList:!0,subtree:!0}),h(()=>{e.disconnect()})}))}export{d as a,b as u};
+//# sourceMappingURL=useResizeObserver-DLOEUKTg.js.map

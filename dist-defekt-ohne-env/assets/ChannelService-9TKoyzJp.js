@@ -1,0 +1,2 @@
+import{aH as t,K as n,aI as o}from"./ModerationService-7nF9_67y.js";const i=async e=>await t({method:"GET",url:n.SERVER_URL+"/api"+o.channel(e)+"/notice",useToken:!0}),u=async(e,a,s)=>await t({method:"PUT",url:n.SERVER_URL+"/api"+o.serverChannel(e,a)+"/notice",body:{content:s},useToken:!0}),d=async(e,a)=>await t({method:"DELETE",url:n.SERVER_URL+"/api"+o.serverChannel(e,a)+"/notice",useToken:!0});export{d,i as g,u};
+//# sourceMappingURL=ChannelService-9TKoyzJp.js.map

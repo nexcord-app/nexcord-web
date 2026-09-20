@@ -1,0 +1,2 @@
+import n from"./kotlin-Cw-eF_bm.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/kotlin" instead of "highlight.js/lib/languages/kotlin.js"'))}i();export{n as default};
+//# sourceMappingURL=kotlin.js-81zu39zU.js.map

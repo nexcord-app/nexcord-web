@@ -1,0 +1,175 @@
+import Input from "@/components/ui/input/Input";
+import {
+  createGoogleAccountLink,
+  loginRequest
+} from "../chat-api/services/UserService";
+import Button from "@/components/ui/Button";
+import {
+  getStorageString,
+  setStorageString,
+  StorageKeys
+} from "../common/localStorage";
+import { A, useNavigate, useLocation, useSearchParams } from "solid-navigator";
+import { createSignal, onMount, Show } from "solid-js";
+import PageHeader from "../components/PageHeader";
+import { css, styled } from "solid-styled-components";
+import { FlexColumn } from "@/components/ui/Flexbox";
+import { useTransContext } from "@nerimity/solid-i18lite";
+import PageFooter from "@/components/PageFooter";
+
+import { MetaTitle } from "@/common/MetaTitle";
+import Text from "@/components/ui/Text";
+
+const LoginPageContainer = styled("div")`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+const Content = styled(FlexColumn)`
+  height: 100%;
+  border-radius: 8px;
+  margin: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  flex: 1;
+`;
+
+const Container = styled(FlexColumn)`
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+`;
+
+const TitleContainer = styled("div")`
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+`;
+
+const linkStyle = css`
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+`;
+
+export default function LoginPage() {
+  const [searchParams] = useSearchParams<{ state: string; code: string }>();
+
+  const [t] = useTransContext();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [requestSent, setRequestSent] = createSignal(false);
+  const [error, setError] = createSignal({ message: "", path: "" });
+  const [email, setEmail] = createSignal("");
+  const [password, setPassword] = createSignal("");
+
+  onMount(() => {
+    if (getStorageString(StorageKeys.USER_TOKEN, null)) {
+      navigate("/app", { replace: true });
+    }
+    if (searchParams.code) {
+      loginClicked(undefined, searchParams.code);
+    }
+  });
+
+  const loginClicked = async (
+    event?: SubmitEvent | MouseEvent,
+    googleCode?: string
+  ) => {
+    event?.preventDefault();
+    const redirectTo = location.query.redirect || "/app";
+    if (requestSent()) return;
+    setRequestSent(true);
+    setError({ message: "", path: "" });
+    const response = await loginRequest(
+      email().trim(),
+      password().trim(),
+      googleCode
+    ).catch((err) => {
+      setError({ message: err.message, path: err.path || "unk" });
+    });
+    setRequestSent(false);
+    if (!response) return;
+    setStorageString(StorageKeys.USER_TOKEN, response.token);
+    navigate(redirectTo);
+  };
+
+  const handleLoginWithGoogle = async () => {
+    createGoogleAccountLink(true).then((link) => {
+      window.location.href = link;
+    });
+  };
+
+  return (
+    <LoginPageContainer class="login-page-container">
+      <MetaTitle>{t("loginPage.login")}</MetaTitle>
+      <PageHeader />
+      <Content>
+        <Container class="container">
+          <form
+            style={{ display: "flex", "flex-direction": "column" }}
+            action="#"
+            onSubmit={loginClicked}
+          >
+            <TitleContainer>{t("loginPage.title")}</TitleContainer>
+            <Input
+              margin={[10, 0, 10, 0]}
+              label={t("loginPage.emailOrUsernameAndTag")}
+              errorName={["email", "usernameAndTag"]}
+              type="text"
+              error={error()}
+              onText={setEmail}
+            />
+            <Input
+              margin={[10, 0, 10, 0]}
+              label={t("loginPage.password")}
+              type="password"
+              error={error()}
+              onText={setPassword}
+            />
+            <Show when={error().path === "unk"}>
+              <Text size={16} color="var(--alert-color)">
+                {error().message}
+              </Text>
+            </Show>
+            <Button
+              primary
+              style={{ flex: 1 }}
+              margin={[10, 0, 0, 0]}
+              iconName="login"
+              label={
+                requestSent()
+                  ? t("loginPage.loggingIn")
+                  : t("header.loginButton")
+              }
+              onClick={loginClicked}
+            />
+          </form>
+          <Button
+            customChildrenLeft={
+              <img
+                src="/assets/Google.svg"
+                width="20px"
+                style={{ "margin-right": "10px" }}
+              />
+            }
+            onclick={handleLoginWithGoogle}
+            label="Login with Google"
+            margin={[10, 0, 0, 0]}
+            padding={8}
+          />
+          <A class={linkStyle} href="/reset-password">
+            {t("resetPassword.resetPasswordButton")}
+          </A>
+          <A class={linkStyle} href="/register">
+            {t("loginPage.createAccountInstead")}
+          </A>
+        </Container>
+      </Content>
+      <PageFooter />
+    </LoginPageContainer>
+  );
+}

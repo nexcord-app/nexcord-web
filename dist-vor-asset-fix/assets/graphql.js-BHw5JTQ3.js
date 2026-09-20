@@ -1,0 +1,2 @@
+import n from"./graphql-DPQANhhf.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/graphql" instead of "highlight.js/lib/languages/graphql.js"'))}e();export{n as default};
+//# sourceMappingURL=graphql.js-BHw5JTQ3.js.map

@@ -1,0 +1,105 @@
+{
+  "version": "0.4.9",
+  "name": "@nerimity/solid-emoji-picker",
+  "description": "SolidJS Emoji Picker modal.",
+  "license": "MIT",
+  "author": "Supertigerr",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nerimity/solid-emoji-picker.git"
+  },
+  "homepage": "https://github.com/Nerimity/solid-emoji-picker#readme",
+  "bugs": {
+    "url": "https://github.com/Nerimity/solid-emoji-picker/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index/index.cjs",
+  "module": "./dist/index/index.js",
+  "types": "./dist/index/index.d.ts",
+  "browser": {},
+  "typesVersions": {
+    "*": {
+      "emojis": [
+        "./dist/emojis/index.d.ts"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "solid-js": "^1.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.18.20",
+    "esbuild-plugin-solid": "^0.5.0",
+    "jsdom": "^22.1.0",
+    "prettier": "2.8.8",
+    "solid-js": "^1.9.10",
+    "tsup": "^6.7.0",
+    "tsup-preset-solid": "^0.1.8",
+    "typescript": "^5.9.3",
+    "vite": "^4.5.14",
+    "vite-plugin-solid": "^2.11.10",
+    "vitest": "^0.32.4"
+  },
+  "keywords": [
+    "solid"
+  ],
+  "dependencies": {
+    "@minht11/solid-virtual-container": "^0.2.1",
+    "match-sorter": "^6.3.4",
+    "solid-styled-components": "^0.28.5"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "exports": {
+    ".": {
+      "solid": {
+        "development": "./dist/index/dev.jsx",
+        "import": "./dist/index/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/dev.js"
+        },
+        "require": "./dist/index/dev.cjs"
+      },
+      "import": {
+        "types": "./dist/index/index.d.ts",
+        "default": "./dist/index/index.js"
+      },
+      "require": "./dist/index/index.cjs"
+    },
+    "./emojis": {
+      "development": {
+        "import": {
+          "types": "./dist/emojis/index.d.ts",
+          "default": "./dist/emojis/dev.js"
+        },
+        "require": "./dist/emojis/dev.cjs"
+      },
+      "import": {
+        "types": "./dist/emojis/index.d.ts",
+        "default": "./dist/emojis/index.js"
+      },
+      "require": "./dist/emojis/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite serve dev",
+    "build": "tsup",
+    "test": "concurrently pnpm:test:*",
+    "test:client": "vitest",
+    "test:ssr": "pnpm run test:client --mode ssr",
+    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "update-deps": "pnpm up -Li",
+    "typecheck": "tsc --noEmit"
+  }
+}

@@ -1,0 +1,57 @@
+.topArea {
+  display: flex;
+  align-self: center;
+
+  flex: 1;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.bannerItems {
+  z-index: 11111;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 30px;
+  .details {
+    z-index: 1111;
+    padding: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.86);
+    font-size: 18px;
+    backdrop-filter: blur(34px);
+  }
+  .name {
+    font-size: 16px;
+  }
+  .memberCount {
+    opacity: 0.7;
+    font-size: 14px;
+  }
+}
+.joinButton {
+  align-self: flex-end;
+  margin-right: 10px;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.invalidServerPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 20px;
+  .errorMessage {
+    color: var(--alert-color);
+    font-size: 18px;
+  }
+  .message {
+    margin-bottom: 20px;
+    opacity: 0.8;
+  }
+}

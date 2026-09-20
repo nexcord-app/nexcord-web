@@ -1,0 +1,23 @@
+import { createSignal } from 'solid-js';
+import { EditorView } from '@codemirror/view';
+import { createCompartmentExtension } from '../core/createCompartmentExtension';
+export function createEditorFocus(view, onFocusChange) {
+    const [focused, setInternalFocused] = createSignal(view()?.hasFocus ?? false);
+    const focusListener = EditorView.focusChangeEffect.of((state, focusing) => {
+        setInternalFocused(focusing);
+        onFocusChange?.(focusing);
+        return null;
+    });
+    void createCompartmentExtension(focusListener, view);
+    const setFocused = (focused) => {
+        setInternalFocused(focused);
+        const viewValue = view();
+        if (!viewValue)
+            return;
+        viewValue.focus();
+    };
+    return {
+        focused,
+        setFocused,
+    };
+}

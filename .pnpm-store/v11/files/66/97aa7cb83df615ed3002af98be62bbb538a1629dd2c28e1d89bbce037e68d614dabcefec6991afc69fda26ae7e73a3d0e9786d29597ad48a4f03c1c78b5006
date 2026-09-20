@@ -1,0 +1,24 @@
+import { JSX } from "solid-js";
+export interface TurnstileRef {
+    reset: () => void;
+}
+interface Props extends TurnstileCallbacks {
+    class?: string;
+    style?: JSX.CSSProperties;
+    sitekey: string;
+    retry?: "auto" | "never";
+    theme?: "light" | "dark" | "auto";
+    size?: "normal" | "invisible" | "compact";
+    autoResetOnExpire?: boolean;
+    reset?: any;
+    ref?: TurnstileRef | ((v: TurnstileRef) => void);
+}
+interface TurnstileCallbacks {
+    onVerify: (token: string) => void;
+    onLoad?: (widgetId: string) => void;
+    onError?: (error?: Error | any) => void;
+    onExpire?: () => void;
+    onTimeout?: () => void;
+}
+export declare function Turnstile(props: Props): JSX.Element;
+export {};

@@ -1,0 +1,25 @@
+{
+    "name": "@types/voice-activity-detection",
+    "version": "0.0.5",
+    "description": "TypeScript definitions for voice-activity-detection",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/voice-activity-detection",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "JohnDoeAntler",
+            "githubUsername": "JohnDoeAntler",
+            "url": "https://github.com/JohnDoeAntler"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/voice-activity-detection"
+    },
+    "scripts": {},
+    "dependencies": {},
+    "typesPublisherContentHash": "53e35c9bcb806d28beb04dabb2517cd09b0105110d476dc48949793ddb02c9ef",
+    "typeScriptVersion": "4.5"
+}

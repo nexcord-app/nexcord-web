@@ -1,0 +1,10 @@
+import type { TFunction, i18n } from '@nerimity/i18lite';
+import type { parse } from 'html-parse-string';
+import type { ParentProps } from 'solid-js';
+import type { TransProps } from '../Trans';
+export declare let parseHTML: typeof parse;
+export declare const translateJSX: ({ i18n: { options }, t, props }: {
+    t: TFunction;
+    props: ParentProps<TransProps>;
+    i18n: i18n;
+}, children: Node[]) => string | any[];

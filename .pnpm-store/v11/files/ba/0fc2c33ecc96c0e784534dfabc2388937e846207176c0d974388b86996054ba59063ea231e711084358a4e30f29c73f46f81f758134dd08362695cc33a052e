@@ -1,0 +1,6 @@
+import { Accessor } from 'solid-js';
+import { EditorView } from '@codemirror/view';
+export declare function createEditorFocus(view: Accessor<EditorView | undefined>, onFocusChange?: (focused: boolean) => void): {
+    focused: Accessor<boolean>;
+    setFocused: (focused: boolean) => void;
+};

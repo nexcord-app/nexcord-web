@@ -1,0 +1,637 @@
+{
+    "header": {
+        "openAppButton": "Buksan ang aplikasyon",
+        "loginButton": "Login",
+        "joinNowButton": "Magparehistro na!",
+        "logoutButton": "Mag-log out"
+    },
+    "homePage": {
+        "slogan": "Isang moderno at matikas na chat app.",
+        "viewGitHubButton": "Tingnan ang GitHub",
+        "subslogan": "Nag-aalok ang Nexcord ng isang eleganteng karanasan na puno ng mga tampok na nagpapaiba dito.",
+        "getStarted": "Magsimula",
+        "availableOn": "Available sa",
+        "browser": "Browser",
+        "featureList": {
+            "feature1": "Libreng animated na avatar at emojis",
+            "feature2": "Makinis na disenyo",
+            "feature3": "Palitan ang iyong tag nang libre",
+            "feature4": "Gumawa ng mga post sa iyong profile",
+            "feature5": "Gumawa ng iyong sariling komunidad",
+            "feature6": "Maghanap ng mga bagong komunidad",
+            "feature7": "Pinapatakbo mula sa mga donasyon",
+            "feature8": "Buong source code sa GitHub",
+            "feature9": "Ipakita ang iyong sarili gamit ang mga border"
+        }
+    },
+    "loginPage": {
+        "title": "Mag-login upang magpatuloy",
+        "emailOrUsernameAndTag": "Email / username:tag",
+        "password": "Password",
+        "login": "Mag-login",
+        "createAccountInstead": "Gumawa na lang ng account",
+        "loggingIn": "Nagla-log in…"
+    },
+    "registerPage": {
+        "title": "Maligayang pagdating sa {{appName}}",
+        "email": "Email",
+        "username": "Username",
+        "password": "Password",
+        "confirmPassword": "Kumpirmahin ang password",
+        "registerButton": "Magparehistro",
+        "registering": "Nagpaparehistro…",
+        "loginInstead": "Mag-login na lang",
+        "header": "Magrehistro",
+        "notices": {
+            "title": "Mga Paalala",
+            "toxic": "Huwag maging toxic.",
+            "nsfw": "Walang NSFW na nilalaman.",
+            "age": "Dapat ay 14 taong gulang o mas matanda ka."
+        },
+        "agreement": "Sa paggawa ng account, sumasang-ayon ka sa Mga Tuntunin at Kundisyon at sa Patakaran sa Privacy."
+    },
+    "inbox": {
+        "drawer": {
+            "addFriendButton": "Magdagdag ng kaibigan",
+            "friendsButton": "Mga Kaibigan",
+            "searchBarPlaceholder": "Maghanap",
+            "friendRequests": "{{count}} Mga Kahilingan sa Kaibigan",
+            "onlineFriends": "{{count}} Mga Kaibigang Online",
+            "offlineFriends": "{{count}} Mga Kaibigang Offline",
+            "notes": "Mga Tala",
+            "blockedUsersButton": "Na-block",
+            "inboxTitle": "Papasok na Mensahe",
+            "viewAll": "Tingnan Lahat"
+        },
+        "blockedUsersModal": {
+            "title": "Mga Na-block na User"
+        }
+    },
+    "explore": {
+        "drawer": {
+            "title": "Mag-explore",
+            "servers": "Mga Server",
+            "bots": "Bots",
+            "themes": "Mga Tema"
+        },
+        "servers": {
+            "title": "Mag-explore - Mga servers",
+            "noticeMessage": "Maaaring ma-bump ang isang server isang beses bawat {{hours}} na oras. Lahat ng bumps ay ni-reset bawat {{date}}.",
+            "sortMostBumps": "Pinakamaraming mga bumps",
+            "sortMostMembers": "Pinakamaraming mga miyembro",
+            "sortRecentlyAdded": "Kamakailang idinagdag",
+            "sortRecentlyBumped": "Kamakailang lang na bumped",
+            "filterAll": "Lahat",
+            "filterVerified": "Beripikado",
+            "memberCount": "{{count}} na miyembro",
+            "lifetimeBumpCount": "{{count}} lifetime na bumps",
+            "visitServerButton": "Bisitahin",
+            "joinServerButton": "Sumali",
+            "bumpButton": "Bump ({{count}})",
+            "moderationNotice": "Ang mga server ay hindi minomoderate ng Nexcord. Mangyaring i-report ang mga server na lumalabag sa TOS.",
+            "sortMostActive": "Pinaka-active (Beta)",
+            "pinnedServers": "Mga Na-pin na Server",
+            "recentlyBumped": "Kamakailang Na-bump na Mga Server"
+        },
+        "bots": {
+            "title": "Tuklasin - Mga Bot",
+            "noticeMessage": "Maaaring i-bump ang isang bot isang beses kada {{hours}} na oras. Lahat ng bump ay magre-reset sa {{date}}.",
+            "moderationNotice": "Ang mga bot ay hindi minomoderate ng Nexcord. Mangyaring i-report ang mga bot na mapanganib o lumalabag sa TOS.",
+            "inviteButton": "Imbitahin",
+            "serverCount": "Sa {{count}} na server"
+        },
+        "themes": {
+            "title": "Tuklasin - Mga Tema",
+            "themesHeaderDescription": "I-personalize ang Nexcord gamit ang sariling tema.",
+            "officialThemes": "Opisyal na Mga Tema",
+            "communityThemes": "Mga Tema ng Komunidad",
+            "noCommunityThemes": "Walang natagpuang tema ng komunidad.",
+            "fetchThemesError": "Nabigong kunin ang mga tema. Pakisubukang muli mamaya.",
+            "unlockDescription": "I-click upang tuklasin ang lahat ng tema ng komunidad"
+        },
+        "sort": "I-sort",
+        "filter": "Salain",
+        "by": "Ayon sa",
+        "bumped": "Na-bump"
+    },
+    "servers": {
+        "settings": {
+            "drawer": {
+                "general": "General",
+                "roles": "Mga roles",
+                "channels": "Mga channel",
+                "bans": "Mga bans",
+                "invites": "Mga invites",
+                "publishServer": "I-publish ang server",
+                "verify": "I-pa verify",
+                "role": "Role",
+                "welcome-screen": "Welcome Screen",
+                "channel": "Channel",
+                "notifications": "Mga abiso",
+                "audit-logs": "Mga Tala ng Audit",
+                "permissions": "Mga Pahintulot",
+                "external-embed": "Panlabas na Embed",
+                "emoji": "Mga Emoji"
+            },
+            "general": {
+                "serverRenameNotice": "Mawawala ang lahat ng mga benepisyo ng pagiging beripikado ng iyong server kapag iniba mo ang pangalan nito.",
+                "serverName": "Pangalan ng Server",
+                "defaultChannel": "Default na Channel",
+                "defaultChannelDescription": "Ididirekta ang mga bagong miyembro sa channel na ito.",
+                "systemMessages": "Mga Mensahe ng System",
+                "systemMessagesDescription": "Kung saan dapat lumabas ang mga mensahe ng system.",
+                "deleteThisServer": "Tanggalin ang server na ito",
+                "deleteServerButton": "Burahin ang Server",
+                "none": "Wala"
+            },
+            "roles": {
+                "addNewRole": "Magdagdag ng bagong role",
+                "addRoleButton": "Magdagdag ng role"
+            },
+            "role": {
+                "roleName": "Pangalan ng role",
+                "roleColor": "Kulay ng role",
+                "hideRole": "Itago ang role",
+                "hideRoleDescription": "Ipakita ang mga miyembro na may ganitong role kasama ang lahat ng default na miyembro",
+                "permissionsDescription": "Pamahalaan ang mga pahintulot para sa tungkuling ito.",
+                "deleteRoleButton": "Tanggalin ang role na ito",
+                "clear": "I-clear",
+                "roleIcon": "Icon ng Role",
+                "managedByBot": "Ang role na ito ay pinamamahalaan ng {{botName}}. Hindi mo maaaring tanggalin o magdagdag ng miyembro sa role na ito. I-kick ang bot na ito upang alisin ang role na ito.",
+                "applyOnJoin": "I-apply sa Pag-join",
+                "applyOnJoinDescription": "I-apply ang role na ito sa mga miyembro kapag sumali sila sa server.",
+                "deleteRoleTitle": "Tanggalin ang {{roleName}}"
+            },
+            "header": {
+                "editServer": "I-edit ang server",
+                "serverMemberCount": "{{count}} na mga miyembro"
+            },
+            "channels": {
+                "createButton": "Gumawa",
+                "createNewDescription": "Gumawa ng panibagong channel o kategorya"
+            },
+            "channel": {
+                "channelName": "Pangalan ng channel",
+                "permissionsDescription": "Baguhin ang mga pahintulot para sa channel na ito.",
+                "deleteThisChannel": "Burahin ang channel na ito",
+                "deleteChannelButton": "Burahin ang channel",
+                "channelIcon": "Icon ng Channel",
+                "slowModeDescription": "Tukuyin kung gaano katagal dapat maghintay ang isang user bago makapagsend ng mensahe.",
+                "deleteChannelTitle": "Tanggalin ang {{channelName}}",
+                "removeNoticeButton": "Alisin ang Paalala"
+            },
+            "invites": {
+                "createInviteButton": "Gumawa ng invite",
+                "serverInvites": "Mga imbitasyon ng server",
+                "serverInvitesDescription": "Imbitahan ang mga kaibigan mo sa server na ito.",
+                "customInviteVerifiedOnlyNotice": "Available lang ang mga custom na link ng imbitasyon para sa mga na-verify na server.",
+                "customLink": "Custom na link",
+                "uses": "{{count}} natitirang paggamit"
+            },
+            "publishServer": {
+                "publishNotice": "Kapag na-publish ang iyong server, magiging available ito sa pahina ng <1>explore</1>.",
+                "public": "Pampubliko",
+                "publicDescription": "Gawing pampubliko ang server na ito.",
+                "bumpServer": "I-bump ang server",
+                "bumpServerDescription": "I-bump ang server na ito upang mabalik ito sa itaas.",
+                "publishServerButton": "I-publush ang server",
+                "unpublishServerButton": "I-unpublish ang server",
+                "bumpButton": "Bump ({{count}})",
+                "descriptionLabel": "Deskripsyon ng Server ({{current}}/{{max}})",
+                "bumpCooldown": "Kailangang maghintay ng {{hours}} oras, {{minutes}} minuto, at {{seconds}} segundo bago i-bump ang server na ito."
+            },
+            "bans": {
+                "sort": {
+                    "unsorted": "Hindi Naayos",
+                    "alphabetical": "Alpabetikal"
+                },
+                "noResults": "Walang Natagpuang Resulta.",
+                "reason": "Dahilan",
+                "noReason": "Walang Ibinigay na Dahilan",
+                "bannedAt": "Na-ban noong",
+                "unknown": "Hindi Alam",
+                "unban": "I-unban",
+                "unbanning": "Ina-alis ang ban…"
+            },
+            "webhook": {
+                "title": "Webhooks",
+                "name": "Pangalan ng Webhook",
+                "link": "URL ng Webhook",
+                "linkDescription": "Isagawa ang mga aksyon gamit ang link na ito",
+                "delete": "Tanggalin ang Webhook"
+            },
+            "verify": {
+                "alreadyVerified": "Ang iyong server ay beripikado na!",
+                "insufficientMembers": "Kailangan mo pa ng {{count}} na miyembro upang makapag-apply para sa beripikasyon.",
+                "verifiable": "Handa nang beripikahin",
+                "verifiableDescription": "May sapat ka nang miyembro upang beripikahin ang iyong server!",
+                "verifyButton": "Beripikahin",
+                "requirements": {
+                    "title": "Mga Kinakailangan",
+                    "englishOnly": "Ingles lamang",
+                    "englishOnlyDescription": "Mas mahirap i-moderate ang mga server na hindi gumagamit ng Ingles.",
+                    "oneMonthOrSupporter": "Hindi bababa sa 1 buwan o may supporter badge",
+                    "oneMonthOrSupporterDescription": "Ang iyong server ay dapat hindi bababa sa 1 buwan ang tanda o ang may-ari ng server ay dapat may supporter badge.",
+                    "members": "{{count}} o higit pang mga miyembro",
+                    "membersDescription": "Ang iyong server ay dapat may hindi bababa sa {{count}} na mga miyembro.",
+                    "profanityFree": "Walang Kabastusan",
+                    "profanityFreeDescription": "Ang pangalan ng server, avatar, at banner ay dapat walang kabastusan.",
+                    "avatarAndBanner": "Avatar at Banner",
+                    "avatarAndBannerDescription": "Ang server ay dapat may avatar at banner.",
+                    "rules": "Mga Patakaran ng Server",
+                    "rulesDescription": "Ang server ay dapat may channel para sa mga patakaran."
+                },
+                "perks": {
+                    "title": "Mga Benepisyo",
+                    "badge": "Beripikadong Badge",
+                    "badgeDescription": "Isang badge na nagpapakita na ang iyong server ay espesyal.",
+                    "explore": "I-highlight sa Explore",
+                    "exploreDescription": "Ang iyong server ay ipapakita sa hiwalay na seksyon sa explore page.",
+                    "customInvite": "Pasadyang link ng imbitasyon",
+                    "customInviteDescription": "Gumawa ng sarili mong link ng imbitasyon mula sa invites page.",
+                    "emojiSlots": "Higit pang slot para sa emoji",
+                    "emojiSlotsDescription": "200 na slot para sa emoji ng iyong server.",
+                    "hdScreenshare": "1080p@60fps na screenshare",
+                    "hdScreenshareDescription": "Mag-screenshare sa 1080p at 60fps."
+                }
+            },
+            "emoji": {
+                "title": "Custom na Emoji",
+                "description": "Magdagdag ng sarili mong emoji.",
+                "addButton": "Magdagdag ng emoji"
+            }
+        },
+        "rolePermissions": {
+            "admin": "Admin",
+            "adminDescription": "Ini-enable ang lahat ng mga pahintulot.",
+            "sendMessage": "Mag send ng mensahe",
+            "sendMessageDescription": "Paganahin ang pagpapadala ng mga mensahe sa server na ito. Maaari pa ring magpadala ng mga mensahe ang mga admin ng server.",
+            "manageRoles": "I-manage ang mga roles",
+            "manageRolesDescription": "Pahintulot para sa pag-update o pagtanggal ng mga roles.",
+            "manageChannels": "I-manage ang mga channels",
+            "manageChannelsDescription": "Pahintulot para sa pag-update o pagtanggal ng mga channel.",
+            "kick": "Puwedeng mag kick",
+            "kickDescription": "Pahintulot na i-kick ang mga user",
+            "ban": "Puwedeng mag ban",
+            "banDescription": "Pahintulot na i-ban ang mga user.",
+            "mentionEveryone": "Mention Everyone",
+            "mentionEveryoneDescription": "Paganahin ang pagbanggit sa @everyone. Maaari pa ring banggitin ng mga admin ng server ang @everyone.",
+            "nicknameMember": "Palayaw ng Miyembro",
+            "nicknameMemberDescription": "Pahintulutan ang mga user na baguhin ang kanilang palayaw sa server."
+        },
+        "channelPermissions": {
+            "sendMessage": "Mag-send ng mga mensahe",
+            "sendMessageDescription": "Paganahin ang pagpapadala ng mga mensahe sa channel. Maaari pa ring magpadala ng mga mensahe ang mga admin ng server.",
+            "joinVoice": "Pagsasali sa voice",
+            "joinVoiceDescription": "Paganahin ang pagsali sa mga voice channel. Maaari pa ring sumali ang mga admin ng server sa mga voice channel.",
+            "hiddenChannel": "Nakatagong Channel",
+            "publicChannel": "Pampublikong Channel",
+            "publicChannelDescription": "I-restore ang access sa channel. Maaaring ma-access ng mga admin ng server ang anumang channel."
+        },
+        "leaveModal": {
+            "title": "Umalis sa Server?",
+            "body": {
+                "part1": "Sigurado ka bang gusto mong umalis sa <1>{{serverName}}</1>?",
+                "part2": "Maaari kang bumalik anumang oras!"
+            },
+            "cancelButton": "Huwag Umalis",
+            "confirmButton": "Umalis"
+        }
+    },
+    "settings": {
+        "drawer": {
+            "title": "Mga Setting",
+            "account": "Account",
+            "interface": "Interface",
+            "language": "Wika",
+            "notifications": "Mga abiso",
+            "developer": "Developer",
+            "applications": "Mga aplikasyon",
+            "experiments": "Mga eksperimento",
+            "viewSource": "Tingnan ang Pinagmulan",
+            "changelog": "Changelog",
+            "window-settings": "Mga Setting ng Window",
+            "activity-status": "Activity Status",
+            "tickets": "Mga tiket",
+            "privacy": "Pagkapribado",
+            "connections": "Mga koneksyon",
+            "badges": "Mga Badge",
+            "call-settings": "Mga Setting ng Tawag",
+            "profile": "Profile"
+        },
+        "language": {
+            "reloadNotice": "Kailangan mong i-reload ang app upang ganap na maipakita ang bagong wika.",
+            "reloadButton": "I-reload",
+            "searchNotice": "Ang mga salin ay pinamamahalaan ng komunidad. Mangyaring i-report ang anumang maling o hindi angkop na salin kay Nexcord.",
+            "contributors": "Mga Nag-ambag"
+        },
+        "header": {
+            "servers": "Mga server",
+            "friends": "Mga Kaibigan",
+            "manageAccount": "Pamahalaan ang Account"
+        },
+        "account": {
+            "tag": "Tag",
+            "botID": "Bot ID",
+            "profile": "Profile",
+            "profileDescription": "I-edit ang iyong bio o mga kulay",
+            "palestineBorder": "Idagdag ang border ng Palestine sa iyong avatar.",
+            "bio": "Bio",
+            "bioDescription": "Suporta sa multiline at markup",
+            "gradientColor1": "Kulay ng Gradient 1",
+            "gradientColor2": "Kulay ng Gradient 2",
+            "primaryColor": "Pangunahing Kulay",
+            "preview": "I-preview",
+            "changePassword": "Palitan ang Password",
+            "forgotPassword": "Nakalimutan ang Password",
+            "newPassword": "Bagong Password",
+            "newPasswordDescription": "Ang pagpapalit ng iyong password ay maglo-log out sa iyo sa lahat ng ibang lugar.",
+            "confirmNewPassword": "Kumpirmahin ang Bagong Password",
+            "confirmNewPasswordDescription": "Kumpirmahin ang iyong bagong password",
+            "confirmCurrentPassword": "Kumpirmahin ang iyong bagong password",
+            "confirmEmail": "Kumpirmahin ang iyong email",
+            "enterCode": "Ilagay ang 5-digit na code na ipinadala sa iyong email:",
+            "sendCodeButton": "Ipadala ang Code",
+            "resendIn": "Muling ipadala sa {{time}}",
+            "deleteAccount": "I-delete ang aking Account",
+            "deleteAccountDescription": "Hindi na ito maibabalik!",
+            "deleteAccountNotice": "Kailangan mong iwanan o tanggalin ang lahat ng server bago mo ma-delete ang iyong account.",
+            "understoodButton": "Naiintindihan",
+            "deletionNotice": "Nalulungkot kami na aalis ka :( Kung may hindi ka nagustuhan, pakisabi sa opisyal na Nexcord server.",
+            "deletedInfo": {
+                "title": "Ano ang matatanggal",
+                "email": "• Email",
+                "username": "• Username",
+                "ip": "• IP Address",
+                "bio": "• Bio",
+                "messages": "• Ang Iyong Mga Mensahe",
+                "posts": "• Ang Iyong Mga Post"
+            },
+            "postsAndMessagesNotice": "Maaaring tumagal ng ilang linggo bago matanggal ang iyong mga post at mensahe.",
+            "deleteCheckbox": "Tanggalin ang aking mga post at mensahe"
+        },
+        "badges": {
+            "noticeTitle": "Mga donasyon",
+            "notice": "Suportahan ang proyektong ito sa pamamagitan ng pag-donate ng pera.",
+            "palestineDescription": "Maaaring makuha sa pamamagitan ng pagpunta sa {{account}} -> {{profile}}",
+            "price": "{{price}} Mga Badge",
+            "supportMethods": "Mga Paraan ng Pagbigay ng Suporta"
+        },
+        "privacy": {
+            "lastOnline": {
+                "title": "Huling Oras ng Pag-online",
+                "description": "Itakda kung sino ang makakakita ng huling oras ng pag-online mo."
+            },
+            "directMessage": {
+                "title": "Direktang Mensahe",
+                "description": "Itakda kung sino ang maaaring magpadala sa iyo ng direktang mensahe."
+            },
+            "friendRequest": {
+                "title": "Hiling ng Pagkakaibigan",
+                "description": "Itakda kung sino ang maaaring magpadala sa iyo ng hiling ng pagkakaibigan."
+            },
+            "options": {
+                "anybody": "Kahit sino",
+                "friendsOnly": "Kaibigan lamang",
+                "serversOnly": "Mga server lamang",
+                "friendsAndServers": "Mga kaibigan at mga server",
+                "nobody": "Walang sino man"
+            },
+            "profileOptions": {
+                "title": "Mga Opsyon sa Profile",
+                "hideFollowers": "Itago ang Mga Followers",
+                "hideFollowersDescription": "Itago ang iyong mga followers mula sa iyong profile.",
+                "hideFollowing": "Itago ang mga sinusundan na tao",
+                "hideFollowingDescription": "Itago ang mga user na sinusundan mo mula sa iyong profile."
+            }
+        },
+        "notifications": {
+            "desktopNotifications": "Mga Abiso sa Desktop",
+            "testNotification": {
+                "title": "Gumana ito!",
+                "body": "Na-enable ang mga abiso sa desktop."
+            }
+        }
+    },
+    "supportBlock": {
+        "support": "Suportahan Ako"
+    },
+    "userContextMenu": {
+        "viewProfile": "Tingnan ang Profile",
+        "sendMessage": "Magpadala ng mensahe",
+        "editRoles": "I-edit ang mga roles"
+    },
+    "kickServerMemberModal": {
+        "title": "I-kick {{username}}",
+        "kickButton": "I-kick",
+        "kicking": "Tinatangal...",
+        "message": "Sigurado ka bang gusto mong tanggalin si <1>{{username}}</1>?"
+    },
+    "editServerRolesModal": {
+        "title": "I-edit ang mga roles"
+    },
+    "banModal": {
+        "title": "I-ban {{username}}?",
+        "message": "Sigurado ka bang gusto mong i-ban <1>{{username}}</1>?",
+        "deletePastMessagesCheckbox": "Tanggalin ang mga mensaheng ipinadala sa nakalipas na 7 oras.",
+        "banButton": "I-ban",
+        "banning": "Bina-ban..."
+    },
+    "messageContextMenu": {
+        "editMessage": "I-edit ang mensahe",
+        "deleteMessage": "Tanggalin ang mensahe",
+        "copyMessage": "Kopyahin ang mensahe"
+    },
+    "profile": {
+        "followButton": "I-follow",
+        "unfollowButton": "I-unfollow",
+        "removeFriendButton": "Tanggalin sa lista ng mga kaibigan",
+        "addFriendButton": "Magdagdag ng kaibigan",
+        "pendingRequest": "Nakabinbing mga friend requests",
+        "acceptRequestButton": "Tanggapin ang friend request",
+        "messageButton": "I-message",
+        "mutualFriends": "Magkakaibigan ({{count}})",
+        "mutualServers": "Mga Mutual Server ({{count}})",
+        "postsTab": "Mga post",
+        "followersTab": "Mga followers",
+        "followingTab": "Mga fina-follow",
+        "postsAndRepliesTab": "Mga post at tugon ({{count}})",
+        "likedPostsTab": "Mga ni-like na post ({{count}})"
+    },
+    "posts": {
+        "deletePostModal": {
+            "message": "Sigurado ka bang gusto mong tanggalin ang post na ito?"
+        },
+        "postWasDeleted": "Ang post na ito ay tinanggal!",
+        "someoneLikedYourPost": "<1>{{username}}</1> ay nag-like sa post mo!",
+        "someoneFollowedYou": "<1>{{username}}</1> ay sumunod sa iyo",
+        "someoneRepliedToPost": "Si <1>{{username}}</1> ay sumagot sa post mo!",
+        "createAPostInputPlaceholder": "Gumawa ng post...",
+        "replyInputPlaceholder": "Mag-reply...",
+        "replyButton": "Mag-reply",
+        "createButton": "Gumawa"
+    },
+    "general": {
+        "searchPlaceholder": "Maghanap",
+        "backButton": "Bumalik",
+        "cancelButton": "Kanselahin",
+        "deleteButton": "Tanggalin",
+        "cannotBeUndone": "Hindi na ito maibabalik!",
+        "confirmButton": "Kumpirmahin",
+        "doneButton": "Tapos na",
+        "saveButton": "I-save",
+        "saveChangesButton": "I-save ang mga pagbabago",
+        "saving": "Ini-save…",
+        "copyLink": "Kopyahin ang Link",
+        "copyID": "Kopyahin ang ID",
+        "accountData": {
+            "email": "Email",
+            "username": "Username",
+            "password": "Password"
+        },
+        "avatarAndBanner": {
+            "avatar": "Abatar",
+            "banner": "Bandera",
+            "supportedFileTypes": "Sinusuportahan: {{extensions}}, Pinakamalaki: {{size}}",
+            "browse": "Mag-browse"
+        },
+        "undoButton": "I-undo",
+        "closeButton": "Isara",
+        "editButton": "I-edit"
+    },
+    "systemMessages": {
+        "joinServer": {
+            "bot": "<User/><2> ay idinagdag sa server.</2>",
+            "user": "<User/><2> ay sumali sa server.</2>"
+        },
+        "leaveServer": "<User/><2> ay umalis sa server.</2>",
+        "kickUser": "<User/><2> ay na-kick.</2>",
+        "banUser": "<User/><2> ay na-ban.</2>",
+        "callStarted": "<User/><2> ay nagsimula ng tawag.</2>",
+        "bumpServer": "<User/><2> ay nag-bump ng server.</2>",
+        "pinnedMessage": "<User/><2> ay nag-pin ng mensahe.</2>",
+        "unsupported": "<User/><2> Hindi suportadong mensahe.</2>"
+    },
+    "statusHeader": {
+        "authenticationError": "Error sa Pag-authenticate",
+        "connecting": "Kumokonekta…",
+        "reconnecting": "Mulit-kokonekta…",
+        "inQueue": "Nasa Pila: {{count}} User(s) ang Nauuna Sa Iyo",
+        "authenticating": "Ina-authenticate…",
+        "connected": "Nakakonekta na!"
+    },
+    "dangerousLinkModal": {
+        "title": "Pasadyang Link",
+        "message": "Dadalahin ka ng link na ito sa",
+        "cancelButton": "Huwag Bisitahin",
+        "visitButton": "Bisitahin"
+    },
+    "connectionErrorModal": {
+        "title": "Error sa Koneksyon",
+        "ok": "OK",
+        "noToken": "Walang ibinigay na token.",
+        "suspended": "Ikaw ay na-suspend.",
+        "reason": "Dahilan",
+        "defaultReason": "Paglabag sa TOS",
+        "until": "Hanggang",
+        "never": "Hindi kailanman",
+        "by": "Sa pamamagitan ng",
+        "deletionNotice": "Ang iyong account at data ay tatanggalin sa loob ng 15 araw",
+        "ipBanned": "Ang iyong IP ay na-ban.",
+        "ipBanNotice": "Mayroong isang taong may parehong IP na na-suspend sa Nexcord. Ang iyong account ay hindi naapektuhan."
+    },
+    "resetPassword": {
+        "title": "I-reset ang Password",
+        "resetSuccessful": "Matagumpay na na-reset ang password.",
+        "passwordsDoNotMatch": "Hindi magkatugma ang kumpirmasyon ng password.",
+        "passwordTooLong": "Ang password ay dapat mas mababa sa 72 karakter.",
+        "resetPasswordButton": "I-reset ang Password",
+        "resetting": "Nire-reset…",
+        "email": "Email",
+        "sendEmailButton": "Magpadala ng Email",
+        "sending": "Pinapadala ang Email…"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "activeUsers": "Mga Aktibong User",
+        "noActiveUsers": "Walang Mga Aktibong User",
+        "servers": "Servers",
+        "posts": "Mga Post",
+        "feed": "Feed",
+        "discover": "Tuklasin",
+        "notifications": "Mga Abiso"
+    },
+    "status": {
+        "online": "Onlayn",
+        "ltp": "Naghahanap ng Kalaro",
+        "afk": "Wala sa Keyboard (AFK)",
+        "dnd": "Huwag Iistorbohin",
+        "offline": "Offline",
+        "appearAsOffline": "Magpanggap na Offline"
+    },
+    "sidePane": {
+        "home": "Home",
+        "homeShort": "Home",
+        "moderation": "Panel ng Moderasyon",
+        "moderationShort": "Mod",
+        "addServer": "Magdagdag ng Server"
+    },
+    "updateModal": {
+        "title": "May Available na Update",
+        "updateButton": "I-update Ngayon",
+        "laterButton": "Mamaya",
+        "releasedAt": "Inilabas noong"
+    },
+    "messageArea": {
+        "messageBoxPlaceholder": "I-message si {{username}}",
+        "messageBoxChannelPlaceholder": "Magpadala ng mensahe sa {{channelName}}",
+        "replying": "Sinasagot ang {{count}} na mensahe(s)",
+        "mention": "Banggitin",
+        "dropFile": "I-drop ang File",
+        "uploadTo": "I-upload sa",
+        "channelNotice": {
+            "title": "Bago ka makipag-chat…",
+            "understoodButton": "Naiintindihan"
+        },
+        "specialMentions": {
+            "everyone": "Binabanggit ang lahat",
+            "someone": "Binabanggit ang isang random na user",
+            "silent": "Tahimik na mensahe"
+        },
+        "linkToGoogleDrive": {
+            "body": "Kailangan mong i-link ang iyong account sa Google Drive upang makapag-upload ng malalaking larawan, video, o file",
+            "linkButton": "I-link Ngayon",
+            "cancelButton": "Huwag I-link"
+        },
+        "emailNotice": "Kumpirmahin ang iyong email upang makapagpadala ng mga mensahe."
+    },
+    "inputFieldActions": {
+        "copy": "Kopyahin",
+        "cut": "Gupitin",
+        "paste": "I-paste"
+    },
+    "markup": {
+        "bold": "Bold",
+        "italic": "Pa-italic",
+        "strikethrough": "I-strikethrough",
+        "header": "Ulo ng Teksto",
+        "namedLink": "Pinangalanang Link",
+        "spoiler": "Tago ng Lihim",
+        "timestamp": "Oras ng Mensahe",
+        "color": "Kulay",
+        "html": "HTML Mode",
+        "emojiPicker": "Pumili ng Emoji",
+        "timestampModal": {
+            "title": "Marka ng Oras",
+            "relative": "Relatibo",
+            "offset": "Offset"
+        }
+    },
+    "editFolderModal": {
+        "title": "I-edit ang Folder",
+        "placeholder": "Pangalan ng Folder",
+        "errors": {
+            "emptyName": "Pakilagay ang pangalan ng folder."
+        }
+    }
+}

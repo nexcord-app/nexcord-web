@@ -1,0 +1,99 @@
+.remindersModalRoot {
+  width: 600px;
+  min-height: 200px;
+  max-height: 80vh;
+}
+
+.remindersModalBody {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  flex-direction: column;
+}
+
+.reminderList {
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  gap: 4px;
+}
+.reminderItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+
+  border: solid 1px rgba(255, 255, 255, 0.2);
+
+  border-radius: 14px;
+  gap: 4px;
+  &.active {
+    border: solid 1px var(--alert-color);
+  }
+
+  .dateContainer {
+    opacity: 0.6;
+    font-size: 14px;
+  }
+  .reminderTimestamp {
+    margin-top: 6px;
+    margin-left: 6px;
+    user-select: none;
+    pointer-events: none;
+  }
+  .messageItem {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    user-select: none;
+    pointer-events: none;
+    &:before {
+      border: none;
+    }
+    :global {
+      .postDetailsContainer {
+        display: none;
+      }
+      .postInnerContainer {
+        padding: 0;
+        margin: 0;
+        gap: 0;
+      }
+      .postInnerInnerContainer {
+        padding: 0;
+        margin: 0;
+      }
+      .avatar {
+        display: none;
+      }
+      .postActions {
+        display: none;
+      }
+      .details {
+        display: none;
+      }
+    }
+  }
+  .reminderDeleted {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    height: 38px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .reminderActions {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2px;
+
+    gap: 6px;
+
+    .button {
+      justify-self: stretch;
+    }
+  }
+}

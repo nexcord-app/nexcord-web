@@ -1,0 +1,57 @@
+.channelPane {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.error {
+  margin-top: 5px;
+  color: var(--alert-color);
+  font-size: 12px;
+}
+
+.saveButton {
+  align-self: flex-end;
+}
+
+.permissions {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.colorPicker {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  &:before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    transition: 0.2s;
+    inset: 0;
+  }
+  &:hover:before {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .icon {
+    position: relative;
+    z-index: 1111;
+  }
+}

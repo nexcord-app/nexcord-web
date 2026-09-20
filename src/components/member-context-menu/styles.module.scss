@@ -1,0 +1,124 @@
+.roleModal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+.roleModalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow: auto;
+  padding-right: 5px;
+  width: 100%;
+  height: 100%;
+  .roleItem {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: 0.2s;
+    border-radius: 6px;
+    user-select: none;
+    .checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      box-shadow: 1px 0px 5px 0px #00000057;
+    }
+    .icon {
+      opacity: 0;
+      transition: 0.2s;
+      // mix-blend-mode: difference;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: solid 1px rgba(255, 255, 255, 0.4);
+      border-radius: 4px;
+      padding: 2px;
+    }
+    .label {
+      margin-left: 5px;
+      display: flex;
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      .icon {
+        opacity: 0.4;
+      }
+    }
+    &.selected {
+      background-color: rgba(255, 255, 255, 0.2);
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.kickModal {
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}
+.muteModal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.headerDetails {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  margin-left: 6px;
+  font-size: 14px;
+
+  .username {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    white-space: nowrap;
+    left: 30px;
+    right: 0;
+  }
+}
+
+.voiceVolume {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+  .label {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+}
+
+.transferOwnershipOwnerBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 6px;
+  margin-bottom: 8px;
+  margin-top: 4px;
+  .tag {
+    opacity: 0.6;
+  }
+}

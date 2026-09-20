@@ -1,0 +1,2 @@
+import e from"./nginx-CwEijJ2O.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/nginx" instead of "highlight.js/lib/languages/nginx.js"'))}i();export{e as default};
+//# sourceMappingURL=nginx.js-DASnoPXl.js.map

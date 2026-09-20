@@ -1,0 +1,2 @@
+import n from"./swift-Dn8kKO_1.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/swift" instead of "highlight.js/lib/languages/swift.js"'))}i();export{n as default};
+//# sourceMappingURL=swift.js-D9eq_6cE.js.map

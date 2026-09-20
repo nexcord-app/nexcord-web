@@ -1,0 +1,2 @@
+import{e as a,g as o,c as s,S as c}from"./ModerationService-DJHF7x8B.js";function i(e){const[t,n]=a(!1),r=setTimeout(()=>{n(!0)},e.ms||100);return o(()=>{clearInterval(r)}),s(c,{get when(){return t()},get children(){return e.children}})}export{i as D};
+//# sourceMappingURL=Delay-DmI0THu4.js.map

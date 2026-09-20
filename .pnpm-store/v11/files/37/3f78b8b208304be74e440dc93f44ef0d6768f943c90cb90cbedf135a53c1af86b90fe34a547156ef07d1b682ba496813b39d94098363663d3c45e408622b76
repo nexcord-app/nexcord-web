@@ -1,0 +1,197 @@
+'use strict';
+
+var solidJs = require('solid-js');
+var view = require('@codemirror/view');
+var state = require('@codemirror/state');
+
+/**
+ * Creates a compartment extension for the given CodeMirror EditorView.
+ *
+ * Extension compartments can be used to make a configuration dynamic.
+ * By wrapping part of your configuration in a compartment, you can later replace that part through a transaction.
+ *
+ * See {@link https://codemirror.net/examples/reconfigure/} for use cases and examples of `Compartments`.
+ * Check out {@link https://codemirror.net/docs/ref/#state.Compartment} for more details about Compartment API.
+ *
+ * @param extension The extension to wrap in a compartment.
+ * @param view The CodeMirror EditorView
+ */
+function createCompartmentExtension(extension, view) {
+  const compartment = new state.Compartment();
+  const reconfigure = extension => {
+    view()?.dispatch({
+      effects: compartment.reconfigure(extension)
+    });
+  };
+  const $extension = typeof extension === 'function' ? extension : () => extension;
+  solidJs.createEffect(solidJs.on([view, $extension], ([view, extension]) => {
+    if (view && extension) {
+      if (compartment.get(view.state)) {
+        reconfigure(extension);
+      } else {
+        view.dispatch({
+          effects: state.StateEffect.appendConfig.of(compartment.of(extension))
+        });
+      }
+    }
+  }, {
+    defer: true
+  }));
+  return reconfigure;
+}
+
+/**
+ * Creates a CodeMirror editor instance.
+ */
+function createCodeMirror(props) {
+  const [ref, setRef] = solidJs.createSignal();
+  const [editorView, setEditorView] = solidJs.createSignal();
+  function localCreateCompartmentExtension(extension) {
+    return createCompartmentExtension(extension, editorView);
+  }
+  const updateListener = view.EditorView.updateListener.of(vu => props?.onModelViewUpdate?.(vu));
+
+  // eslint-disable-next-line solid/reactivity
+  localCreateCompartmentExtension(updateListener);
+  solidJs.createEffect(solidJs.on(ref, ref => {
+    const state$1 = state.EditorState.create({
+      doc: props?.value ?? ''
+    });
+    const currentView = new view.EditorView({
+      state: state$1,
+      parent: ref,
+      // Replace the old `updateListenerExtension`
+      dispatch: (transaction, editorView) => {
+        if (props?.onTransactionDispatched) {
+          props.onTransactionDispatched(transaction, editorView);
+        }
+        currentView.update([transaction]);
+        if (transaction.docChanged) {
+          const document = transaction.state.doc;
+          const value = document.toString();
+          props?.onValueChange?.(value);
+        }
+      }
+    });
+    solidJs.onMount(() => setEditorView(currentView));
+    solidJs.onCleanup(() => {
+      editorView()?.destroy();
+      setEditorView(undefined);
+    });
+  }));
+  solidJs.createEffect(solidJs.on(editorView, editorView => {
+    const localValue = editorView?.state.doc.toString();
+    if (localValue !== props?.value && !!editorView) {
+      editorView.dispatch({
+        changes: {
+          from: 0,
+          to: localValue?.length,
+          insert: props?.value ?? ''
+        }
+      });
+    }
+  }, {
+    defer: true
+  }));
+  return {
+    editorView,
+    ref: setRef,
+    createExtension: localCreateCompartmentExtension
+  };
+}
+
+/**
+ * Creates a lazy compartment extension for the given CodeMirror EditorView,
+ * configured only after the Promise will be resolved.
+ **
+ * See {@link https://codemirror.net/examples/reconfigure/} for use cases and examples of `Compartments`.
+ * Check out {@link https://codemirror.net/docs/ref/#state.Compartment} for more details about Compartment API.
+ *
+ * @param fn The Promise callback that will return the extension once resolved.
+ * @param view The CodeMirror EditorView
+ */
+function createLazyCompartmentExtension(fn, view) {
+  const [loadedExtension, setLoadedExtension] = solidJs.createSignal([]);
+  const [loading, setLoading] = solidJs.createSignal(false);
+  const reconfigure = createCompartmentExtension(() => loadedExtension(), view);
+  const setExtension = extension => {
+    const resolvedExtension = extension ?? [];
+    reconfigure(resolvedExtension);
+    setLoadedExtension(resolvedExtension);
+  };
+  solidJs.onMount(() => {
+    setLoading(true);
+    fn().then(extension => setExtension(extension)).catch(() => setExtension(null)).finally(() => setLoading(false));
+  });
+  return Object.defineProperties(reconfigure, {
+    loading: {
+      get: () => loading()
+    }
+  });
+}
+
+function createEditorFocus(view$1, onFocusChange) {
+  const [focused, setInternalFocused] = solidJs.createSignal(view$1()?.hasFocus ?? false);
+  const focusListener = view.EditorView.focusChangeEffect.of((state, focusing) => {
+    setInternalFocused(focusing);
+    onFocusChange?.(focusing);
+    return null;
+  });
+  void createCompartmentExtension(focusListener, view$1);
+  const setFocused = focused => {
+    setInternalFocused(focused);
+    const viewValue = view$1();
+    if (!viewValue) return;
+    viewValue.focus();
+  };
+  return {
+    focused,
+    setFocused
+  };
+}
+
+function getReadOnlyExtensions(readOnly) {
+  return readOnly ? view.EditorView.editable.of(false) : [];
+}
+
+/**
+ * Allows to change the editor readOnly state by the given `readOnly` property value
+ * @param view The editor view
+ * @param readOnly The editor readOnly state
+ */
+function createEditorReadonly(view, readOnly) {
+  const localReadOnly = readOnly ? solidJs.untrack(readOnly) : false;
+  const reconfigure = createCompartmentExtension(getReadOnlyExtensions(localReadOnly), view);
+  solidJs.createEffect(solidJs.on(readOnly, readOnly => reconfigure(getReadOnlyExtensions(readOnly))));
+}
+
+/**
+ * Makes the view state value controlled.
+ * @param view The editor view.
+ * @param code The editor code. Whenever this value change, the editor view state will be updated automatically
+ */
+function createEditorControlledValue(view, code) {
+  const memoizedCode = solidJs.createMemo(code);
+  solidJs.createEffect(solidJs.on(view, view => {
+    if (!view) return;
+    solidJs.createEffect(solidJs.on(memoizedCode, code => {
+      const localValue = view?.state.doc.toString();
+      if (localValue === code) return;
+      view.dispatch({
+        changes: {
+          from: 0,
+          to: localValue?.length,
+          insert: code ?? ''
+        }
+      });
+    }));
+  }));
+}
+
+exports.createCodeMirror = createCodeMirror;
+exports.createCompartmentExtension = createCompartmentExtension;
+exports.createEditorControlledValue = createEditorControlledValue;
+exports.createEditorFocus = createEditorFocus;
+exports.createEditorReadonly = createEditorReadonly;
+exports.createLazyCompartmentExtension = createLazyCompartmentExtension;
+//# sourceMappingURL=index.js.map

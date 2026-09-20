@@ -1,0 +1,398 @@
+.profilePane {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 8px;
+  margin-left: 4px;
+  border-radius: 10px;
+  color: var(--text-color);
+}
+.profilePaneInner {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  flex-direction: column;
+
+  width: 100vw;
+  max-width: 820px;
+}
+.topArea {
+  position: relative;
+  z-index: 1111;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  margin: 4px;
+
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  border-radius: 8px;
+
+  &:after {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.6;
+    content: "";
+
+    filter: blur(2em);
+    inset: 0;
+  }
+  &:before {
+    position: absolute;
+    z-index: 1;
+    border-radius: 8px;
+    content: "";
+    inset: 0;
+  }
+
+  .avatar {
+    margin-left: 26px;
+  }
+  .topAreaContent {
+    z-index: 111;
+  }
+}
+
+.informationContainer {
+  padding: 10px;
+
+  margin-top: 4px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+}
+
+.postsTabButton {
+  z-index: 1111;
+  padding-top: 6px;
+  padding-right: 6px;
+  padding-bottom: 6px;
+  padding-left: 6px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.followingAndFollowersContainer {
+  display: flex;
+  margin-top: 12px;
+  font-size: 14px;
+  gap: 12px;
+}
+
+.usernameTagOuter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.followsYou {
+  padding: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-left: 4px;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+}
+
+.username {
+  line-height: 1;
+
+  line-height: var(--lh);
+  letter-spacing: var(--ls);
+  font-family: var(--font);
+  font-size: calc(20px * var(--scale, 1));
+}
+.usernameTag {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-right: 6px;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.dropDown {
+  max-width: 190px;
+  margin-left: -2px;
+}
+
+.tag {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.bannerFloatingItems {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  display: flex;
+  align-items: start;
+
+  .addFriendButton {
+    align-self: center;
+    margin-top: 30px;
+    margin-right: 20px;
+    margin-left: auto;
+    text-decoration: none;
+  }
+}
+
+.content {
+  display: flex;
+  height: 100%;
+}
+
+.bioContainer {
+  display: flex;
+  overflow: auto;
+  flex-shrink: 0;
+  max-height: 500px;
+  padding-top: 14px;
+
+  margin-top: 14px;
+
+  border-top: solid 1px rgba(255, 255, 255, 0.4);
+  word-break: break-word;
+
+  white-space: pre-wrap;
+  white-space: pre-line;
+}
+
+.sidePane {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 200px;
+  max-width: 200px;
+  margin-right: 4px;
+  margin-left: 6px;
+  gap: 4px;
+  .title {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    user-select: none;
+    .icon {
+      margin-right: 3px;
+    }
+  }
+  .block {
+    padding: 4px;
+    border-radius: 8px;
+  }
+  .mobileBlock {
+    .title {
+      cursor: pointer;
+    }
+  }
+}
+
+.item {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  padding: 5px;
+  margin: 4px;
+  margin-right: 0;
+  margin-left: 0;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  &.botCreatorItem {
+    margin: 0;
+    margin-right: -4px;
+    margin-bottom: -4px;
+    margin-left: -4px;
+  }
+}
+.name {
+  overflow: hidden;
+  margin-left: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.postsContainer {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  flex-direction: column;
+  padding: 8px;
+  margin-left: 4px;
+  border-radius: 8px;
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.SidePaneItem {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  gap: 4px;
+  &.clickable {
+    cursor: pointer;
+  }
+
+  .label {
+    margin-right: 5px;
+  }
+  .value {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.richPresence {
+  position: relative;
+  z-index: 1111;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+
+  padding: 6px;
+
+  padding-top: 0;
+  border-radius: 8px;
+  gap: 6px;
+  &.hasImage {
+    padding-top: 6px;
+  }
+  .backgroundImage {
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    filter: blur(50px) brightness(0.6);
+    inset: -20px;
+  }
+  .richInfo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-right: 2px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+  }
+}
+.activityImg {
+  width: 60px;
+  border-radius: 6px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+
+  &.videoActivityImg {
+    width: 100%;
+    max-width: 200px;
+    object-fit: contain;
+    aspect-ratio: 16/9;
+  }
+}
+
+.playedFor {
+  font-variant-numeric: tabular-nums;
+}
+
+.mobile {
+  .sidePane {
+    width: initial;
+    max-width: initial;
+    margin-right: 0;
+    margin-bottom: 4px;
+    margin-left: 4px;
+  }
+  .topArea {
+    margin: 4px;
+    margin-right: 0;
+  }
+}
+
+.botCommandsContainer {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 8px;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  border-radius: 8px;
+
+  white-space: nowrap;
+
+  .botCommands {
+    overflow: auto;
+    max-height: 300px;
+  }
+  .botCommandsTitle {
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .botCommandHeader {
+    display: flex;
+
+    align-items: center;
+    text-overflow: ellipsis;
+    gap: 6px;
+    .botCommandName {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .botCommandArgs {
+      overflow: hidden;
+
+      opacity: 0.5;
+      text-overflow: ellipsis;
+      font-size: 12px;
+    }
+  }
+
+  .botCommandItem {
+    display: flex;
+    overflow: hidden;
+    overflow: hidden;
+    flex-direction: column;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    text-overflow: ellipsis;
+    font-size: 14px;
+    gap: 4px;
+
+    &:first-child {
+      border-top: solid 1px rgba(255, 255, 255, 0.2);
+    }
+  }
+  .botCommandDescription {
+    overflow: hidden;
+    opacity: 0.6;
+    text-overflow: ellipsis;
+  }
+}
+
+.unfriendConfirmContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  .unfriendConfirmPreviewContainer {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    gap: 8px;
+  }
+}

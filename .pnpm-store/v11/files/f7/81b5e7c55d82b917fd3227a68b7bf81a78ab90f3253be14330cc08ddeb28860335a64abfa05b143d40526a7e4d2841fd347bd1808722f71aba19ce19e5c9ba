@@ -1,0 +1,40 @@
+import OpusMediaRecorder from 'opus-media-recorder';
+import EncoderWorker from 'opus-media-recorder/encoderWorker.umd.js?url';
+import OggOpusWasm from 'opus-media-recorder/OggOpusEncoder.wasm?url';
+import WebMOpusWasm from 'opus-media-recorder/WebMOpusEncoder.wasm?url';
+
+// src/init.ts
+window.global ||= window;
+var workerOptions = {
+  encoderWorkerFactory: function() {
+    return new Worker(EncoderWorker);
+  },
+  OggOpusEncoderWasmPath: OggOpusWasm,
+  WebMOpusEncoderWasmPath: WebMOpusWasm
+};
+var recorder;
+var useMicRecorder = () => {
+  const record = () => new Promise((res) => {
+    navigator.mediaDevices.getUserMedia({
+      audio: true
+    }).then((stream) => {
+      recorder = new OpusMediaRecorder(stream, {
+        mimeType: "audio/ogg"
+      }, workerOptions);
+      recorder.start();
+      recorder.addEventListener("dataavailable", (e) => {
+        res(e.data);
+      });
+    });
+  });
+  const stop = () => {
+    recorder?.stop();
+    recorder?.stream.getTracks().forEach((i) => i.stop());
+  };
+  return {
+    record,
+    stop
+  };
+};
+
+export { useMicRecorder };

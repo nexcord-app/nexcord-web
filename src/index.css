@@ -1,0 +1,51 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: contain;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
+}
+
+:root {
+  --header-height: 50px;
+  --bottom-pane-gap: 70px;
+}
+
+#root.mobileAgent {
+  -webkit-user-select: none;
+}
+
+textarea {
+  font-family: "Inter", sans-serif;
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+#dnd-action-dragged-el {
+  opacity: 0.6 !important;
+}
+
+.cm-editor {
+  height: 100%;
+}
+
+.twitter-tweet {
+  margin-bottom: 0 !important;
+}

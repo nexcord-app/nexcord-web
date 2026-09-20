@@ -1,0 +1,101 @@
+.invitesPane {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.buttons {
+  margin-left: auto;
+}
+
+.details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobile .inviteItem {
+  .detailsOuter {
+    align-content: center;
+    align-items: initial;
+    flex-direction: column;
+  }
+  .buttons {
+    align-self: flex-start;
+    margin-top: 5px;
+    margin-left: initial;
+  }
+}
+
+.inviteItem {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  gap: 6px;
+
+  .avatar {
+    align-self: start;
+    margin-top: 4px;
+  }
+
+  .detailsOuter {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 5px;
+  }
+  .otherDetails {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    margin-top: 3px;
+    margin-left: -3px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    .detail {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .icon {
+      margin-right: 3px;
+      margin-left: 3px;
+    }
+  }
+  .username {
+    overflow: hidden;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .button {
+    align-self: center;
+    padding: 4px;
+    margin: 0;
+    font-size: 14px;
+  }
+  .copyButton {
+    margin-right: 5px;
+    margin-left: auto;
+  }
+
+  .url {
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 560px) {
+  .inviteItem .otherDetails {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+    .detail {
+      width: 100%;
+    }
+    .username {
+      max-width: 100%;
+    }
+  }
+}

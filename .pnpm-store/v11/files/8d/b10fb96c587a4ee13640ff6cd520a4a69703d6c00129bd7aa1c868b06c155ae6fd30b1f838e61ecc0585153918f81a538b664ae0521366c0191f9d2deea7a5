@@ -1,0 +1,7 @@
+import type { TOptions } from '@nerimity/i18lite';
+import { type ParentComponent } from 'solid-js';
+export type TransProps = {
+    key: string;
+    options?: TOptions;
+};
+export declare const Trans: ParentComponent<TransProps>;

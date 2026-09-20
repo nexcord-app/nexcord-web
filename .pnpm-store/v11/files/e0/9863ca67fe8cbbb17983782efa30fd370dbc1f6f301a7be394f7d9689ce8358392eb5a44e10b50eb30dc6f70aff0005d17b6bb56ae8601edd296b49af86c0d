@@ -1,0 +1,8 @@
+import { Accessor } from 'solid-js';
+import { EditorView } from '@codemirror/view';
+/**
+ * Allows to change the editor readOnly state by the given `readOnly` property value
+ * @param view The editor view
+ * @param readOnly The editor readOnly state
+ */
+export declare function createEditorReadonly(view: Accessor<EditorView | undefined>, readOnly: Accessor<boolean>): void;

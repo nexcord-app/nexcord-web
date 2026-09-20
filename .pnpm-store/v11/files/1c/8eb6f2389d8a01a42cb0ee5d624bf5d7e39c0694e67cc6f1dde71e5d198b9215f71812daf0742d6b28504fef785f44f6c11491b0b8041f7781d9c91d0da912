@@ -1,0 +1,38 @@
+import { onMount } from "solid-js";
+export function Turnstile(props) {
+    const turnstile = () => window.turnstile;
+    let element;
+    onMount(() => {
+        if (document.getElementById("turnstileScript"))
+            return ready();
+        const scriptEl = document.createElement("script");
+        scriptEl.src =
+            "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback";
+        scriptEl.id = "turnstileScript";
+        document.body.appendChild(scriptEl);
+        window.onloadTurnstileCallback = ready;
+    });
+    const ready = () => {
+        const id = turnstile().render(element, {
+            sitekey: props.sitekey,
+            theme: props.theme,
+            size: props.size,
+            callback(token) {
+                props.onVerify(token);
+            },
+            "error-callback": () => props.onError?.(),
+            "expired-callback": () => {
+                props.onExpire?.();
+                if (props.autoResetOnExpire)
+                    turnstile().reset(id);
+            },
+            "timeout-callback": () => props.onTimeout?.(),
+            retry: props.retry,
+        });
+        props.onLoad?.(id);
+        props?.ref?.({
+            reset: () => turnstile().reset(id)
+        });
+    };
+    return <div class={props.class} style={props.style} ref={element}></div>;
+}

@@ -1,0 +1,2 @@
+import n from"./coq-CKyaS9Ed.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/coq" instead of "highlight.js/lib/languages/coq.js"'))}e();export{n as default};
+//# sourceMappingURL=coq.js-BcaFHLir.js.map

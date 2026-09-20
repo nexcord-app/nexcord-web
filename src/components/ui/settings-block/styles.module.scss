@@ -1,0 +1,66 @@
+/* :where() has zero specificity; this allows overriding this rule with
+solid-styled-components styles, which have non-deterministic load order. */
+:where(.block) {
+  padding: 10px;
+  padding-left: 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.block {
+  &.clickable {
+    cursor: pointer;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+.settingsBlock {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.group > .block {
+  &:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-top: 0;
+  }
+  &:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 1px;
+  }
+}
+
+.outerContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-shrink: 0;
+}
+.details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-left: 15px;
+  gap: 3px;
+}
+
+.label {
+  font-size: 14px;
+}
+
+.description {
+  opacity: 0.6;
+  font-size: 12px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}

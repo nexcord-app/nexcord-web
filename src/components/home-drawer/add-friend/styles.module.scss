@@ -1,0 +1,13 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.successMessage {
+  margin-top: 4px;
+  margin-left: 2px;
+}
+.description {
+  font-size: 14px;
+}

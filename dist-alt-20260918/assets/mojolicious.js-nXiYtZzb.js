@@ -1,0 +1,2 @@
+import o from"./mojolicious-Dk5OekI8.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/mojolicious" instead of "highlight.js/lib/languages/mojolicious.js"'))}i();export{o as default};
+//# sourceMappingURL=mojolicious.js-nXiYtZzb.js.map

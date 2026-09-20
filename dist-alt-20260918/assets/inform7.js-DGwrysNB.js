@@ -1,0 +1,2 @@
+import n from"./inform7-BSn5iWxr.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/inform7" instead of "highlight.js/lib/languages/inform7.js"'))}i();export{n as default};
+//# sourceMappingURL=inform7.js-DGwrysNB.js.map

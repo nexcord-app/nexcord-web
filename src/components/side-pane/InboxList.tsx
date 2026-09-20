@@ -1,0 +1,82 @@
+import style from "./InboxList.module.css";
+import { createMemo, createSignal, For, Show } from "solid-js";
+import { Tooltip } from "../ui/Tooltip";
+import Avatar from "../ui/Avatar";
+import { useParams } from "solid-navigator";
+import { SidebarItemContainer } from "./SidebarItemContainer";
+import { User } from "@/chat-api/store/useUsers";
+import useStore from "@/chat-api/store/useStore";
+import { NotificationCountBadge } from "./NotificationCountBadge";
+import { emitDrawerGoToMain } from "@/common/GlobalEvents";
+import { useWindowProperties } from "@/common/useWindowProperties";
+import { cn } from "@/common/classNames";
+
+function InboxItem(props: { user: User; size: number }) {
+  const params = useParams<{ channelId?: string }>();
+  const store = useStore();
+  const [hovered, setHovered] = createSignal(false);
+
+  const inboxItem = () => store.inbox.get(props.user.inboxChannelId!);
+
+  const selected = () =>
+    inboxItem() && params.channelId === inboxItem()?.channelId;
+
+  const mentionCount = () => store.mentions.getDmCount(props.user!.id);
+  const hasNotifications = () => mentionCount();
+
+  const handleClick = async () => {
+    props.user?.openDM();
+    emitDrawerGoToMain();
+  };
+
+  return (
+    <Tooltip tooltip={props.user.username}>
+      <SidebarItemContainer
+        onclick={handleClick}
+        alert={hasNotifications()}
+        selected={selected()}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <NotificationCountBadge count={mentionCount()} top={5} right={10} />
+        <Avatar
+          resize={128}
+          animate={hovered()}
+          size={props.size - props.size * 0.4}
+          user={props.user}
+        />
+      </SidebarItemContainer>
+    </Tooltip>
+  );
+}
+
+export const InboxList = (props: { size: number }) => {
+  const store = useStore();
+  const { isMobileWidth } = useWindowProperties();
+
+  const mentionUsers = createMemo(() => {
+    return store.mentions
+      .array()
+      .filter((m) => {
+        return !m?.serverId;
+      })
+      .map((m) => store.users.get(m?.userId!)!);
+  });
+
+  return (
+    <Show when={isMobileWidth() ? mentionUsers().length : true}>
+      <div>
+        <div
+          class={cn(style.inboxList, isMobileWidth() && style.mobile)}
+          style={{
+            "padding-bottom": mentionUsers().length ? "4px" : "0"
+          }}
+        >
+          <For each={mentionUsers()}>
+            {(user) => <InboxItem user={user} size={props.size} />}
+          </For>
+        </div>
+      </div>
+    </Show>
+  );
+};

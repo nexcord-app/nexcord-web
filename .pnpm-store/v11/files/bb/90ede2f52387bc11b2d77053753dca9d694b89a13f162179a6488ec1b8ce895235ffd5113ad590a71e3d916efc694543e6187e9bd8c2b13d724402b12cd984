@@ -1,0 +1,13 @@
+import { type InitOptions, type TFunction, type i18n } from '@nerimity/i18lite';
+import { type ParentComponent } from 'solid-js';
+export type TransProviderActions = {
+    addResources(lng: string, ns: string, resources: any): i18n;
+    changeLanguage(lng: string): Promise<void>;
+    getI18next(): i18n;
+};
+export declare const useTransContext: () => [TFunction, TransProviderActions];
+export declare const TransProvider: ParentComponent<{
+    instance?: i18n;
+    lng?: string;
+    options?: InitOptions;
+}>;

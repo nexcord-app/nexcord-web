@@ -1,0 +1,7 @@
+import{U as d,D as g,H as r,ah as m,o as u,af as f,c as e,F as h,I as A,q as b}from"./ModerationService-CpG_--VM.js";import{s as v}from"./Flexbox-D5klO2LR.js";import{b as x}from"./useStore-BX0H4HHl.js";import{B as y,a}from"./Breadcrumb-B3zChS5t.js";import{a as B,S as i}from"./SettingsBlock-BzKx6hwO.js";import{h as S,B as C,i as k}from"./Text-zTrywdpE.js";import"./_commonjsHelpers-CE1G-McA.js";import"./useResizeObserver-D1YIQi8T.js";const w=v("div")`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+`;function R(){const{header:o}=x(),s=d();g(()=>{o.updateHeader({title:r("3i16p4")+" - "+r("AResiX"),iconName:"settings"})});const[n,c]=m([]);u(async()=>{const t=await S();c(f(t))});const p=async()=>{const t=await k().catch(l=>{b(l.message)});t&&s("/app/settings/developer/applications/"+t.id)};return e(w,{get children(){return[e(y,{get children(){return[e(a,{href:"/app",icon:"home",get title(){return r("t5AkH8")}}),e(a,{href:"/app/settings/developer",get title(){return r("AResiX")}}),e(a,{get title(){return r("tqCAim")}})]}}),e(B,{get children(){return[e(i,{icon:"extension",get label(){return r("tqCAim")},get description(){return`${n.length}/10`},get children(){return e(C,{iconName:"add",get label(){return r("YavGE+")},onClick:p})}}),e(h,{each:n,children:t=>e(i,{icon:"extension",get href(){return`./${t.id}`},get children(){return e(A,{name:"keyboard_arrow_right"})},get label(){return t.name}})})]}})]}})}export{R as default};
+//# sourceMappingURL=DeveloperApplicationsSettings-CS8ntsiv.js.map

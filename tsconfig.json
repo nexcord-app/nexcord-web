@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "noUncheckedIndexedAccess": true,
+    "types": ["vite/client", "gapi", "@maxim_mazurok/gapi.client.drive-v3"],
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@thaunknown/simple-peer": ["./node_modules/@types/simple-peer"]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+import n from"./smali-CHxz8c5N.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/smali" instead of "highlight.js/lib/languages/smali.js"'))}i();export{n as default};
+//# sourceMappingURL=smali.js-BuV7lV0G.js.map

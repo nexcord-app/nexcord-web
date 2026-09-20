@@ -1,0 +1,2 @@
+import{bG as t,au as n,bH as o}from"./useStore-C81yKXnX.js";const u=async e=>await t({method:"GET",url:n.SERVER_URL+"/api"+o.channel(e)+"/notice",useToken:!0}),i=async(e,a,s)=>await t({method:"PUT",url:n.SERVER_URL+"/api"+o.serverChannel(e,a)+"/notice",body:{content:s},useToken:!0}),d=async(e,a)=>await t({method:"DELETE",url:n.SERVER_URL+"/api"+o.serverChannel(e,a)+"/notice",useToken:!0});export{d,u as g,i as u};
+//# sourceMappingURL=ChannelService-BZ2UQuYN.js.map

@@ -1,0 +1,2 @@
+import a from"./apache-5JXIaQnf.js";function e(){e.warned||(e.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/apache" instead of "highlight.js/lib/languages/apache.js"'))}e();export{a as default};
+//# sourceMappingURL=apache.js-DOMa4Z7F.js.map

@@ -1,0 +1,2 @@
+import type { InterpolationOptions } from '@nerimity/i18lite';
+export declare const hasInterpolation: (value: string, { prefix, suffix }: InterpolationOptions) => boolean;

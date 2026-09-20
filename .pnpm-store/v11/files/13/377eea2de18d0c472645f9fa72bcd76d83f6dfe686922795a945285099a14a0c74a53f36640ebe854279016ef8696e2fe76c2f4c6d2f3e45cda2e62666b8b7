@@ -1,0 +1,16 @@
+import { JSX, JSXElement } from 'solid-js';
+import SortableJs from 'sortablejs';
+
+type SortableEvent = SortableJs.SortableEvent;
+interface SortableProps<T> extends SortableJs.Options {
+    items: T[];
+    setItems: (items: T[], event: SortableEvent) => void;
+    idField: keyof T;
+    class?: string;
+    style?: JSX.CSSProperties;
+    id?: string;
+    children: (item: T) => JSXElement;
+}
+declare function Sortable<T>(props: SortableProps<T>): JSX.Element;
+
+export { type SortableEvent, Sortable as default };

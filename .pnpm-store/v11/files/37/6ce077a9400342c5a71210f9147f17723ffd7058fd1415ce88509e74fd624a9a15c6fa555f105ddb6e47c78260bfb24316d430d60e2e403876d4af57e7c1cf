@@ -1,0 +1,81 @@
+{
+  "name": "solid-navigator",
+  "version": "0.3.14",
+  "description": "Solid Navigator is a library that is inspired by vue router and solid router.",
+  "license": "MIT",
+  "author": "SupertigerDev",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SupertigerDev/solid-navigator.git"
+  },
+  "homepage": "https://github.com/SupertigerDev/solid-navigator#readme",
+  "bugs": {
+    "url": "https://github.com/SupertigerDev/solid-navigator/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "browser": {},
+  "exports": {
+    "solid": {
+      "development": "./dist/dev.jsx",
+      "import": "./dist/index.jsx"
+    },
+    "development": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/dev.js"
+      }
+    },
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "typesVersions": {},
+  "peerDependencies": {
+    "solid-js": "^1.6.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.19.11",
+    "esbuild-plugin-solid": "^0.5.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "jsdom": "^23.2.0",
+    "prettier": "3.2.4",
+    "solid-js": "^1.8.11",
+    "tsup": "^8.0.1",
+    "tsup-preset-solid": "^2.2.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "vite-plugin-solid": "^2.8.1",
+    "vitest": "^1.2.1"
+  },
+  "keywords": [
+    "solid"
+  ],
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8.6.0"
+  },
+  "scripts": {
+    "dev": "vite serve dev",
+    "build": "tsup",
+    "format": "prettier --ignore-path .gitignore -w \"src/**/*.{js,ts,json,css,tsx,jsx}\" \"dev/**/*.{js,ts,json,css,tsx,jsx}\"",
+    "lint": "concurrently pnpm:lint:*",
+    "lint:code": "eslint --ignore-path .gitignore --max-warnings 0 src/**/*.{js,ts,tsx,jsx}",
+    "lint:types": "tsc --noEmit",
+    "update-deps": "pnpm up -Li"
+  }
+}

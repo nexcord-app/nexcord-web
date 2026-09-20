@@ -1,0 +1,3 @@
+import type { InitOptions, TFunction } from '@nerimity/i18lite';
+import type { TransProps } from '../Trans';
+export declare const translateWithInterpolation: (t: TFunction, options: InitOptions, props: TransProps) => (item: any) => any;

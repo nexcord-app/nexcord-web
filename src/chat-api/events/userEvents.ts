@@ -1,0 +1,145 @@
+import { batch } from "solid-js";
+import useChannels from "../store/useChannels";
+import useMention from "../store/useMention";
+import useStore from "../store/useStore";
+import useUsers, { UserStatus } from "../store/useUsers";
+import { LastOnlineStatus, SelfUser } from "./connectionEventTypes";
+import {
+  ActivityStatus,
+  FriendStatus,
+  RawUserNotificationSettings,
+  RawUser,
+  RawUserConnection,
+  RawNotice,
+  RawReminder
+} from "../RawData";
+import useFriends from "../store/useFriends";
+import useAccount from "../store/useAccount";
+
+export function onUserPresenceUpdate(payload: {
+  userId: string;
+  status?: UserStatus;
+  custom?: string;
+  activities?: ActivityStatus[];
+}) {
+  const users = useUsers();
+  const account = useAccount();
+
+  if (payload.status === UserStatus.OFFLINE) {
+    users.updateLastOnlineAt(payload.userId);
+  }
+
+  users.setPresence(payload.userId, {
+    ...(payload.status !== undefined ? { status: payload.status } : undefined),
+    ...(payload.custom !== undefined ? { custom: payload.custom } : undefined),
+    ...(payload.activities !== undefined
+      ? { activities: payload.activities }
+      : undefined)
+  });
+}
+
+export function onNotificationDismissed(payload: { channelId: string }) {
+  const channels = useChannels();
+  const mentions = useMention();
+  const channel = channels.get(payload.channelId);
+  batch(() => {
+    channel?.updateLastSeen((channel.lastMessagedAt || Date.now()) + 1);
+    mentions.remove(payload.channelId);
+  });
+}
+
+export function onUserUpdatedSelf(payload: Partial<SelfUser>) {
+  const { account, users, servers } = useStore();
+
+  const clanServerId = (payload.profile as any)?.clanServerId;
+  if (clanServerId) {
+    if (!payload.profile) payload.profile = {};
+    payload.profile.clan = servers.get(clanServerId)?.clan;
+  }
+
+  account.setUser(payload);
+
+  const user = users.get(account.user()?.id!);
+  user?.update(payload);
+}
+export function onUserUpdated(payload: {
+  userId: string;
+  updated: Partial<RawUser>;
+}) {
+  const { users, friends } = useStore();
+  const user = users.get(payload.userId);
+  user?.update(payload.updated);
+  if (payload.updated.lastOnlineStatus) {
+    const lastOnlineStatus = payload.updated.lastOnlineStatus;
+    const areFriends =
+      friends.get(payload.userId)?.status === FriendStatus.FRIENDS;
+    if (!areFriends && lastOnlineStatus === LastOnlineStatus.FRIENDS) {
+      users.updateLastOnlineAt(payload.userId);
+    }
+  }
+}
+
+export function onUserNotificationSettingsUpdate(payload: {
+  serverId?: string;
+  channelId?: string;
+  updated: Partial<RawUserNotificationSettings>;
+}) {
+  const { account } = useStore();
+  account.setNotificationSettings(
+    payload.channelId || payload.serverId!,
+    payload.updated
+  );
+}
+
+export function onUserBlocked(payload: { user: RawUser }) {
+  const account = useAccount();
+  const friends = useFriends();
+  friends.set({
+    createdAt: Date.now(),
+    recipient: payload.user,
+    userId: account.user()?.id!,
+    status: FriendStatus.BLOCKED
+  });
+}
+export function onUserUnblocked(payload: { userId: string }) {
+  const friends = useFriends();
+  friends.delete(payload.userId);
+}
+
+export function onUserConnectionAdded(payload: {
+  connection: RawUserConnection;
+}) {
+  const account = useAccount();
+  account.setUser({
+    connections: [...(account.user()?.connections || []), payload.connection]
+  });
+}
+
+export function onUserConnectionRemoved(payload: { connectionId: string }) {
+  const account = useAccount();
+  account.setUser({
+    connections: account
+      .user()
+      ?.connections.filter((c) => c.id !== payload.connectionId)
+  });
+}
+
+export function onUserNoticeUpdated(payload: RawNotice) {
+  const account = useAccount();
+  const notices: RawNotice[] = [...(account.user()?.notices || [])];
+  notices.push(payload);
+  account.setUser({ notices });
+}
+
+export function onUserReminderAdd(payload: RawReminder) {
+  const account = useAccount();
+  account.addReminder(payload);
+}
+export function onUserReminderUpdate(payload: RawReminder) {
+  const account = useAccount();
+  account.updateReminder(payload);
+}
+export function onUserReminderRemove(payload: { id: string }) {
+  const account = useAccount();
+  account.removeReminder(payload.id);
+}

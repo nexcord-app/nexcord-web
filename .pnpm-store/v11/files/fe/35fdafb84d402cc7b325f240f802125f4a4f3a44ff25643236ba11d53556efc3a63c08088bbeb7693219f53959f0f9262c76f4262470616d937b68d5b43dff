@@ -1,0 +1,57 @@
+import * as solid_js from 'solid-js';
+import { JSX, Component } from 'solid-js';
+
+interface RouteObject {
+    path: string;
+    children?: RouteObject[];
+    component?: () => JSX.Element;
+    components?: Record<string, (() => JSX.Element) | undefined>;
+}
+declare const Route: (props: Omit<RouteObject, 'children'> & {
+    children?: JSX.Element;
+}) => JSX.Element;
+declare const matchComponent: (name: () => string) => () => Component;
+
+interface NavigateOptions {
+    replace?: boolean;
+    state?: any;
+}
+declare const useNavigate: () => (path: string, options?: NavigateOptions | undefined) => void;
+declare const Navigate: (props: {
+    href: string;
+}) => null;
+declare function useSearchParams<T = Record<string, string>>(): readonly [T, (query: T, options?: NavigateOptions) => void];
+
+declare const Outlet: (props: {
+    children?: string;
+    name?: string;
+}) => solid_js.JSX.Element;
+
+type Params = Record<string, string>;
+interface PathMatch {
+    params: Params;
+    path: string;
+}
+
+interface RouterProps {
+    children?: JSX.Element;
+    root?: () => JSX.Element;
+}
+declare function Router(props: RouterProps): JSX.Element;
+declare function useParams<T = Record<string, string>>(): T;
+declare const useLocation: () => {
+    query: Record<string, string>;
+    readonly search: string;
+    readonly pathname: string;
+    readonly hash: string;
+    readonly state: any;
+};
+
+type LinkProps = {
+    replace?: boolean;
+    state?: any;
+} & JSX.AnchorHTMLAttributes<HTMLAnchorElement>;
+declare const A: (props: LinkProps) => JSX.Element;
+declare const useMatch: (path: () => string) => solid_js.Accessor<PathMatch | undefined>;
+
+export { A, Navigate, type NavigateOptions, Outlet, Route, type RouteObject, Router, type RouterProps, matchComponent, useLocation, useMatch, useNavigate, useParams, useSearchParams };

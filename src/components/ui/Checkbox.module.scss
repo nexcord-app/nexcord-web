@@ -1,0 +1,51 @@
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  padding: 3px;
+  border: solid 1px rgba(255, 255, 255, 0.2);
+
+  border-radius: 6px;
+  color: transparent;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: 0.2s;
+  transition: 0.2s;
+}
+
+.nativeCheckbox {
+  position: absolute;
+  margin: 0;
+  border-radius: 6px;
+  opacity: 0;
+  cursor: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  inset: 0;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  gap: 10px;
+
+  &:hover .checkbox {
+    color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &.selected .checkbox {
+    color: white;
+    background-color: var(--primary-color);
+  }
+
+  .checkbox :global(.icon) {
+    color: inherit;
+  }
+}

@@ -1,0 +1,6 @@
+import{J as m,W as u,M as c,c as e,K as g,S as p,s as l}from"./useStore-B0mu5xqR.js";import{I as h}from"./browser-BaK9C9_l.js";import{B as f,a as n}from"./Breadcrumb-BbBmT7rf.js";import{c as v}from"./ModerationPane-DWUF3gQw.js";import"./_commonjsHelpers-CE1G-McA.js";import"./Avatar-Dm8O4A-8.js";import"./date-BKAW-sdF.js";import"./Checkbox-Dmn0FJkh.js";import"./Input-B_7GKQol.js";import"./ConnectionErrorModal-CuGXfkwb.js";import"./logout-H7jibjfq.js";import"./GlobalEvents-Z7kgH4CP.js";import"./SettingsBlock-C1ny6-Rp.js";const I=l("div")`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+`;function P(){const[o]=h(),r=m(),{header:a,servers:i,channels:d}=u(),s=()=>i.get(r.serverId),t=()=>d.get(r.channelId);return c(()=>{a.updateHeader({title:"Settings - Audit Logs",serverId:r.serverId,iconName:"settings"})}),e(I,{get children(){return[e(f,{get children(){return[e(n,{get href(){return g.SERVER_MESSAGES(r.serverId,s()?.defaultChannelId)},icon:"home",get title(){return s()?.name}}),e(n,{get href(){return t()?.serverId?"../":void 0},get title(){return o("gg7o5L")}}),e(p,{get when(){return t()?.serverId},get children(){return e(n,{get title(){return t()?.name}})}})]}}),e(v,{alwaysExpanded:!0,get serverId(){return r.serverId},hideSearchBar:!0,noMargin:!0,title:"Audit Logs"})]}})}export{P as default};
+//# sourceMappingURL=ServerAuditLogs-B86rnMeo.js.map

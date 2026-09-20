@@ -1,0 +1,2 @@
+import n from"./elixir-DLGFH_Et.js";function i(){i.warned||(i.warned=!0,console.log('Deprecation (warning): Using file extension in specifier is deprecated, use "highlight.js/lib/languages/elixir" instead of "highlight.js/lib/languages/elixir.js"'))}i();export{n as default};
+//# sourceMappingURL=elixir.js-mpKB6xoH.js.map
