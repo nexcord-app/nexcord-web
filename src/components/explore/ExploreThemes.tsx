@@ -44,7 +44,7 @@ export default function ExploreThemes() {
   const [search, setSearch] = createSignal("");
 
   const REMOTE_THEMES_URL =
-    "https://raw.githubusercontent.com/Nexcord/themes/refs/heads/main/themes.json";
+    "https://raw.githubusercontent.com/nexcord-app/themes/refs/heads/main/themes.json";
 
   onMount(() => {
     header.updateHeader({
@@ -106,7 +106,7 @@ export default function ExploreThemes() {
           label="GitHub"
           iconName="code"
           margin={[19, 0, 0, 0]}
-          href="https://github.com/Nerimity/themes"
+          href="https://github.com/nexcord-app/themes"
           target="_blank"
           class={css`
             align-self: stretch;
