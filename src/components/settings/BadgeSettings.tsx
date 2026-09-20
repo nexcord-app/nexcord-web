@@ -222,18 +222,7 @@ const SupportMethodBlock = () => {
       <SettingsBlock
         label="Ko-Fi"
         iconSrc="/assets/kofi.svg"
-        href="https://ko-fi.com/supertiger"
-        hrefBlank
-      />
-      <SettingsBlock
-        class={css`
-          img {
-            border-radius: 50%;
-          }
-        `}
-        label="Boosty"
-        iconSrc="/assets/boosty.jpg"
-        href="https://boosty.to/supertigerdev/donate"
+        href="https://ko-fi.com/xyztoshi"
         hrefBlank
       />
     </SettingsGroup>

@@ -7,7 +7,7 @@
     },
     "systemMessages": {
         "joinServer": {
-            "bot": "<User/><2> wurde dem Server hinzugefügt.</2>",
+            "bot": "<Bot/><2> wurde dem Server hinzugefügt.</2>",
             "user": "<User/><2> ist dem Server beigetreten.</2>"
         },
         "leaveServer": "<User/><2> hat den Server verlassen.</2>",
