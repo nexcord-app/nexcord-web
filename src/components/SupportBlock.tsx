@@ -30,7 +30,7 @@ const SettingItemContainer = styled(ItemContainer)<{ nested?: boolean }>`
 export function SupportBlock() {
   return (
     <A
-      href="https://ko-fi.com/supertiger"
+      href="https://ko-fi.com/xyztoshi"
       target="_blank"
       rel="noopener noreferrer"
       style={{ "text-decoration": "none" }}
