@@ -147,7 +147,7 @@ export default function ExploreThemes() {
       const token = getAuthToken();
 
       if (!token) {
-        alert("Fehler: Kein Authentifizierungs-Token gefunden. Bitte neu anmelden.");
+        alert("Fehler: Kein Authentifizierungs-Token (userToken) gefunden. Bitte neu anmelden.");
         setIsSubmitting(false);
         return;
       }
@@ -173,7 +173,7 @@ export default function ExploreThemes() {
         setSubmitCss("");
       } else {
         const errorData = await res.json().catch(() => ({}));
-        alert(`Fehler beim Einreichen des Themes: ${errorData.error || res.statusText}`);
+        alert(`Fehler beim Einreichen des Themes: ${errorData.error || errorData.details || res.statusText}`);
       }
     } catch (err) {
       console.error(err);
