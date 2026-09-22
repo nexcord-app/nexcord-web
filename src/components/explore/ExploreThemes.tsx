@@ -135,15 +135,18 @@ export default function ExploreThemes() {
 
     setIsSubmitting(true);
     try {
-      // Token aus Speicher-Keys auslesen
-      const rawToken = localStorage.getItem("token") || localStorage.getItem("session") || "";
-      const authToken = rawToken.startsWith("Bearer ") ? rawToken : `Bearer ${rawToken}`;
+      // Token direkt aus dem localStorage auslesen
+      const token =
+        localStorage.getItem("token") ||
+        localStorage.getItem("session") ||
+        localStorage.getItem("nerimity_token") ||
+        "";
 
       const res = await fetch("https://server.nexcord.de/api/explore/themes/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": authToken,
+          "Authorization": token,
         },
         body: JSON.stringify({
           title: submitTitle(),
