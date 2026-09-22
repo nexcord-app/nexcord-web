@@ -135,12 +135,18 @@ export default function ExploreThemes() {
 
     setIsSubmitting(true);
     try {
-      // Token direkt aus dem localStorage auslesen
+      // Token aus dem LocalStorage holen
       const token =
         localStorage.getItem("token") ||
         localStorage.getItem("session") ||
-        localStorage.getItem("nerimity_token") ||
+        sessionStorage.getItem("token") ||
         "";
+
+      if (!token) {
+        alert("Fehler: Kein Authentifizierungs-Token gefunden. Bitte neu anmelden.");
+        setIsSubmitting(false);
+        return;
+      }
 
       const res = await fetch("https://server.nexcord.de/api/explore/themes/submit", {
         method: "POST",
@@ -163,7 +169,7 @@ export default function ExploreThemes() {
         setSubmitCss("");
       } else {
         const errorData = await res.json().catch(() => ({}));
-        alert(`Fehler beim Einreichen des Themes: ${errorData.message || res.statusText}`);
+        alert(`Fehler beim Einreichen des Themes: ${errorData.error || res.statusText}`);
       }
     } catch (err) {
       console.error(err);
