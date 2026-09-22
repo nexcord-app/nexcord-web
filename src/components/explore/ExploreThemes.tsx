@@ -145,7 +145,6 @@ export default function ExploreThemes() {
           "Content-Type": "application/json",
           "Authorization": authToken,
         },
-        credentials: "include",
         body: JSON.stringify({
           title: submitTitle(),
           description: submitDesc(),
