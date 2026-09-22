@@ -129,18 +129,22 @@ export default function ExploreThemes() {
     }
   };
 
+  const getAuthToken = (): string => {
+    return (
+      localStorage.getItem("userToken") ||
+      localStorage.getItem("token") ||
+      localStorage.getItem("session") ||
+      ""
+    );
+  };
+
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
     if (!submitTitle() || !submitCss()) return;
 
     setIsSubmitting(true);
     try {
-      // Token aus dem LocalStorage holen
-      const token =
-        localStorage.getItem("token") ||
-        localStorage.getItem("session") ||
-        sessionStorage.getItem("token") ||
-        "";
+      const token = getAuthToken();
 
       if (!token) {
         alert("Fehler: Kein Authentifizierungs-Token gefunden. Bitte neu anmelden.");
