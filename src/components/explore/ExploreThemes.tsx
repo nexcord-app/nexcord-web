@@ -100,7 +100,8 @@ export default function ExploreThemes() {
       const githubThemes = githubRes.ok ? await githubRes.json() : {};
 
       // 2. Datenbank-Themes laden (API)
-      const dbRes = await fetch("/api/v1/explore/themes");
+// RICHTIG:
+      const dbRes = await fetch("https://server.nexcord.de/api/explore/themes");
       const dbThemesList = dbRes.ok ? await dbRes.json() : [];
 
       // API Array in Record Format umwandeln
@@ -133,7 +134,7 @@ export default function ExploreThemes() {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch("/api/v1/explore/themes/submit", {
+      const res = await fetch("https://server.nexcord.de/api/explore/themes/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
