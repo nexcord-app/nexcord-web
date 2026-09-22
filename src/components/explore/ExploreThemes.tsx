@@ -96,23 +96,24 @@ export default function ExploreThemes() {
     setLoading(true);
     try {
       // 1. GitHub Themes laden
-      const githubRes = await fetch(REMOTE_THEMES_URL, { cache: "no-store" });
-      const githubThemes = githubRes.ok ? await githubRes.json() : {};
+      const githubRes = await fetch(REMOTE_THEMES_URL, { cache: "no-store" }).catch(() => null);
+      const githubThemes = githubRes && githubRes.ok ? await githubRes.json() : {};
 
       // 2. Datenbank-Themes laden (API)
-// RICHTIG:
-      const dbRes = await fetch("https://server.nexcord.de/api/explore/themes");
-      const dbThemesList = dbRes.ok ? await dbRes.json() : [];
+      const dbRes = await fetch("https://server.nexcord.de/api/explore/themes").catch(() => null);
+      const dbThemesList = dbRes && dbRes.ok ? await dbRes.json() : [];
 
       // API Array in Record Format umwandeln
       const dbThemesRecord: Record<string, ThemePreset> = {};
-      dbThemesList.forEach((theme: any) => {
-        dbThemesRecord[theme.title] = {
-          name: theme.title,
-          description: theme.description,
-          css: theme.cssCode,
-        } as any;
-      });
+      if (Array.isArray(dbThemesList)) {
+        dbThemesList.forEach((theme: any) => {
+          dbThemesRecord[theme.title] = {
+            name: theme.title,
+            description: theme.description,
+            css: theme.cssCode,
+          } as any;
+        });
+      }
 
       // Zusammenführen
       batch(() => {
@@ -134,9 +135,14 @@ export default function ExploreThemes() {
 
     setIsSubmitting(true);
     try {
+     const authToken = localStorage.getItem("token") || "";
+
       const res = await fetch("https://server.nexcord.de/api/explore/themes/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": authToken,
+        },
         body: JSON.stringify({
           title: submitTitle(),
           description: submitDesc(),
