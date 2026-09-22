@@ -47,7 +47,7 @@ const SettingItemContainer = styled(ItemContainer)<{ nested?: boolean }>`
 export default function ModerationDrawer() {
   return (
     <Rerun on={getCurrentLanguage}>
-      <DrawerHeader text="Moderation Pane" />
+      <DrawerHeader text="Moderation Panel" />
       <DrawerContainer>
         <List />
       </DrawerContainer>
@@ -70,6 +70,11 @@ const items = [
     name: () => "Tickets",
     path: "tickets",
     icon: "sell"
+  },
+  {
+    name: () => "Themes",
+    path: "themes",
+    icon: "palette"
   }
 ];
 
@@ -86,7 +91,7 @@ function List() {
                 tickets.hasModerationTicketNotification()
               }
             >
-              <NotificationCircle count={tickets.hasModerationTicketNotification()}  />
+              <NotificationCircle count={tickets.hasModerationTicketNotification()} />
             </Show>
           </Item>
         )}
@@ -112,7 +117,7 @@ function NotificationCircle(props: {count?: number}) {
         "margin-right": "8px"
       }}
     >
-      {props.count ||"!"}
+      {props.count || "!"}
     </div>
   );
 }
