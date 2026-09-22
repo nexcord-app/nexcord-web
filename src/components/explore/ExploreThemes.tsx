@@ -135,7 +135,9 @@ export default function ExploreThemes() {
 
     setIsSubmitting(true);
     try {
-     const authToken = localStorage.getItem("token") || "";
+      // Token aus Speicher-Keys auslesen
+      const rawToken = localStorage.getItem("token") || localStorage.getItem("session") || "";
+      const authToken = rawToken.startsWith("Bearer ") ? rawToken : `Bearer ${rawToken}`;
 
       const res = await fetch("https://server.nexcord.de/api/explore/themes/submit", {
         method: "POST",
@@ -143,6 +145,7 @@ export default function ExploreThemes() {
           "Content-Type": "application/json",
           "Authorization": authToken,
         },
+        credentials: "include",
         body: JSON.stringify({
           title: submitTitle(),
           description: submitDesc(),
@@ -157,10 +160,12 @@ export default function ExploreThemes() {
         setSubmitDesc("");
         setSubmitCss("");
       } else {
-        alert("Fehler beim Einreichen des Themes.");
+        const errorData = await res.json().catch(() => ({}));
+        alert(`Fehler beim Einreichen des Themes: ${errorData.message || res.statusText}`);
       }
     } catch (err) {
       console.error(err);
+      alert("Netzwerkfehler beim Einreichen.");
     } finally {
       setIsSubmitting(false);
     }
